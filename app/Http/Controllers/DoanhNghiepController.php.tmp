@@ -1,0 +1,126 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use App\Models\HoSo;
+use Session;
+use DB;
+
+class DoanhNghiepController extends Controller
+{
+    public function __construct()
+   {
+       $this->middleware('auth');
+   }
+
+   public function getProfile(Request $request){
+    $request->user()->authorizeRoles(['user']);
+    $user = $request->user();
+
+    Session::put('email',$user->email);
+    
+    $HoSo=DB::table('users')
+        ->leftJoin('tblNguoiDung','tblNguoiDung.users_id','=','users.id')
+        ->leftJoin('tblHoSo','tblHoSo.idtblHoSo','=','tblNguoiDung.idtblHoSo')
+        ->leftJoin('tblnguoidaidien','tblnguoidaidien.idtblnguoidaidien','=','tblHoSo.tblNguoiDaiDien_idtblNguoiDaiDien')
+        ->orderBy('TenDonVi', 'desc')
+        ->where('users.email',Session::get('email'))
+        ->first();
+        return view('nguoidung.hoso')->with('HoSo',$HoSo);
+    }
+
+    
+
+    public function updateProfile(Request $request){
+        $request->user()->authorizeRoles(['user']);
+        $HoSo = DB::table('tblHoSo')->get();
+        $Huyen = DB::table('tblcbql_huyen')->get();
+
+    
+        return view('nguoidung.capnhathoso')->with('HoSo',$HoSo)->with('Huyen',$Huyen);
+    
+        }
+
+    public function postupdateProfile(Request $request){
+
+        $add = new HoSo();
+        $add['SanPham']=$request->SanPham;
+        $add['TenDonVi']=$request->TenDonVi;
+        $add['GiayDKKD']=$request->GiayDKKD;
+        $add['NgayDKKD']=$request->NgayDKKD;
+        $add['SoDKKD']=$request->SoDKKD;
+        $add['MaSoThue']=$request->MaSoThue;
+        $add['DiaChi']=$request->DiaChi;
+        $add['DienThoai']=$request->DienThoai;
+        $add['Email']=$request->Email;
+        $add['Website']=$request->Website;
+        $add['DiaChiXuong']=$request->DiaChiXuong;
+        $add['DiaChiCty']=$request->DiaChiCty;
+        $add['VonDieuLe']=$request->VonDieuLe;
+    
+        $add->save();
+
+        return Redirect()->route('nguoidung.hoso')->with('success', 'Account created successfully');
+    
+        }
+
+    public function getMau2(Request $request){
+        $request->user()->authorizeRoles(['user']);
+        $user = $request->user();
+    
+            return view('nguoidung.mau2');
+    
+        }
+    public function postMau2(Request $request){
+        $request->user()->authorizeRoles(['user']);
+        $user = $request->user();
+    
+            return view('nguoidung.mau2');
+    
+        }
+
+    public function getMau3(Request $request){
+        $request->user()->authorizeRoles(['user']);
+        $user = $request->user();
+    
+            return view('nguoidung.mau3');
+    
+        }
+    public function postMau3(Request $request){
+        $request->user()->authorizeRoles(['user']);
+        $user = $request->user();
+    
+            return view('nguoidung.mau3');
+    
+        }
+
+    public function getMau4(Request $request){
+        $request->user()->authorizeRoles(['user']);
+        $user = $request->user();
+    
+            return view('nguoidung.mau4');
+    
+        }
+    public function postMau4(Request $request){
+        $request->user()->authorizeRoles(['user']);
+        $user = $request->user();
+    
+            return view('nguoidung.mau4');
+    
+        }
+    public function getuploadfile(Request $request){
+        $request->user()->authorizeRoles(['user']);
+        $user = $request->user();
+    
+            return view('nguoidung.uploadfile');
+    
+        }
+    public function postuploadfile(Request $request){
+        $request->user()->authorizeRoles(['user']);
+        $user = $request->user();
+    
+            return view('nguoidung.uploadfile');
+    
+        }
+}
