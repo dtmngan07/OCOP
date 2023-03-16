@@ -28,6 +28,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
     Route::get('/logout','Laravel\Fortify\Http\Controllers\AuthenticatedSessionController@destroy' );
     Route::get('/password.update','Laravel\Fortify\Http\Controllers\PasswordController@update' );
 
@@ -44,12 +45,17 @@ Route::middleware([
 
     Route::get('/admin/dsdonviduyet','App\Http\Controllers\DonViDuyetController@getDS_DonViDuyet' );
 
-
     /* PHẦN QUẢN LÝ TRANG NGƯỜI DÙNG */
     Route::get('/nguoidung','App\Http\Controllers\AdminController@getdashboardUser' );
     Route::get('/nguoidung/hoso','App\Http\Controllers\HoSoController@getHoSo' ); //xem hồ sơ doanh nghiệp
+    Route::get('/nguoidung/capnhathoso','App\Http\Controllers\HoSoController@get_Them_HoSo' );
+    Route::post('/nguoidung/capnhathoso','App\Http\Controllers\HoSoController@post_Them_HoSo' );
 
     Route::get('/nguoidung/hosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@getHoSo_NguoiDaiDien' );
+    Route::get('/nguoidung/hosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@getHoSo_NguoiDaiDien' );
+    Route::get('/nguoidung/themhosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@getThemHoSo_NguoiDaiDien' );
+    Route::post('/nguoidung/themhosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@postThemHoSo_NguoiDaiDien' );
+
 /* 
     Route::get('/nguoidung/hosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@getProfileNguoiDaiDien' );
     Route::get('/nguoidung/hosonguoidaidien/them','App\Http\Controllers\NguoiDaiDienController@getProfileNguoiDaiDien' );

@@ -4,6 +4,8 @@
     <div class="card-body">
         <h5 class="card-title">Thông tin người đại diện doanhn nghiệp</h5>
 
+        <a href="{{ URL::to('/nguoidung/themhosonguoidaidien') }}" class="btn btn-info"><i class="bi bi-plus-lg"></i>Thêm</a>
+        <hr>
         <!-- Vertical Form -->
         <form class="row g-3">
             <div class="col-12">
@@ -29,5 +31,6 @@
 
     </div>
 </div>
+
 
 @endsection

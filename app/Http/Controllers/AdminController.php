@@ -25,7 +25,7 @@ class AdminController extends Controller
         $request->user()->authorizeRoles(['user']);
         $user = $request->user();
         Session::put('name',$user->name);
-        Session::put('role',"client");
+        Session::put('role',"user");
 
             return view('nguoidung.trangchuUser');
         }

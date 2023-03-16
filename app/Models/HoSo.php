@@ -102,5 +102,8 @@ class HoSo extends Model
         'PhuongAnBaoVeMoiTruong'
 
         ];
+        public function add_HoSo ($data){
+            return DB::table($this->table)->insert($data);
+        }
 
 }

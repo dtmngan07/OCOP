@@ -122,7 +122,7 @@
       </li><!-- End Profile Page Nav -->
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ URL::to('nguoidung/capnhathoso') }}">
+        <a class="nav-link collapsed" href="{{ URL::to('/nguoidung/capnhathoso') }}">
           <i class="bi bi-person"></i>
           <span>Cập nhật hồ sơ</span>
         </a>

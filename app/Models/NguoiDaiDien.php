@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use DB;
 
 class NguoiDaiDien extends Model
 {
@@ -16,4 +17,8 @@ class NguoiDaiDien extends Model
         'DiaChi',
         'SoDienThoai'
         ];
+
+    public function add_NguoiDaiDien ($data){
+        return DB::table($this->table)->insert($data);
+    }
 }

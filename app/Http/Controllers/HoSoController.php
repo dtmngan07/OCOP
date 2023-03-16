@@ -27,4 +27,24 @@ class HoSoController extends Controller
         return view('nguoidung.hoso.hoso')->with('HoSo',$HoSo);
     }
 
+    public function get_Them_HoSo(Request $request){
+        $request->user()->authorizeRoles(['user']);
+        $user = $request->user();
+
+        return view('nguoidung.capnhathoso');
+    }
+    
+    public function post_Them_HoSo(Request $request){
+
+        $add = [
+            'TenDonVi'=>$request->TenDonVi,
+            'DienThoai'=>$request->DienThoai,
+            'DiaChiCty'=>$request->DiaChiCty,
+            'Email'=>$request->Email,
+            'Website'=>$request->Website,
+        ];
+        $this->users->add_HoSo($add);    
+
+        return redirect()->route('nguoidung.capnhathoso');
+    }
 }
