@@ -17,7 +17,6 @@
                     <th scope="col">Website</th>
                     <th scope="col">Người đại diện</th>
                     <th scope="col">Xem chi tiết</th>
-                    <th scope="col">Sửa</th>
                     <th scope="col">Xóa</th>
                 </tr>
             </thead>
@@ -38,7 +37,6 @@
                     <td>{{ $iteam->TenNguoiDaiDien}}</td>
                     <td><a href="{{ URL::to('/admin/xemchitiet/',['id' => $iteam->id]) }}" class="btn btn-info">Xem chi tiết</a></td>
                     <td><a>Xóa</a></td>
-                    <td><a>Sửa</a></td>
                 </tr>
                 @endforeach
             </tbody>

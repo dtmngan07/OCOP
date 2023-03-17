@@ -46,22 +46,63 @@
                             </div>
 
                             <div class="row">
+                                <div class="col-lg-3 col-md-4 label ">Biểu tượng</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo ->BieuTuong}}</div>
+                            </div>
+
+                            <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Tên sản phẩm đăng ký</div>
                                 <div class="col-lg-9 col-md-8">{{ $HoSo -> SanPham}}</div>
                             </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Số phiếu đăng ký sản phẩm OCOP</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo -> SoPhieu}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Giấy đăng ký kinh doanh</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo -> GiayDKKD}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Ngày đăng ký kinh doanh</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo -> NgayDKKD}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Số đăng ký kinh doanh</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo ->	SoDKKD}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Mã sô thuế</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo -> MaSoThue}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Loại hình tổ chức</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo -> ten}}</div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-lg-3 col-md-4 label">Vốn điều lệ</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo -> VonDieuLe}}</div>
+                            </div>
+
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Số điện thoại</div>
                                 <div class="col-lg-9 col-md-8">{{ $HoSo -> DienThoai}}</div>
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-3 col-md-4 label">Địa chỉ công ty</div>
-                                <div class="col-lg-9 col-md-8">{{ $HoSo -> 	DiaChiCty}}</div>
+                                <div class="col-lg-3 col-md-4 label">Địa chỉ xưởng</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo -> DiaChiXuong}}</div>
                             </div>
 
                             <div class="row">
-                                <div class="col-lg-3 col-md-4 label">Loại hình tổ chức</div>
-                                <div class="col-lg-9 col-md-8">{{ $HoSo -> ten}}</div>
+                                <div class="col-lg-3 col-md-4 label">Địa chỉ công ty</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo -> 	DiaChiCty}}</div>
                             </div>
 
                             <div class="row">

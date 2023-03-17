@@ -27,6 +27,18 @@ class HoSoController extends Controller
         return view('nguoidung.hoso.hoso')->with('HoSo',$HoSo);
     }
 
+    public function getDS_HoSo(Request $request){
+        $request->user()->authorizeRoles(['admin']);
+        $user = $request->user();
+
+        $HoSo=DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.id','=','ho_sos.nguoi_dai_dien_id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->get();
+            
+        return view('admin.quanlyhoso.danhsachhosodangky')->with('HoSo',$HoSo);
+    }
+
     public function get_Them_HoSo(Request $request){
         $request->user()->authorizeRoles(['user']);
         $user = $request->user();
