@@ -69,7 +69,7 @@
                 <div class="col-lg-6 col-sm-12 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="bi bi-person-fill"></i>
+                            <i class="far fa-address-book" style='font-size:50px'></i>
                             <h5 class="mb-3">Trang quản lý</h5>
                             <p>Dành cho cán bộ quản lý</p>
                             <a href="{{ URL::to('admin') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
@@ -81,7 +81,7 @@
                 <div class="col-lg-6 col-sm-12 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="bi bi-journal-text"></i>
+                            <i class="far fa-edit" style='font-size:50px'></i>
                             <h5 class="mb-3">Trang đăng ký</h5>
                             <p>Dành cho doanh nghiệp đăng ký sản phẩm Ocop</p>
                             <a href="{{ URL::to('nguoidung') }}" class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
