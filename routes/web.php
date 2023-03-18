@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Home.home');
+    return view('Home.index');
 });
 Route::get('/home', function () {
-    return view('Home.home');
+    return view('Home.index');
 });
 
 
@@ -26,7 +26,7 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('Home.home');
     })->name('dashboard');
 
     Route::get('/logout','Laravel\Fortify\Http\Controllers\AuthenticatedSessionController@destroy' );

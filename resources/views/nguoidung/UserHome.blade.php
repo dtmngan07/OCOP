@@ -129,9 +129,9 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ URL::to('nguoidung/doimatkhau') }}">
+        <a class="nav-link collapsed" href="{{ route('profile.show') }}">
           <i class="bi bi-person"></i>
-          <span>Đổi mật khẩu</span>
+          <span>Cập nhật thông tin đăng nhập</span>
         </a>
       </li>
 

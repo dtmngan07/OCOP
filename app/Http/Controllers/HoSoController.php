@@ -22,6 +22,7 @@ class HoSoController extends Controller
         $HoSo=DB::table('ho_sos')
         ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.id','=','ho_sos.nguoi_dai_dien_id')
         ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.id','=','ho_sos.phieu_dang_ki_id')
         ->first();
             
         return view('nguoidung.hoso.hoso')->with('HoSo',$HoSo);

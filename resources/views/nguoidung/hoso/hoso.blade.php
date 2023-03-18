@@ -35,7 +35,7 @@
                     <div class="tab-content pt-2">
 
                         <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                            <h5 class="card-title">Thông tin chung</h5>
+                            <h5 class="card-title">Mô tả về doanh nghiệp</h5>
                             <p class="small fst-italic">
                                 Nội dung về doanh nghiệp
                             </p>
@@ -57,7 +57,7 @@
 
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Số phiếu đăng ký sản phẩm OCOP</div>
-                                <div class="col-lg-9 col-md-8">{{ $HoSo -> SoPhieu}}</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo -> sophieu}}</div>
                             </div>
 
                             <div class="row">
