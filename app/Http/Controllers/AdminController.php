@@ -13,6 +13,14 @@ class AdminController extends Controller
    {
        $this->middleware('auth');
    }
+
+   public function getdashboard(Request $request){
+    $role = DB::table('role_user')
+        ->leftJoin('users','users.id','=','role_user.user_id')
+        ->leftJoin('roles','roles.id','=','role_user.role_id')
+        ->first();
+        return view('Home.home')->with('role',$role);
+    }
    public function getdashboardAdmin(Request $request){
     $request->user()->authorizeRoles(['admin']);
     $user = $request->user();
@@ -28,7 +36,7 @@ class AdminController extends Controller
         Session::put('role',"user");
 
             return view('nguoidung.trangchuUser');
-        }
+    }
 
         public function getProfile(Request $request){
             $request->user()->authorizeRoles(['Admin']);

@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('Home.index');
+    return view('Home.trangchu');
 });
 Route::get('/home', function () {
-    return view('Home.index');
+    return view('Home.trangchu');
 });
 
 
@@ -25,9 +25,7 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified'
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('Home.home');
-    })->name('dashboard');
+    Route::get('/dashboard','App\Http\Controllers\AdminController@getdashboard');
 
     Route::get('/logout','Laravel\Fortify\Http\Controllers\AuthenticatedSessionController@destroy' );
     Route::get('/password.update','Laravel\Fortify\Http\Controllers\PasswordController@update' );

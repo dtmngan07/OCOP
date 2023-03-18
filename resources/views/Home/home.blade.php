@@ -57,7 +57,20 @@
                 <a href="{{ URL::to('home') }}" class="nav-item nav-link active">Trang chủ</a>
                 <a href="http://ocop.gov.vn/" class="nav-item nav-link">Thông tin chương trình</a>
                 <a href="https://ocop.angiang.gov.vn/" class="nav-item nav-link">Trang chủ Ocop An Giang</a>
-               
+
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <span class="d-none d-md-block dropdown-toggle ps-2">
+                    Xin chào {{ Auth::user()->name }}
+                    </span>
+                </a>
+
+                <form method="POST" action="{{ route('logout') }}" x-data>
+              @csrf
+              <a class="nav-item nav-link" href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                <i class="bi bi-box-arrow-right"></i>
+                {{ __('Log Out') }}
+              </a>
+              </form>
             </div>
         </div>
     </nav>
@@ -66,6 +79,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-4">
+                @if ($role->role_name == 'admin')
                 <div class="col-lg-6 col-sm-12 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
@@ -78,6 +92,7 @@
                         </div>
                     </div>
                 </div>
+                @elseif ($role->role_name == 'user')
                 <div class="col-lg-6 col-sm-12 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
@@ -90,6 +105,9 @@
                         </div>
                     </div>
                 </div>
+                @else
+                    <h5>Trang khác</h5>
+                @endif
             </div>
         </div>
     </div>
