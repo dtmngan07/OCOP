@@ -22,19 +22,11 @@ class AdminController extends Controller
         return view('Home.home')->with('role',$role);
     }
    public function getdashboardAdmin(Request $request){
-    $request->user()->authorizeRoles(['admin']);
-    $user = $request->user();
-    Session::put('name',$user->name);
-    Session::put('role',"admin");
 
         return view('admin.trangchuAdmin');
     }
     public function getdashboardUser(Request $request){
-        $request->user()->authorizeRoles(['user']);
-        $user = $request->user();
-        Session::put('name',$user->name);
-        Session::put('role',"user");
-
+        
             return view('nguoidung.trangchuUser');
     }
 
