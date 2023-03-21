@@ -1,7 +1,7 @@
 @extends( 'admin.AdminHome')
 @section ('content')
 <section class="section profile">
-    <form action="{{ route('/admin/xemchitiet/',['id' => $HoSo->id])}}" method="post" enctype="multipart/form-data">
+    <form action="" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-xl-4">
                 <div class="card">
@@ -57,7 +57,7 @@
 
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 label">Số phiếu đăng ký sản phẩm OCOP</div>
-                                    <div class="col-lg-9 col-md-8">{{ $HoSo -> SoPhieu}}</div>
+                                    <div class="col-lg-9 col-md-8">{{ $HoSo -> 	sophieu}}</div>
                                 </div>
 
                                 <div class="row">

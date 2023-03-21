@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CanBoQuanLy extends Model
 {
     use HasFactory;
-    protected $table = 'CanBoQuanLy';
+    protected $table = 'can_bo_quan_lies';
 
     protected $fillable = [
         'id',
@@ -16,4 +16,5 @@ class CanBoQuanLy extends Model
         'diachi',
         'sodienthoai',
     ];
+
 }

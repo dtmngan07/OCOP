@@ -77,7 +77,7 @@ public function authorizeRoles($roles)
 */
 public function hasAnyRole($roles)
 {
-  return null !== $this->roles()->whereIn('name', $roles)->first();
+  return null !== $this->roles()->whereIn('role_name', $roles)->first();
 }
 /**
 * Check one role
@@ -85,6 +85,6 @@ public function hasAnyRole($roles)
 */
 public function hasRole($role)
 {
-  return null !== $this->roles()->where('name', $role)->first();
+  return null !== $this->roles()->where('role_name', $role)->first();
 }
 }

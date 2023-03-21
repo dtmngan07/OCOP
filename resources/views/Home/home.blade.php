@@ -79,7 +79,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="row g-4">
-                @if ($role->role_name == 'admin')
+                @if ($role->role_name =="admin")
                 <div class="col-lg-6 col-sm-12 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
@@ -92,7 +92,9 @@
                         </div>
                     </div>
                 </div>
-                @elseif ($role->role_name == 'user')
+                @endif
+
+                @if ($role->role_name =="user")
                 <div class="col-lg-6 col-sm-12 wow fadeInUp" data-wow-delay="0.7s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
@@ -105,8 +107,6 @@
                         </div>
                     </div>
                 </div>
-                @else
-                    <h5>Trang khác</h5>
                 @endif
             </div>
         </div>

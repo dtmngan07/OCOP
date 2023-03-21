@@ -15,9 +15,11 @@ class AdminController extends Controller
    }
 
    public function getdashboard(Request $request){
+    $user = $request->user();
     $role = DB::table('role_user')
         ->leftJoin('users','users.id','=','role_user.user_id')
         ->leftJoin('roles','roles.id','=','role_user.role_id')
+        ->where('user_id',$user->id)
         ->first();
         return view('Home.home')->with('role',$role);
     }

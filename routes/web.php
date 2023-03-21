@@ -34,14 +34,28 @@ Route::middleware([
 
     Route::get('/admin/dshoso','App\Http\Controllers\HoSoController@getDS_HoSo' );
     Route::get('/admin/xemchitiet/{id}','App\Http\Controllers\HoSoController@getXemChiTiet' );
+    Route::get('/admin/xoa/{id}','App\Http\Controllers\HoSoController@get_Xoa_HoSo' );
 
     Route::get('/admin/dscanboquanly','App\Http\Controllers\CanBoQuanLyController@getDS_CanBoQuanLy' );
     Route::get('/admin/canboquanly/them','App\Http\Controllers\CanBoQuanLyController@get_Them_CanBoQuanLy' );
-    Route::post('/admin/canboquanly/them','App\Http\Controllers\CanBoQuanLyController@post_Them_CanBoQuanLy' );
+    Route::post('/savethem','App\Http\Controllers\CanBoQuanLyController@post_Them_CanBoQuanLy' );
     Route::get('/admin/canboquanly/sua/{id}','App\Http\Controllers\CanBoQuanLyController@get_Sua_CanBoQuanLy' );
     Route::post('/admin/canboquanly/sua/{id}','App\Http\Controllers\CanBoQuanLyController@post_Sua_CanBoQuanLy' );
+    Route::get('/admin/canboquanly/xoa/{id}','App\Http\Controllers\CanBoQuanLyController@get_Xoa_CanBoQuanLy' );
 
     Route::get('/admin/dsdonviduyet','App\Http\Controllers\DonViDuyetController@getDS_DonViDuyet' );
+    Route::get('/admin/donviduyet/them','App\Http\Controllers\DonViDuyetController@get_Them_DonViDuyet' );
+    Route::post('/admin/donviduyet/them','App\Http\Controllers\DonViDuyetController@post_Them_DonViDuyet' );
+    Route::get('/admin/donviduyet/sua/{id}','App\Http\Controllers\DonViDuyetController@get_Sua_DonViDuyet' );
+    Route::post('/admin/donviduyet/sua/{id}','App\Http\Controllers\DonViDuyetController@post_Sua_DonViDuyet' );
+    Route::get('/admin/donviduyet/xoa/{id}','App\Http\Controllers\DonViDuyetController@get_Xoa_DonViDuyet' );
+
+    Route::get('/admin/dsphieudangky','App\Http\Controllers\PhieuDangKyController@getDS_PhieuDangKy');
+    Route::get('/admin/phieudangky/them','App\Http\Controllers\PhieuDangKyController@get_Them_PhieuDangKy' );
+    Route::post('/admin/phieudangky/them','App\Http\Controllers\PhieuDangKyController@post_Them_PhieuDangKy' );
+    Route::get('/admin/phieudangky/sua/{id}','App\Http\Controllers\PhieuDangKyController@get_Sua_PhieuDangKy' );
+    Route::post('/admin/phieudangky/sua/{id}','App\Http\Controllers\PhieuDangKyController@post_Sua_PhieuDangKy' );
+    Route::get('/admin/phieudangky/xoa/{id}','App\Http\Controllers\PhieuDangKyController@get_Xoa_PhieuDangKy' );
 
     /* PHẦN QUẢN LÝ TRANG NGƯỜI DÙNG */
     Route::get('/nguoidung','App\Http\Controllers\AdminController@getdashboardUser' );
@@ -54,27 +68,17 @@ Route::middleware([
     Route::get('/nguoidung/themhosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@getThemHoSo_NguoiDaiDien' );
     Route::post('/nguoidung/themhosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@postThemHoSo_NguoiDaiDien' );
 
-/* 
-    Route::get('/nguoidung/hosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@getProfileNguoiDaiDien' );
-    Route::get('/nguoidung/hosonguoidaidien/them','App\Http\Controllers\NguoiDaiDienController@getProfileNguoiDaiDien' );
-    Route::post('/nguoidung/hosonguoidaidien/them','App\Http\Controllers\NguoiDaiDienController@getProfileNguoiDaiDien' );
 
-    Route::get('/nguoidung/capnhathoso','App\Http\Controllers\DoanhNghiepController@updateProfile' );
-    Route::post('/nguoidung/capnhathoso','App\Http\Controllers\DoanhNghiepController@postupdateProfile' );
- */
+    Route::get('/nguoidung/xemmau2','App\Http\Controllers\HoSoControllerr@getMau2' );
 
+    Route::get('/nguoidung/mau3','App\Http\Controllers\HoSoController@getMau3' );
+    Route::get('/nguoidung/mau3','App\Http\Controllers\HoSoController@postMau3' );
 
-    Route::get('/nguoidung/mau2','App\Http\Controllers\DoanhNghiepController@getMau2' );
-    Route::get('/nguoidung/mau2','App\Http\Controllers\DoanhNghiepController@postMau2' );
+    Route::get('/nguoidung/mau4','App\Http\Controllers\HoSoController@getMau4' );
+    Route::get('/nguoidung/mau4','App\Http\Controllers\HoSoController@postMau4' );
 
-    Route::get('/nguoidung/mau3','App\Http\Controllers\DoanhNghiepController@getMau3' );
-    Route::get('/nguoidung/mau3','App\Http\Controllers\DoanhNghiepController@postMau3' );
-
-    Route::get('/nguoidung/mau4','App\Http\Controllers\DoanhNghiepController@getMau4' );
-    Route::get('/nguoidung/mau4','App\Http\Controllers\DoanhNghiepController@postMau4' );
-
-    Route::get('/nguoidung/uploadfile','App\Http\Controllers\DoanhNghiepController@getuploadfile' );
-    Route::get('/nguoidung/uploadfile','App\Http\Controllers\DoanhNghiepController@postuploadfile' );
+    Route::get('/nguoidung/uploadfile','App\Http\Controllers\HoSoController@getuploadfile' );
+    Route::get('/nguoidung/uploadfile','App\Http\Controllers\HoSoController@postuploadfile' );
 });
 
 require_once __DIR__ . '../jetstream.php';

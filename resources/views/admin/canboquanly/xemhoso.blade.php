@@ -25,11 +25,11 @@
             @foreach($CanBoQuanLy as $iteam)
                 <tr>
                 @csrf
-                    <td>{{ $iteam->id}}</td>
+                    <td>{{++$i}}</td>
                     <td>{{ $iteam -> hoten }}</td>
                     <td>{{ $iteam -> diachi }}</td>
                     <td>{{ $iteam -> sodienthoai }}</td>
-                    <td><a class="btn btn-info"><i class="bi bi-x-lg"></i></a></td>
+                    <td><a href="{{ URL::to('/admin/canboquanly/xoa',['id' => $iteam->id]) }}" class="btn btn-info"><i class="bi bi-x-lg"></i></a></td>
                     <td><a href="{{ URL::to('/admin/canboquanly/sua',['id' => $iteam->id]) }}" class="btn btn-info"><i class="bi bi-pencil-fill"></i></a></td>
                 </tr>
                 @endforeach

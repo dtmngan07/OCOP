@@ -9,12 +9,13 @@ class DonViDuyet extends Model
 {
     use HasFactory;
 
-    protected $table = 'DonViDuyet';
+    protected $table = 'don_vi_duyets';
 
     protected $fillable = [
         'id',
         'tendonvi',
         'diachi',
         'sodienthoai',
+        'cap_duyet_id',
     ];
 }

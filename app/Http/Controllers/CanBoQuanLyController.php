@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateCanBoQuanLyRequest;
 use Illuminate\Http\Request;
 use Session;
 use DB;
+use Illuminate\Support\Facades\Redirect;
 
 class CanBoQuanLyController extends Controller
 {
@@ -27,48 +28,44 @@ class CanBoQuanLyController extends Controller
     }
 
     public function get_Them_CanBoQuanLy(Request $request){
-        $request->user()->authorizeRoles(['Admin']);
-        $user = $request->user();
-        
+
         return view('admin.canboquanly.them');
     }
     public function post_Them_CanBoQuanLy(Request $request){
         
         $CanBoQuanLy = new CanBoQuanLy();
-        $CanBoQuanLy->hoten=$request->input('hoten');
-        $CanBoQuanLy->diachi=$request->input('diachi');
-        $CanBoQuanLy->sodienthoai=$request->input('sodienthoai');
+        $CanBoQuanLy['hoten']=$request->hoten;
+        $CanBoQuanLy['diachi']=$request->diachi;
+        $CanBoQuanLy['sodienthoai']=$request->sodienthoai;
         $CanBoQuanLy->save();
             
-        return redirect()->route('admin.canboquanly.xemhoso')->with('success', 'thêm thành công.');
+        return redirect::to('/admin/dscanboquanly');
     }
 
     public function get_Sua_CanBoQuanLy(Request $request, $id){
-        $request->user()->authorizeRoles(['Admin']);
-        $user = $request->user();
-        
-        $CanBoQuanLy = CanBoQuanLy::find($id);
+        $CanBoQuanLy = DB::table('can_bo_quan_lies')
+        ->where('can_bo_quan_lies.id',$id)
+        ->first();
 
-        return view('admin.canboquanly.sua');
+        return view('admin.canboquanly.sua')->with('CanBoQuanLy',$CanBoQuanLy);
     }
-    public function post_Sua_CanBoQuanLy(Request $request,$id){
+    public function post_Sua_CanBoQuanLy(Request $request){
 
         $CanBoQuanLy = new CanBoQuanLy();
-        $CanBoQuanLy->hoten=$request->input('hoten');
-        $CanBoQuanLy->diachi=$request->input('diachi');
-        $CanBoQuanLy->sodienthoai=$request->input('sodienthoai');
+        $CanBoQuanLy['hoten']=$request->hoten;
+        $CanBoQuanLy['diachi']=$request->diachi;
+        $CanBoQuanLy['sodienthoai']=$request->sodienthoai;
         $CanBoQuanLy->save();
             
-        return redirect()->route('admin.canboquanly.xemhoso')->with('success', 'sửa thành công.');
+        return redirect::to('/admin/dscanboquanly');
     }
 
-    public function post_Xoa_CanBoQuanLy($id){
-        $CanBoQuanLy = CanBoQuanLy::find($id);
-        $CanBoQuanLy->delete();
+    public function get_Xoa_CanBoQuanLy($id){
+        DB::table('can_bo_quan_lies')->delete($id);
 
         /* storage::delete($canboquanly->hinh); */
 
-        return redirect()->route('admin.canboquanly.xemhoso')->with('success', 'xóa thành công.');
+        return redirect::to('/admin/dscanboquanly');
     }
 
 }

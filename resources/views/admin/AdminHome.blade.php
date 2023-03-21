@@ -152,6 +152,13 @@
         </a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ URL::to('admin/dsphieudangky') }}">
+          <i class="bi bi-card-list"></i>
+          <span>Phiếu đăng ký</span>
+        </a>
+      </li>
+
       <li class="nav-heading">QUẢN LÝ THÔNG TIN CÁ NHÂN</li>
 
       <li class="nav-item">
