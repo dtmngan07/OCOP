@@ -2,7 +2,6 @@
 @section ('content')
 <main id="" class="">
     <h1 style="text-align:center;">BIỂU SỐ 02: PHIẾU ĐĂNG KÝ SẢN PHẨM ĐÃ CÓ</h1>
-    <a href="" class="btn btn-info"><i class="bi bi-pencil-fill"></i>Cập nhật thông tin mẫu 2</a>
     <section class="">
         <div class="row">
             <div class="col-xl-12">
@@ -42,11 +41,12 @@
                         </ul>
                         <div class="tab-content pt-2">
                             <!-- PHẦN A -->
-                            
+
                             <div class="tab-pane fade show active pt-3" id="phanA">
                                 <h3 style="text-align:center;">DÀNH CHO CÁN BỘ QUẢN LÝ CHƯƠNG TRÌNH OCOP</h3>
                                 <hr>
                                 <form>
+                                    {{ csrf_field() }}
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Phiếu số:</label>
                                         <div class="col-md-8 col-lg-9">
@@ -67,6 +67,10 @@
                                             <input name="" type="text" class="form-control" id="" value="">
                                         </div>
                                     </div>
+
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                    </div>
                                 </form>
 
                             </div>
@@ -74,11 +78,15 @@
                             <div class="tab-pane fade pt-3" id="phanB">
                                 <h3 style="text-align:center;">THÔNG TIN VỀ CHỦ THỂ</h3>
                                 <hr>
-                                <form>
+                                <form action="{{ URL::to('/nguoidung/capnhatmau2phanB') }}" enctype="multipart/form-data" class="row g-3" method="POST">
+                                    {{ csrf_field() }}
+                                    @if ($PhanB != NULL)
+                                    <input value="{{$PhanB->id}}" type="text" class="form-control" name="id" hidden>
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
+                                            <input name="TenDonVi" type="text" class="form-control" id=""
+                                                value="{{$PhanB-> TenDonVi}}">
                                         </div>
                                     </div>
 
@@ -86,14 +94,16 @@
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Ngày thành lập/đăng ký
                                             kinh doanh:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="date" class="form-control" id="" value="">
+                                            <input name="NgayDKKD" type="text" class="form-control" id=""
+                                                value="{{$PhanB->NgayDKKD }}">
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Số đăng ký:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
+                                            <input name="SoDKKD" type="text" class="form-control" id=""
+                                                value="{{$PhanB-> SoDKKD}}">
                                         </div>
                                     </div>
 
@@ -101,7 +111,8 @@
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Loại hình tổ chức công
                                             ty:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
+                                            <input name="ten" type="text" class="form-control" id=""
+                                                value="{{$PhanB->ten }}">
                                         </div>
                                     </div>
 
@@ -109,7 +120,8 @@
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Tên người điều hành chủ
                                             thể sản xuất:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
+                                            <input name="NguoiDaiDien" type="text" class="form-control" id=""
+                                                value="{{$PhanB->	NguoiDaiDien }}">
                                         </div>
                                     </div>
 
@@ -117,28 +129,32 @@
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của
                                             người điều hành:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
+                                            <input name="NguoiDaiDien" type="text" class="form-control" id=""
+                                                value="{{$PhanB->NguoiDaiDien }}">
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Số điện thoại:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
+                                            <input name="DienThoai" type="text" class="form-control" id=""
+                                                value="{{$PhanB->DienThoai }}">
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Email:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
+                                            <input name="Email" type="text" class="form-control" id=""
+                                                value="{{$PhanB->Email }}">
                                         </div>
                                     </div>
 
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Website:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
+                                            <input name="Website" type="text" class="form-control" id=""
+                                                value="{{$PhanB->Website }}">
                                         </div>
                                     </div>
 
@@ -146,7 +162,164 @@
                                         <label for="" class="col-md-4 col-lg-3 col-form-label"> Tên sản phẩm/dịch vụ, mô
                                             tả về quy cách sản phẩm, tiêu chuẩn:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor1" value="">
+                                            <input name="MoTaQuyCachSanPham" type="text" class="form-control"
+                                                id="MoTaQuyCachSanPham" value="{!!$PhanB->MoTaQuyCachSanPham !!}">
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
+                                            Đánh dấu vào mục tương ứng:
+                                        </label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <div class="col-sm-10">
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                                    <label class="form-check-label" for="gridCheck1">
+                                                        Đã có công bố chất lượng (tự công bố/xác nhận công bố)
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
+                                                    <label class="form-check-label" for="gridCheck2">
+                                                        Đã có sở hữu trí tuệ
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check">
+                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
+                                                    <label class="form-check-label" for="gridCheck2">
+                                                        Đã có giấy đủ điều kiện sản xuất, chứng nhận vệ sinh an toàn
+                                                        thực phẩm cho sản xuất sản phẩm tương ng
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
+                                            Loại hình đăng ký sở hữu trí tuệ (bảo hộ nhãn hiệuu; logo; sáng chế; kiểu
+                                            dáng công nghiệp;…)
+                                        </label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="LoaiHinhDangKySoHuuTriTue" type="text" class="form-control" id="" value="{{$PhanB->LoaiHinhDangKySoHuuTriTue}}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
+                                            Lịch sử hình thành của chủ thể (nêu các giai đoạn hình thành và phát triển):
+                                        </label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="LichSuHinhThanh" type="text" class="form-control" id="LichSuHinhThanh" value="{!!$PhanB->LichSuHinhThanh!!}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
+                                            Lý do thành lập và quá trình thành lập chủ thể:
+                                        </label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="LyDoThanhLap" type="text" class="form-control" id="LyDoThanhLap" value="{!! $PhanB->LyDoThanhLap !!}">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
+                                            Chủ thể đã làm tăng thêm giá trị vào các tài nguyên sẵn có ở địa phương như
+                                            thế nào:
+                                        </label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="" type="text" class="form-control" id="" value="">
+                                        </div>
+                                    </div>
+                                    @else
+                                    <input value="" type="text" class="form-control" name="id" hidden>
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="TenDonVi" type="text" class="form-control" id=""
+                                                value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Ngày thành lập/đăng ký
+                                            kinh doanh:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="NgayDKKD" type="text" class="form-control" id=""
+                                                value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Số đăng ký:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="SoDKKD" type="text" class="form-control" id=""
+                                                value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Loại hình tổ chức công
+                                            ty:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="ten" type="text" class="form-control" id=""
+                                                value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Tên người điều hành chủ
+                                            thể sản xuất:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="NguoiDaiDien" type="text" class="form-control" id=""
+                                                value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của
+                                            người điều hành:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="NguoiDaiDien" type="text" class="form-control" id=""
+                                                value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Số điện thoại:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="DienThoai" type="text" class="form-control" id=""
+                                                value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Email:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="Email" type="text" class="form-control" id=""
+                                                value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Website:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="Website" type="text" class="form-control" id=""
+                                                value="">
+                                        </div>
+                                    </div>
+
+                                    <div class="row mb-3">
+                                        <label for="" class="col-md-4 col-lg-3 col-form-label"> Tên sản phẩm/dịch vụ, mô
+                                            tả về quy cách sản phẩm, tiêu chuẩn:</label>
+                                        <div class="col-md-8 col-lg-9">
+                                            <input name="MoTaQuyCachSanPham" type="text" class="form-control"
+                                                id="MoTaQuyCachSanPham" value="">
                                         </div>
                                     </div>
                                     <br>
@@ -189,7 +362,7 @@
                                             dáng công nghiệp;…)
                                         </label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
+                                            <input name="LoaiHinhDangKySoHuuTriTue" type="text" class="form-control" id="" value="">
                                         </div>
                                     </div>
 
@@ -198,7 +371,7 @@
                                             Lịch sử hình thành của chủ thể (nêu các giai đoạn hình thành và phát triển):
                                         </label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor2" value="">
+                                            <input name="LichSuHinhThanh" type="text" class="form-control" id="ckeditor2" value="">
                                         </div>
                                     </div>
 
@@ -207,7 +380,7 @@
                                             Lý do thành lập và quá trình thành lập chủ thể:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor3" value="">
+                                            <input name="LyDoThanhLap" type="text" class="form-control" id="LyDoThanhLap" value="">
                                         </div>
                                     </div>
 
@@ -219,6 +392,10 @@
                                         <div class="col-md-8 col-lg-9">
                                             <input name="" type="text" class="form-control" id="" value="">
                                         </div>
+                                    </div>
+                                    @endif
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
                                     </div>
                                 </form>
 
@@ -501,6 +678,10 @@
                                         </div>
                                     </div>
 
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                    </div>
+
                                 </form>
                             </div> <!-- HẾT PHẦN C -->
 
@@ -696,7 +877,8 @@
 
                                                 <div class="col-md-10 col-lg-12">
                                                     <label for="" class=" col-form-label">
-                                                    Nếu có, trình bày ngắn gọn loại hình đào tạo và tổ chức thực hiện đào tạo:
+                                                        Nếu có, trình bày ngắn gọn loại hình đào tạo và tổ chức thực
+                                                        hiện đào tạo:
                                                     </label>
                                                     <input name="" type="text" class="form-control" id="" value="">
                                                 </div>
@@ -726,7 +908,7 @@
 
                                                 <div class="col-md-10 col-lg-12">
                                                     <label for="" class=" col-form-label">
-                                                    Nếu có, trình bày vắn tắt:
+                                                        Nếu có, trình bày vắn tắt:
                                                     </label>
                                                     <input name="" type="file" class="form-control" id="" value="">
                                                 </div>
@@ -736,7 +918,7 @@
 
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Cách chia số tiền, lợi nhuận thu được:
+                                            Cách chia số tiền, lợi nhuận thu được:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="" type="text" class="form-control" id="ckeditor5" value="">
@@ -745,13 +927,17 @@
 
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Liệt kê các thách thức chính của doanh nghiệp/hợp tác xã/tổ hợp tác/hộ gặp phải:
+                                            Liệt kê các thách thức chính của doanh nghiệp/hợp tác xã/tổ hợp tác/hộ gặp
+                                            phải:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="" type="text" class="form-control" id="ckeditor6" value="">
                                         </div>
                                     </div>
 
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                    </div>
                                 </form>
 
                             </div>
@@ -762,7 +948,8 @@
                                 <form>
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Trình bày ngắn gọn trong bảng dưới đây về lĩnh vực và yêu cầu các cơ quan thực hiện:
+                                            Trình bày ngắn gọn trong bảng dưới đây về lĩnh vực và yêu cầu các cơ quan
+                                            thực hiện:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="" type="file" class="form-control" id="" value="">
@@ -770,6 +957,10 @@
                                     </div>
                                     <div class="text-center">
                                         <button type="submit" class="btn btn-primary">Lưu</button>
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
                                     </div>
 
                                 </form>
@@ -781,7 +972,7 @@
                                 <form>
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Tên tổ chức/cá nhân:
+                                            Tên tổ chức/cá nhân:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="" type="text" class="form-control" id="" value="">
@@ -790,7 +981,7 @@
 
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Xin gửi Phiếu đăng ký này đến OCOP:
+                                            Xin gửi Phiếu đăng ký này đến OCOP:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="" type="text" class="form-control" id="" value="">
@@ -799,7 +990,7 @@
 
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Địa chỉ:
+                                            Địa chỉ:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="" type="text" class="form-control" id="" value="">
@@ -808,13 +999,16 @@
 
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Điện thoại:
+                                            Điện thoại:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="" type="text" class="form-control" id="" value="">
                                         </div>
                                     </div>
 
+                                    <div class="text-center">
+                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
+                                    </div>
                                 </form>
                             </div>
 
@@ -828,9 +1022,9 @@
     </section>
     <script src="//cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
     <script>
-    CKEDITOR.replace('ckeditor1');
-    CKEDITOR.replace('ckeditor2');
-    CKEDITOR.replace('ckeditor3');
+    CKEDITOR.replace('MoTaQuyCachSanPham');
+    CKEDITOR.replace('LichSuHinhThanh');
+    CKEDITOR.replace('LyDoThanhLap');
     CKEDITOR.replace('ckeditor4');
     CKEDITOR.replace('ckeditor5');
     CKEDITOR.replace('ckeditor6');

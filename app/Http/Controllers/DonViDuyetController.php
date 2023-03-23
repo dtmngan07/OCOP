@@ -71,13 +71,6 @@ class DonViDuyetController extends Controller
     }
 
     public function post_Sua_DonViDuyet(Request $request,$id){
-        
-/*         $DonViDuyet = new DonViDuyet();
-        $DonViDuyet['tendonvi']=$request->tendonvi;
-        $DonViDuyet['diachi']=$request->diachi;
-        $DonViDuyet['sodienthoai']=$request->sodienthoai;
-        $DonViDuyet['cap_duyet_id']=$request->cap_duyet_id;
-        $DonViDuyet->update($request->all()); */
 
         $DonViDuyet = array();
         $DonViDuyet['tendonvi']=$request->tendonvi;

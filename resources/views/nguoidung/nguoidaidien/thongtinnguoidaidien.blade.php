@@ -2,10 +2,7 @@
 @section ('content')
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">Thông tin người đại diện doanhn nghiệp</h5>
-
-        <a href="{{ URL::to('/nguoidung/themhosonguoidaidien') }}" class="btn btn-info"><i class="bi bi-plus-lg"></i>Thêm</a>
-        <hr>
+        <h5 class="card-title">Thông tin người đại diện doanh nghiệp</h5>
         <!-- Vertical Form -->
         <form class="row g-3">
             <div class="col-12">
@@ -26,7 +23,7 @@
                 <input value='{{ $HoSo_NguoiDaiDien -> TenDonVi}}' type="text" class="form-control" id="TenDonVi" disabled >
             </div>
 
-            <a href="" class="btn btn-info"><i class="bi bi-pencil-fill"></i> Sửa thông tin</a>
+            <a href="{{ URL::to('nguoidung/capnhathosonguoidaidien') }}" class="btn btn-info"><i class="bi bi-pencil-fill"></i>Cập nhật thông tin</a>
         </form><!-- Vertical Form -->
 
     </div>

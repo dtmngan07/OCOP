@@ -2,10 +2,10 @@
 @section ('content')
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">Sửa thông tin người đại diện doanhn nghiệp</h5>
+        <h5 class="card-title">Cập nhật thông tin người đại diện doanhn nghiệp</h5>
 
         <!-- Vertical Form -->
-        <form class="row g-3">
+        <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ URL::to('nguoidung/capnhathosonguoidaidien') }}">
             <div class="col-12">
                 <label for="" class="form-label">Họ tên</label>
                 <input type="text" class="form-control" id="TenNguoiDaiDien">

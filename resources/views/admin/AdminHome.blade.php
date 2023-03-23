@@ -162,7 +162,7 @@
       <li class="nav-heading">QUẢN LÝ THÔNG TIN CÁ NHÂN</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ URL::to('admin/hoso') }}">
+        <a class="nav-link collapsed" href="{{ URL::to('/admin/thongtintaikhoancanhan')}}">
           <i class="bi bi-person"></i>
           <span>Thông tin cá nhân</span>
         </a>

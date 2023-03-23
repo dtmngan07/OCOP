@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
-                    <img src="{{ asset('assets/img/profile-img.jpg') }}" alt="Profile" class="rounded-circle">
+                    <img src="{{ asset('bieutuong/'.$HoSo ->BieuTuong) }}" alt="Profile" class="">
                     <h2></h2>
                     <div class="social-links mt-2">
                         <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
@@ -16,6 +16,9 @@
                         <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
+            </div>
+            <div class="text-center">
+                <a href="{{ URL::to('nguoidung/hoso/sua') }}" class="btn btn-info">Cập nhật thông tin hồ sơ</a>
             </div>
 
         </div>
@@ -43,12 +46,7 @@
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 label ">Tên doanh nghiệp</div>
                                 <div class="col-lg-9 col-md-8">{{ $HoSo -> TenDonVi}}</div>
-                            </div>
-
-                            <div class="row">
-                                <div class="col-lg-3 col-md-4 label ">Biểu tượng</div>
-                                <div class="col-lg-9 col-md-8">{{ $HoSo ->BieuTuong}}</div>
-                            </div>
+                            </div>  
 
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Tên sản phẩm đăng ký</div>
@@ -57,7 +55,7 @@
 
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Số phiếu đăng ký sản phẩm OCOP</div>
-                                <div class="col-lg-9 col-md-8">{{ $HoSo -> sophieu}}</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo ->SoPhieuDK}}</div>
                             </div>
 
                             <div class="row">
@@ -117,18 +115,18 @@
 
                             <div class="row">
                                 <div class="col-lg-3 col-md-4 label">Người đại diện</div>
-                                <div class="col-lg-9 col-md-8">{{ $HoSo -> TenNguoiDaiDien}}</div>
+                                <div class="col-lg-9 col-md-8">{{ $HoSo -> NguoiDaiDien}}</div>
                             </div>
 
                         </div>
-                      
+
                     </div>
 
                 </div>
             </div>
 
         </div>
-        
+
     </div>
 </section>
 @endsection

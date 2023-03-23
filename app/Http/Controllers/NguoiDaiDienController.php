@@ -28,7 +28,7 @@ class NguoiDaiDienController extends Controller
 
     public function getHoSo_NguoiDaiDien(Request $request){
         $request->user()->authorizeRoles(['user']);
-/*         $user = $request->user(); */
+        $user = $request->user();
 
         $HoSo_NguoiDaiDien=DB::table('ho_sos')
         ->rightJoin('nguoi_dai_diens','nguoi_dai_diens.id','=','ho_sos.nguoi_dai_dien_id')
@@ -39,7 +39,7 @@ class NguoiDaiDienController extends Controller
 
     public function getThemHoSo_NguoiDaiDien(Request $request){
         $request->user()->authorizeRoles(['user']);
-/*         $user = $request->user(); */
+        $user = $request->user();
 
         return view('nguoidung.nguoidaidien.them_thongtinnguoidaidien');
     }
