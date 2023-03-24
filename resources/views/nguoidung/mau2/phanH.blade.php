@@ -2,7 +2,7 @@
 @section ('content')
 <main>
     <!--  PHẦN H -->
-    <div class="tab-pane fade pt-3" id="phanH">
+    <div class="" id="phanH">
         <h3 style="text-align:center;">Dành cho tổ chức/cá nhân đề xuất:</h3>
         <hr>
         <form>
