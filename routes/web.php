@@ -73,16 +73,36 @@ Route::middleware([
     Route::get('/nguoidung/capnhathosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@getThemHoSo_NguoiDaiDien' );
     Route::post('/nguoidung/capnhathosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@postThemHoSo_NguoiDaiDien' );
 
+    //CẬP NHẬT THÔNG TIN CHO MẪU 2
+    Route::get('nguoidung/mau2','App\Http\Controllers\Mau2Controller@getMau2' );
 
-    Route::get('nguoidung/mau2','App\Http\Controllers\HoSoController@getMau2' );
-    Route::get('/nguoidung/capnhatmau2phanB','App\Http\Controllers\HoSoController@get_capnhat_Mau2_PhanB');
-    Route::post('/nguoidung/capnhatmau2phanB','App\Http\Controllers\HoSoController@post_capnhat_Mau2_PhanB');
+    Route::get('/nguoidung/capnhatmau2phanA','App\Http\Controllers\Mau2Controller@get_capnhat_Mau2_PhanA');
+    Route::post('/nguoidung/capnhatmau2phanA','App\Http\Controllers\Mau2Controller@post_capnhat_Mau2_PhanA');
 
+    Route::get('/nguoidung/capnhatmau2phanB','App\Http\Controllers\Mau2Controller@get_capnhat_Mau2_PhanB');
+    Route::post('/nguoidung/capnhatmau2phanB','App\Http\Controllers\Mau2Controller@post_capnhat_Mau2_PhanB');
 
+    Route::get('/nguoidung/capnhatmau2phanC','App\Http\Controllers\Mau2Controller@get_capnhat_Mau2_PhanC');
+    Route::post('/nguoidung/capnhatmau2phanC','App\Http\Controllers\Mau2Controller@post_capnhat_Mau2_PhanC');
+
+    Route::get('/nguoidung/capnhatmau2phanD','App\Http\Controllers\Mau2Controller@get_capnhat_Mau2_PhanD');
+    Route::post('/nguoidung/capnhatmau2phanD','App\Http\Controllers\Mau2Controller@post_capnhat_Mau2_PhanD');
+
+    Route::get('/nguoidung/capnhatmau2phanE','App\Http\Controllers\Mau2Controller@get_capnhat_Mau2_PhanE');
+    Route::post('/nguoidung/capnhatmau2phanE','App\Http\Controllers\Mau2Controller@post_capnhat_Mau2_PhanE');
+
+    Route::get('/nguoidung/capnhatmau2phanG','App\Http\Controllers\Mau2Controller@get_capnhat_Mau2_PhanG');
+    Route::post('/nguoidung/capnhatmau2phanG','App\Http\Controllers\Mau2Controller@post_capnhat_Mau2_PhanG');
+
+    Route::get('/nguoidung/capnhatmau2phanH','App\Http\Controllers\Mau2Controller@get_capnhat_Mau2_PhanH');
+    Route::post('/nguoidung/capnhatmau2phanH','App\Http\Controllers\Mau2Controller@post_capnhat_Mau2_PhanH');
+
+    //CẬP NHẬT THÔNG TIN CHO MẪU 3
     Route::get('/nguoidung/mau3','App\Http\Controllers\HoSoController@getMau3' );
     Route::post('/nguoidung/capnhatmau3','App\Http\Controllers\HoSoController@get_capnhat_Mau3' );
     Route::post('/nguoidung/capnhatmau3','App\Http\Controllers\HoSoController@post_capnhat_Mau3' );
 
+    //CẬP NHẬT THÔNG TIN CHO MẪU 4
     Route::get('/nguoidung/mau4','App\Http\Controllers\HoSoController@getMau4' );
     Route::get('/nguoidung/capnhatmau4','App\Http\Controllers\HoSoController@get_capnhat_Mau4');
     Route::post('/nguoidung/capnhatmau4','App\Http\Controllers\HoSoController@post_capnhat_Mau4');

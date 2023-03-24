@@ -3,226 +3,179 @@
 
 <head>
     <meta charset="utf-8">
+    <title>Trang chủ</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Trang dành cho doanh nghiệp</title>
-    <meta content="" name="description">
     <meta content="" name="keywords">
+    <meta content="" name="description">
 
-    <!-- Favicons -->
-    <link href="{{ asset('assets/img/adminicon.png') }}" rel="icon">
-    <link href="{{ asset('assets/img/adminicon.png') }}" rel="apple-touch-icon">
+    <!-- Favicon -->
+    <link href="{{ asset('index/img/logo.jpeg') }}" rel="icon">
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/boxicons/css/boxicons.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/quill/quill.snow.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/quill/quill.bubble.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/remixicon/remixicon.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/vendor/simple-datatables/style.css') }}" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <!-- Libraries Stylesheet -->
+    <link href="{{ asset('index/lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('index/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
-    <!-- =======================================================
-  * Template Name: NiceAdmin - v2.4.1
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ asset('index/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{{ asset('index/css/style.css') }}" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
 
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
 
-        <div class="d-flex align-items-center justify-content-between">
-            <a href="{{ URL::to('UserHome') }}" class="logo d-flex align-items-center">
-                <img src="assets/img/product.png" alt="">
-                <span class="d-none d-lg-block">Trang dành cho doanh nghiệp</span>
-            </a>
-            <i class="bi bi-list toggle-sidebar-btn"></i>
-        </div><!-- End Logo -->
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <!--         <a href="{{ URL::to('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="bi bi-house-door"></i>Trang chủ</h2>
+        </a> -->
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{{ URL::to('home') }}" class="nav-item nav-link active">Trang chủ</a>
+                <a href="http://ocop.gov.vn/" class="nav-item nav-link">Thông tin chương trình</a>
+                <a href="https://ocop.angiang.gov.vn/" class="nav-item nav-link">Trang chủ Ocop An Giang</a>
 
-        <div class="search-bar">
-            <form class="search-form d-flex align-items-center" method="POST" action="#">
-                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
-                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
-            </form>
-        </div><!-- End Search Bar -->
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <span class="d-none d-md-block dropdown-toggle ps-2">
+                        Xin chào {{ Auth::user()->name }}
+                    </span>
+                </a>
 
-        <nav class="header-nav ms-auto">
-            <ul class="d-flex align-items-center">
-
-                <li class="nav-item d-block d-lg-none">
-                    <a class="nav-link nav-icon search-bar-toggle " href="#">
-                        <i class="bi bi-search"></i>
+                <form method="POST" action="{{ route('logout') }}" x-data>
+                    @csrf
+                    <a class="nav-item nav-link" href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                        <i class="bi bi-box-arrow-right"></i>
+                        {{ __('Log Out') }}
                     </a>
-                </li><!-- End Search Icon-->
-                <li class="nav-item dropdown pe-3">
-
-                    <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-                        <span class="d-none d-md-block dropdown-toggle ps-2">
-                            {{ Auth::user()->name }}
-                        </span>
-                    </a><!-- End Profile Iamge Icon -->
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                        <li class="dropdown-header">
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="{{ route('profile.show') }}">
-                                <i class="bi bi-person"></i>
-                                <span>{{ __('Profile') }}</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <a class="dropdown-item d-flex align-items-center" href="{{ URL::to('admin/hoso') }}">
-                                <i class="bi bi-gear"></i>
-                                <span>Account Settings</span>
-                            </a>
-                        </li>
-                        <li>
-                            <hr class="dropdown-divider">
-                        </li>
-
-                        <li>
-                            <form method="POST" action="{{ route('logout') }}" x-data>
-                                @csrf
-                                <a class="dropdown-item d-flex align-items-center" href="{{ route('logout') }}"
-                                    @click.prevent="$root.submit();">
-                                    <i class="bi bi-box-arrow-right"></i>
-                                    {{ __('Log Out') }}
-                                </a>
-                            </form>
-                        </li>
-
-                    </ul><!-- End Profile Dropdown Items -->
-                </li><!-- End Profile Nav -->
-            </ul>
-        </nav><!-- End Icons Navigation -->
-
-    </header><!-- End Header -->
-
-    <!-- ======= Sidebar ======= -->
-    <aside id="sidebar" class="sidebar">
-
-        <ul class="sidebar-nav" id="sidebar-nav">
-
-            <li class="nav-item">
-                <a class="nav-link " href="index.html">
-                    <i class="bi bi-grid"></i>
-                    <span>Dashboard</span>
-                </a>
-            </li><!-- End Dashboard Nav -->
-
-            <!-- PHẦN NHẬP CÁC BIỂU MẪU -->
-            <li class="nav-heading">Nhập thông tin vào biểu mẫu</li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ URL::to('nguoidung/mau2') }}">
-                    <i class="bi bi-card-list"></i>
-                    <span>Biểu mẫu số 2</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ URL::to('nguoidung/mau3') }}">
-                    <i class="bi bi-card-list"></i>
-                    <span>Biểu mẫu số 3</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ URL::to('nguoidung/mau4') }}">
-                    <i class="bi bi-card-list"></i>
-                    <span>Biểu mẫu số 4</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ URL::to('nguoidung/uploadfile') }}">
-                    <i class="bi bi-card-list"></i>
-                    <span>Upload các file có liên quan</span>
-                </a>
-            </li>
-
-            <li class="nav-heading">Thông tin doanh nghiệp</li>
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ URL::to('nguoidung/hoso') }}">
-                    <i class="bi bi-person"></i>
-                    <span>Thông tin doanh nghiệp</span>
-                </a>
-            </li><!-- End Profile Page Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ route('profile.show') }}">
-                    <i class="bi bi-person"></i>
-                    <span>Cập nhật thông tin đăng nhập</span>
-                </a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="{{ URL::to('logout') }}">
-                    <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Logout</span>
-                </a>
-            </li><!-- End Login Page Nav -->
-
-        </ul>
-
-    </aside><!-- End Sidebar-->
-
-    <main id="main" class="main">
-
-        <section class="section dashboard">
-            <div class="row">
-                @yield('content')
-
+                </form>
             </div>
-        </section>
-
-    </main><!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-        <div class="copyright">
-            &copy; Copyright <strong><span>FIT - AGU</span></strong>
         </div>
-        <div class="credits">
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="far fa-address-book" style='font-size:50px'></i><hr>
+                            <h5 class="mb-3">Thông tin doanh nghiệp</h5><br>
+                            <a href="{{ URL::to('nguoidung/hoso') }}"
+                                class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
+                                Xem và cập nhật
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="far fa-edit" style='font-size:50px'></i><hr>
+                            <h5 class="mb-3">Cập nhật thông tin mẫu 2</h5><br>
+                            <a href="{{ URL::to('nguoidung/mau2') }}"
+                                class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
+                                Xem và cập nhật
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="far fa-clipboard" style='font-size:50px'></i><hr>
+                            <h5 class="mb-3">Cập nhật thông tin mẫu 3</h5><br>
+                            <a href="{{ URL::to('nguoidung/mau3') }}"
+                                class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
+                                Xem và cập nhật
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="far fa-file" style='font-size:50px'></i><hr>
+                            <h5 class="mb-3">Cập nhật thông tin mẫu 4</h5><br>
+                            <a href="{{ URL::to('nguoidung/mau4') }}"
+                                class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
+                                Xem và cập nhật
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer><!-- End Footer -->
+    </div>
+    <!-- Service End -->
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Liên hệ</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>82, Tôn Đức Thắng, Mỹ Bình, Long Xuyên, An
+                        Giang</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+84 2963 856 188</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ttcntttt@angiang.gov.vn</p>
 
-    <!-- Vendor JS Files -->
-    <script src="{{ asset('assets/vendor/apexcharts/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/chart.js/chart.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/echarts/echarts.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/quill/quill.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/simple-datatables/simple-datatables.js') }}"></script>
-    <script src="{{ asset('assets/vendor/tinymce/tinymce.min.js') }}"></script>
-    <script src="{{ asset('assets/vendor/php-email-form/validate.js') }}"></script>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">DTMNGAN</a>, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
 
-    <!-- Template Main JS File -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
 
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('index/lib/wow/wow.min.js') }}"></script>
+    <script src="{{ asset('index/lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('index/lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('index/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ asset('index/js/main.js') }}"></script>
 </body>
 
 </html>

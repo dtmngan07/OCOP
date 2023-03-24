@@ -1,1034 +1,127 @@
-@extends( 'nguoidung.UserHome')
-@section ('content')
-<main id="" class="">
-    <h1 style="text-align:center;">BIỂU SỐ 02: PHIẾU ĐĂNG KÝ SẢN PHẨM ĐÃ CÓ</h1>
-    <section class="">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card">
-                    <div class="card-body pt-3">
-                        <!-- Bordered Tabs -->
-                        <ul class="nav nav-tabs nav-tabs-bordered">
-
-                            <li class="nav-item">
-                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#phanA">Phần
-                                    A</button>
-                            </li>
-
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#phanB">Phần B</button>
-                            </li>
-
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#phanC">Phần C</button>
-                            </li>
-
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#phanD">Phần D</button>
-                            </li>
-
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#phanE">Phần E</button>
-                            </li>
-
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#phanG">Phần G</button>
-                            </li>
-
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#phanH">Phần H</button>
-                            </li>
-                        </ul>
-                        <div class="tab-content pt-2">
-                            <!-- PHẦN A -->
-
-                            <div class="tab-pane fade show active pt-3" id="phanA">
-                                <h3 style="text-align:center;">DÀNH CHO CÁN BỘ QUẢN LÝ CHƯƠNG TRÌNH OCOP</h3>
-                                <hr>
-                                <form>
-                                    {{ csrf_field() }}
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Phiếu số:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Ngày nhận:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="date" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Người tiếp nhận:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
-                                    </div>
-                                </form>
-
-                            </div>
-                            <!-- PHẦN B -->
-                            <div class="tab-pane fade pt-3" id="phanB">
-                                <h3 style="text-align:center;">THÔNG TIN VỀ CHỦ THỂ</h3>
-                                <hr>
-                                <form action="{{ URL::to('/nguoidung/capnhatmau2phanB') }}" enctype="multipart/form-data" class="row g-3" method="POST">
-                                    {{ csrf_field() }}
-                                    @if ($PhanB != NULL)
-                                    <input value="{{$PhanB->id}}" type="text" class="form-control" name="id" hidden>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="TenDonVi" type="text" class="form-control" id=""
-                                                value="{{$PhanB-> TenDonVi}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Ngày thành lập/đăng ký
-                                            kinh doanh:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="NgayDKKD" type="text" class="form-control" id=""
-                                                value="{{$PhanB->NgayDKKD }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Số đăng ký:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="SoDKKD" type="text" class="form-control" id=""
-                                                value="{{$PhanB-> SoDKKD}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Loại hình tổ chức công
-                                            ty:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="ten" type="text" class="form-control" id=""
-                                                value="{{$PhanB->ten }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Tên người điều hành chủ
-                                            thể sản xuất:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="NguoiDaiDien" type="text" class="form-control" id=""
-                                                value="{{$PhanB->	NguoiDaiDien }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của
-                                            người điều hành:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="NguoiDaiDien" type="text" class="form-control" id=""
-                                                value="{{$PhanB->NguoiDaiDien }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Số điện thoại:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="DienThoai" type="text" class="form-control" id=""
-                                                value="{{$PhanB->DienThoai }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Email:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="Email" type="text" class="form-control" id=""
-                                                value="{{$PhanB->Email }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Website:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="Website" type="text" class="form-control" id=""
-                                                value="{{$PhanB->Website }}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label"> Tên sản phẩm/dịch vụ, mô
-                                            tả về quy cách sản phẩm, tiêu chuẩn:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="MoTaQuyCachSanPham" type="text" class="form-control"
-                                                id="MoTaQuyCachSanPham" value="{!!$PhanB->MoTaQuyCachSanPham !!}">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <br>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Đánh dấu vào mục tương ứng:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Đã có công bố chất lượng (tự công bố/xác nhận công bố)
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Đã có sở hữu trí tuệ
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Đã có giấy đủ điều kiện sản xuất, chứng nhận vệ sinh an toàn
-                                                        thực phẩm cho sản xuất sản phẩm tương ng
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Loại hình đăng ký sở hữu trí tuệ (bảo hộ nhãn hiệuu; logo; sáng chế; kiểu
-                                            dáng công nghiệp;…)
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="LoaiHinhDangKySoHuuTriTue" type="text" class="form-control" id="" value="{{$PhanB->LoaiHinhDangKySoHuuTriTue}}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Lịch sử hình thành của chủ thể (nêu các giai đoạn hình thành và phát triển):
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="LichSuHinhThanh" type="text" class="form-control" id="LichSuHinhThanh" value="{!!$PhanB->LichSuHinhThanh!!}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Lý do thành lập và quá trình thành lập chủ thể:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="LyDoThanhLap" type="text" class="form-control" id="LyDoThanhLap" value="{!! $PhanB->LyDoThanhLap !!}">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Chủ thể đã làm tăng thêm giá trị vào các tài nguyên sẵn có ở địa phương như
-                                            thế nào:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-                                    @else
-                                    <input value="" type="text" class="form-control" name="id" hidden>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="TenDonVi" type="text" class="form-control" id=""
-                                                value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Ngày thành lập/đăng ký
-                                            kinh doanh:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="NgayDKKD" type="text" class="form-control" id=""
-                                                value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Số đăng ký:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="SoDKKD" type="text" class="form-control" id=""
-                                                value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Loại hình tổ chức công
-                                            ty:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="ten" type="text" class="form-control" id=""
-                                                value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Tên người điều hành chủ
-                                            thể sản xuất:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="NguoiDaiDien" type="text" class="form-control" id=""
-                                                value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của
-                                            người điều hành:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="NguoiDaiDien" type="text" class="form-control" id=""
-                                                value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Số điện thoại:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="DienThoai" type="text" class="form-control" id=""
-                                                value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Email:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="Email" type="text" class="form-control" id=""
-                                                value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Website:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="Website" type="text" class="form-control" id=""
-                                                value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label"> Tên sản phẩm/dịch vụ, mô
-                                            tả về quy cách sản phẩm, tiêu chuẩn:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="MoTaQuyCachSanPham" type="text" class="form-control"
-                                                id="MoTaQuyCachSanPham" value="">
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <br>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Đánh dấu vào mục tương ứng:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Đã có công bố chất lượng (tự công bố/xác nhận công bố)
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Đã có sở hữu trí tuệ
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Đã có giấy đủ điều kiện sản xuất, chứng nhận vệ sinh an toàn
-                                                        thực
-                                                        phẩm cho sản xuất sản phẩm tương ng
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Loại hình đăng ký sở hữu trí tuệ (bảo hộ nhãn hiệuu; logo; sáng chế; kiểu
-                                            dáng công nghiệp;…)
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="LoaiHinhDangKySoHuuTriTue" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Lịch sử hình thành của chủ thể (nêu các giai đoạn hình thành và phát triển):
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="LichSuHinhThanh" type="text" class="form-control" id="ckeditor2" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Lý do thành lập và quá trình thành lập chủ thể:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="LyDoThanhLap" type="text" class="form-control" id="LyDoThanhLap" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Chủ thể đã làm tăng thêm giá trị vào các tài nguyên sẵn có ở địa phương như
-                                            thế nào:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-                                    @endif
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
-                                    </div>
-                                </form>
-
-                            </div>
-
-                            <!--  PHẦN C -->
-                            <div class="tab-pane fade pt-3" id="phanC">
-                                <h3 style="text-align:center;">MÔI TRƯỜNG KINH DOANH </h3>
-                                <hr>
-                                <form>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Đất và văn phòng:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Thuê
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Sở hữu
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Đất sản xuất:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Thuê
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Sở hữu
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Nguồn điện từ điện quốc gia:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Đã mắc
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Đang có kế hoạch
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Không có
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Nguồn nước:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Nước sạch
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Nước giếng khoan
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Không có
-                                                    </label>
-                                                </div>
-
-                                                <label for="" class="col-md-4 col-lg-3 col-form-label">Nguồn
-                                                    khác:</label>
-                                                <div class="col-md-8 col-lg-9">
-                                                    <input name="" type="text" class="form-control" id="" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Phương tiện vận tải:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Có xe ô tô
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Xe máy
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Xe trâu/bò kéo
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Không có
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Thuê
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Phương tiện công cộng
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Phương tiện truyền thông:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Điện thoại để bàn
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Điện thoại di động
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Bưu điện
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        E-mail
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Website
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Mạng xã hội
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Không có
-                                                    </label>
-                                                </div>
-
-                                                <label for="" class="col-md-4 col-lg-3 col-form-label">Khác:</label>
-                                                <div class="col-md-8 col-lg-9">
-                                                    <input name="" type="text" class="form-control" id="" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <hr>
-                                    <h3 style="text-align:center;">HOẠT ĐỘNG KINH DOANH</h3>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Kết quả bán hàng:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Chi phí:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Lãi/lỗ: tháng 04/2021 đến nay…
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Nhân lực:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Nguồn cung cấp nguyên vật liệu đầu vào:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
-                                    </div>
-
-                                </form>
-                            </div> <!-- HẾT PHẦN C -->
-
-                            <!--  PHẦN D -->
-                            <div class="tab-pane fade pt-3" id="phanD">
-                                <h3 style="text-align:center;">THÔNG TIN VỀ KINH DOANH</h3>
-                                <hr>
-                                <form>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Mức độ thường xuyên của hoạt động sản xuất sản phẩm:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Thường xuyên hàng ngày
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Theo tuần
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Theo tháng
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Thị trường đích (nêu cụ thể địa điểm/khu vực đang phân phối tại địa phương
-                                            (tỉnh, huyện xã, thôn); ngoài tỉnh)
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Mức độ thường xuyên của bán sản phẩm ?
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Thường xuyên hàng ngày
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Theo tuần
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Theo tháng
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Khách hàng hướng tới:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Khá giả
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Bình dân
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Nông thôn
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Thành thị
-                                                    </label>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Doanh nghiệp/hợp tác xã/tổ hợp tác/hộ đã tích lũy vốn cho kinh doanh như thế
-                                            nào, số vốn góp của người địa phương
-                                            (ghi rõ vốn cá nhân tự có, vốn tập thể (vốn thành viên góp)?; loại hình góp
-                                            vốn (bằng tiền, mặt bằng, đất, công lao động,...).
-                                        </label>
-
-
-                                        <div class="col-md-8 col-lg-9">
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">Vốn điều lệ:</label>
-                                            <input name="" type="text" class="form-control" id="" value="">
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">Loại hình góp
-                                                vốn:</label>
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Nơi sản xuất, hoàn thiệnn sản phẩm (ghi rõ địa chỉ nơi sản xuất, hoàn thiện
-                                            sản phẩm):
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Lưu</button>
-                                    </div>
-
-                                </form>
-                            </div>
-                            <!--  PHẦN E -->
-                            <div class="tab-pane fade pt-3" id="phanE">
-                                <h3 style="text-align:center;">THÔNG TIN CHUNG</h3>
-                                <hr>
-                                <form>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Mô tả vắn tắt phương án kinh doanh; ho t động kinh doanh và quy mô sản xuất:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor4" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Sơ đồ tóm tắt quy trình sản xuất tạo sản phẩm
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Có nhận được hỗ trợ về đào tạo nào không?:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Có
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Không
-                                                    </label>
-                                                </div>
-
-                                                <div class="col-md-10 col-lg-12">
-                                                    <label for="" class=" col-form-label">
-                                                        Nếu có, trình bày ngắn gọn loại hình đào tạo và tổ chức thực
-                                                        hiện đào tạo:
-                                                    </label>
-                                                    <input name="" type="text" class="form-control" id="" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Có nhận được hỗ trợ nào khác không?:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck1">
-                                                    <label class="form-check-label" for="gridCheck1">
-                                                        Có
-                                                    </label>
-                                                </div>
-
-                                                <div class="form-check">
-                                                    <input class="form-check-input" type="checkbox" id="gridCheck2">
-                                                    <label class="form-check-label" for="gridCheck2">
-                                                        Không
-                                                    </label>
-                                                </div>
-
-                                                <div class="col-md-10 col-lg-12">
-                                                    <label for="" class=" col-form-label">
-                                                        Nếu có, trình bày vắn tắt:
-                                                    </label>
-                                                    <input name="" type="file" class="form-control" id="" value="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Cách chia số tiền, lợi nhuận thu được:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor5" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Liệt kê các thách thức chính của doanh nghiệp/hợp tác xã/tổ hợp tác/hộ gặp
-                                            phải:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor6" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
-                                    </div>
-                                </form>
-
-                            </div>
-                            <!--  PHẦN G -->
-                            <div class="tab-pane fade pt-3" id="phanG">
-                                <h3 style="text-align:center;">NHU CẦU HỖ TRỢ</h3>
-                                <hr>
-                                <form>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Trình bày ngắn gọn trong bảng dưới đây về lĩnh vực và yêu cầu các cơ quan
-                                            thực hiện:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Lưu</button>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
-                                    </div>
-
-                                </form>
-                            </div>
-                            <!--  PHẦN H -->
-                            <div class="tab-pane fade pt-3" id="phanH">
-                                <h3 style="text-align:center;">Dành cho tổ chức/cá nhân đề xuất:</h3>
-                                <hr>
-                                <form>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Tên tổ chức/cá nhân:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Xin gửi Phiếu đăng ký này đến OCOP:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Địa chỉ:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Điện thoại:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="text-center">
-                                        <button type="submit" class="btn btn-primary">Cập nhật</button>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div><!-- End Bordered Tabs -->
-
-                    </div>
-                </div>
-
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Trang chủ</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{{ asset('index/img/logo.jpeg') }}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{{ asset('index/lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('index/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ asset('index/css/bootstrap.min.css') }}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{{ asset('index/css/style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <!--         <a href="{{ URL::to('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="bi bi-house-door"></i>Trang chủ</h2>
+        </a> -->
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{{ URL::to('/nguoidung') }}" class="nav-item nav-link active">Trang chủ</a>
+
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <span class="d-none d-md-block ps-2">
+                        Xin chào {{ Auth::user()->name }}
+                    </span>
+                </a>
+
+                <form method="POST" action="{{ route('logout') }}" x-data>
+                    @csrf
+                    <a class="nav-item nav-link" href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                        <i class="bi bi-box-arrow-right"></i>
+                        {{ __('Log Out') }}
+                    </a>
+                </form>
             </div>
         </div>
-    </section>
-    <script src="//cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
-    <script>
-    CKEDITOR.replace('MoTaQuyCachSanPham');
-    CKEDITOR.replace('LichSuHinhThanh');
-    CKEDITOR.replace('LyDoThanhLap');
-    CKEDITOR.replace('ckeditor4');
-    CKEDITOR.replace('ckeditor5');
-    CKEDITOR.replace('ckeditor6');
-    CKEDITOR.replace('ckeditor7');
-    </script>
-</main><!-- End #main -->
-@endsection
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="container-xxl py-5">
+        <div class="container-fluild">
+            @yield('content')
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Liên hệ</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>82, Tôn Đức Thắng, Mỹ Bình, Long Xuyên, An
+                        Giang</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+84 2963 856 188</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ttcntttt@angiang.gov.vn</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">DTMNGAN</a>, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('index/lib/wow/wow.min.js') }}"></script>
+    <script src="{{ asset('index/lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('index/lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('index/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ asset('index/js/main.js') }}"></script>
+</body>
+
+</html>

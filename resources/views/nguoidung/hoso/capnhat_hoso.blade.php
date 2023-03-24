@@ -1,4 +1,4 @@
-@extends('nguoidung.UserHome')
+@extends('nguoidung.hoso.index_hoso')
 @section ('content')
 <div class="card">
     <div class="card-body">
@@ -16,7 +16,7 @@
 
             <div class="col-12">
                 <label for="" class="form-label">Tên sản phẩm đăng ký</label>
-                <input value="{{ $HoSo->BieuTuong}}" type="file" class="form-control" name="BieuTuong" id="BieuTuong">
+                <input value="{{ asset('bieutuong/'.$HoSo ->BieuTuong) }}" type="file" class="form-control" name="BieuTuong" id="BieuTuong">
             </div>
 
             <div class="col-12">
