@@ -14,7 +14,7 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="TenDonVi" type="text" class="form-control" id=""
-                        value="{{$PhanB-> TenDonVi}}">
+                        value="{{$PhanB-> TenDonVi}}" readonly>
                 </div>
             </div>
 
@@ -23,7 +23,7 @@
                     kinh doanh:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="NgayDKKD" type="text" class="form-control" id=""
-                        value="{{$PhanB->NgayDKKD }}">
+                        value="{{$PhanB->NgayDKKD }}" readonly>
                 </div>
             </div>
 
@@ -31,7 +31,7 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Số đăng ký:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="SoDKKD" type="text" class="form-control" id=""
-                        value="{{$PhanB-> SoDKKD}}">
+                        value="{{$PhanB-> SoDKKD}}" readonly>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                     ty:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="ten" type="text" class="form-control" id=""
-                        value="{{$PhanB->ten }}">
+                        value="{{$PhanB->ten }}" readonly>
                 </div>
             </div>
 
@@ -49,7 +49,7 @@
                     thể sản xuất:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="NguoiDaiDien" type="text" class="form-control" id=""
-                        value="{{$PhanB->	NguoiDaiDien }}">
+                        value="{{$PhanB->	NguoiDaiDien }}" readonly>
                 </div>
             </div>
 
@@ -57,8 +57,8 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của
                     người điều hành:</label>
                 <div class="col-md-8 col-lg-9">
-                    <input name="NguoiDaiDien" type="text" class="form-control" id=""
-                        value="{{$PhanB->NguoiDaiDien }}">
+                    <input name="DiaChi_NguoiDaiDien" type="text" class="form-control" id=""
+                        value="{{$PhanB->DiaChi_NguoiDaiDien }}" readonly>
                 </div>
             </div>
 
@@ -66,7 +66,7 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Số điện thoại:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="DienThoai" type="text" class="form-control" id=""
-                        value="{{$PhanB->DienThoai }}">
+                        value="{{$PhanB->DienThoai }}" readonly>
                 </div>
             </div>
 
@@ -74,7 +74,7 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Email:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="Email" type="text" class="form-control" id=""
-                        value="{{$PhanB->Email }}">
+                        value="{{$PhanB->Email }}" readonly>
                 </div>
             </div>
 
@@ -82,7 +82,7 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Website:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="Website" type="text" class="form-control" id=""
-                        value="{{$PhanB->Website }}">
+                        value="{{$PhanB->Website }}" readonly>
                 </div>
             </div>
 
@@ -106,7 +106,7 @@
                         <div class="form-check">
                             <input class="form-check-input" value="Đã có công bố chất lượng"
                                 type="checkbox" name="TinhTrangCongBo[]"
-                                id="TinhTrangCongBoChatLuong">
+                                id="TinhTrangCongBoChatLuong" {{ in_array("Đã có công bố chất lượng", explode(' - ', $PhanB->TinhTrangCongBo)) ? 'checked' : '' }}>
                             <label class="form-check-label" for="">
                                 Đã có công bố chất lượng (tự công bố/xác nhận công bố)
                             </label>
@@ -115,7 +115,7 @@
                         <div class="form-check">
                             <input class="form-check-input" value="Đã có sở hữu trí tuệ"
                                 type="checkbox" name="TinhTrangCongBo[]"
-                                id="TinhTrangSoHuuTriTue">
+                                id="TinhTrangSoHuuTriTue" {{ in_array("Đã có sở hữu trí tuệ", explode(' - ', $PhanB->TinhTrangCongBo)) ? 'checked' : '' }}>
                             <label class="form-check-label" for="">
                                 Đã có sở hữu trí tuệ
                             </label>
@@ -125,16 +125,12 @@
                             <input class="form-check-input"
                                 value="Đã có giấy đủ điều kiện sản xuất, chứng nhận vệ sinh an toàn thực phẩm cho sản xuất sản phẩm tương ứng"
                                 type="checkbox" name="TinhTrangCongBo[]"
-                                id="TinhTrangVeSinhAnToanThucPham">
+                                id="TinhTrangVeSinhAnToanThucPham" {{ in_array("Đã có giấy đủ điều kiện sản xuất, chứng nhận vệ sinh an toàn thực phẩm cho sản xuất sản phẩm tương ứng", explode(' - ', $PhanB->TinhTrangCongBo)) ? 'checked' : '' }}>
                             <label class="form-check-label" for="">
                                 Đã có giấy đủ điều kiện sản xuất, chứng nhận vệ sinh an toàn
                                 thực phẩm cho sản xuất sản phẩm tương ứng
                             </label>
                         </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <label for="" class="col-md-12 col-lg-12 col-form-label">Bạn đã chọn:
-                            {!!$PhanB->TinhTrangCongBo!!}</label>
                     </div>
 
                 </div>
@@ -151,7 +147,7 @@
                     <div class="col-sm-10">
                         <div class="form-check">
                             <input class="form-check-input" value="Bảo hộ nhãn hiệu"
-                                type="checkbox" name="LoaiHinhDangKySoHuuTriTue[]" id="">
+                                type="checkbox" name="LoaiHinhDangKySoHuuTriTue[]" id="" {{ in_array("Bảo hộ nhãn hiệu", explode(' - ', $PhanB->LoaiHinhDangKySoHuuTriTue)) ? 'checked' : '' }}>
                             <label class="form-check-label" for="">
                                 Bảo hộ nhãn hiệu
                             </label>
@@ -159,7 +155,7 @@
 
                         <div class="form-check">
                             <input class="form-check-input" value="Logo" type="checkbox"
-                                name="LoaiHinhDangKySoHuuTriTue[]">
+                                name="LoaiHinhDangKySoHuuTriTue[]" {{ in_array("Logo", explode(' - ', $PhanB->LoaiHinhDangKySoHuuTriTue)) ? 'checked' : '' }}>
                             <label class="form-check-label" for="">
                                 Logo
                             </label>
@@ -167,7 +163,7 @@
 
                         <div class="form-check">
                             <input class="form-check-input" value="Sáng chế" type="checkbox"
-                                name="LoaiHinhDangKySoHuuTriTue[]">
+                                name="LoaiHinhDangKySoHuuTriTue[]" {{ in_array("Sáng chế", explode(' - ', $PhanB->LoaiHinhDangKySoHuuTriTue)) ? 'checked' : '' }}>
                             <label class="form-check-label" for="">
                                 Sáng chế
                             </label>
@@ -175,15 +171,11 @@
 
                         <div class="form-check">
                             <input class="form-check-input" value="Kiểu dáng công nghiệp"
-                                type="checkbox" name="LoaiHinhDangKySoHuuTriTue[]">
+                                type="checkbox" name="LoaiHinhDangKySoHuuTriTue[]" {{ in_array("Kiểu dáng công nghiệp", explode(' - ', $PhanB->LoaiHinhDangKySoHuuTriTue)) ? 'checked' : '' }}>
                             <label class="form-check-label" for="">
                                 Kiểu dáng công nghiệp
                             </label>
                         </div>
-                    </div>
-                    <div class="col-sm-12">
-                        <label for="" class="col-md-12 col-lg-12 col-form-label">Bạn đã chọn:
-                            {!!$PhanB->LoaiHinhDangKySoHuuTriTue!!}</label>
                     </div>
                 </div>
             </div>
@@ -230,7 +222,7 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="TenDonVi" type="text" class="form-control" id=""
-                        value="{{$PhanB-> TenDonVi}}">
+                        value="">
                 </div>
             </div>
 
@@ -239,7 +231,7 @@
                     kinh doanh:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="NgayDKKD" type="text" class="form-control" id=""
-                        value="{{$PhanB->NgayDKKD }}">
+                        value="">
                 </div>
             </div>
 
@@ -247,7 +239,7 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Số đăng ký:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="SoDKKD" type="text" class="form-control" id=""
-                        value="{{$PhanB-> SoDKKD}}">
+                        value="">
                 </div>
             </div>
 
@@ -256,7 +248,7 @@
                     ty:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="ten" type="text" class="form-control" id=""
-                        value="{{$PhanB->ten }}">
+                        value="">
                 </div>
             </div>
 
@@ -265,7 +257,7 @@
                     thể sản xuất:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="NguoiDaiDien" type="text" class="form-control" id=""
-                        value="{{$PhanB->NguoiDaiDien }}">
+                        value="">
                 </div>
             </div>
 
@@ -273,8 +265,8 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của
                     người điều hành:</label>
                 <div class="col-md-8 col-lg-9">
-                    <input name="NguoiDaiDien" type="text" class="form-control" id=""
-                        value="{{$PhanB->NguoiDaiDien }}">
+                    <input name="DiaChi_NguoiDaiDien" type="text" class="form-control" id=""
+                        value="">
                 </div>
             </div>
 
@@ -282,7 +274,7 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Số điện thoại:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="DienThoai" type="text" class="form-control" id=""
-                        value="{{$PhanB->DienThoai }}">
+                        value="">
                 </div>
             </div>
 
@@ -290,7 +282,7 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Email:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="Email" type="text" class="form-control" id=""
-                        value="{{$PhanB->Email }}">
+                        value="">
                 </div>
             </div>
 
@@ -298,7 +290,7 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Website:</label>
                 <div class="col-md-8 col-lg-9">
                     <input name="Website" type="text" class="form-control" id=""
-                        value="{{$PhanB->Website }}">
+                        value="">
                 </div>
             </div>
 

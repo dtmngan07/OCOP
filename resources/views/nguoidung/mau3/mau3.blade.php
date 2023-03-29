@@ -1,391 +1,131 @@
-@extends( 'nguoidung.UserHome')
-@section ('content')
-<main id="" class="">
-    <h1 style="text-align:center;">BIỂU SỐ 03: PHƯƠNG ÁN SẢN XUẤT KINH DOANH</h1>
-    <section class="">
-        <div class="row">
-            <div class="col-xl-12">
-                <div class="card">
-                    <div class="card-body pt-3">
-                        <!-- Bordered Tabs -->
-                        <ul class="nav nav-tabs nav-tabs-bordered">
+<!DOCTYPE html>
+<html lang="en">
 
-                            <li class="nav-item">
-                                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#phanI">
-                                    PHẦN I
-                                </button>
-                            </li>
+<head>
+    <meta charset="utf-8">
+    <title>Trang chủ</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
 
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#phanII">
-                                    PHẦN II
-                                </button>
-                            </li>
+    <!-- Favicon -->
+    <link href="{{ asset('index/img/logo.jpeg') }}" rel="icon">
 
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#phanIII">
-                                PHẦN III
-                                </button>
-                            </li>
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap"
+        rel="stylesheet">
 
-                            <li class="nav-item">
-                                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#phanIV">
-                                    PHẦN IV
-                                </button>
-                            </li>
-                        </ul>
-                        <div class="tab-content pt-2">
-                            <!-- PHẦN I -->
-                            <div class="tab-pane fade show active pt-3" id="phanI">
-                                <h3 style="text-align:center;">PHẦN I. GIỚI THIỆU</h3>
-                                <hr>
-                                <form>
-                                <h4 style="text-align:center;">I. GIỚI THIỆU TỔNG THỂ</h4>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ trụ sở chính:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
+    <!-- Libraries Stylesheet -->
+    <link href="{{ asset('index/lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('index/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
 
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ xưởng sản xuất:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{{ asset('index/css/bootstrap.min.css') }}" rel="stylesheet">
 
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Vốn điều lệ:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
+    <!-- Template Stylesheet -->
+    <link href="{{ asset('index/css/style.css') }}" rel="stylesheet">
+</head>
 
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Số lượng thành viên:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
 
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Ngành, nghề sản xuất, kinh doanh:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
 
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Nhân sự:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor1" value="">
-                                        </div>
-                                    </div>
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
+        <!--         <a href="{{ URL::to('home') }}" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+            <h2 class="m-0 text-primary"><i class="bi bi-house-door"></i>Trang chủ</h2>
+        </a> -->
+        <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div>
+            <a href="{{ url()->previous() }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block"><i class="fa fa-arrow-left ms-2"></i></a>
+            </div>
+            <div class="navbar-nav ms-auto p-4 p-lg-0">
+                <a href="{{ URL::to('/nguoidung') }}" class="nav-item nav-link active">Trang chủ</a>
 
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Tổng diện tích hoạt động sản xuất là</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor2" value="">
-                                        </div>
-                                    </div>
-                                <h4 style="text-align:center;">II. TỔ CHỨC NHÂN SỰ</h4>
-                                
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Sơ đồ tổ chức bộ máy:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
+                <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+                    <span class="d-none d-md-block ps-2">
+                        Xin chào {{ Auth::user()->name }}
+                    </span>
+                </a>
 
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Chức năng nhiệm vụ các bộ phận trong sơ đồ tổ chức:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                </form>
-
-                            </div> <!-- hết phần I -->
-
-                            <!-- PHẦN II -->
-                            <div class="tab-pane fade show pt-3" id="phanII">
-                                <h3 style="text-align:center;">
-                                PHẦN II. TỔNG QUAN VỀ TÌNH HÌNH THỊ TRƯỜNG VÀ KHẢ NĂNG THAM GIA CỦA DOANH NGHIỆP/HỢP TÁC XÃ/TỔ HỢP TÁC/HỘ KINH DOANH
-                                </h3>
-                                <hr>
-                                <form>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Đánh giá chung về tình hình thị trường</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor3" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Đánh giá khả năng tham gia thị trường</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor4" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Căn cứ pháp lý thành lập và hoạt động</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor5" value="">
-                                        </div>
-                                    </div>
-
-                                </form>
-
-                            </div> <!-- hết phần II -->
-
-                            <!-- PHẦN III -->
-                            <div class="tab-pane fade show pt-3" id="phanIII">
-                                <h3 style="text-align:center;">
-                                PHẦN III. PHƯƠNG ÁN SẢN XUẤT, KINH DOANH (3 năm)
-                                </h3>
-                                <hr>
-                                <form>
-                                    <h4 style="text-align:center;">I. PHÂN TÍCH ĐIỂM MẠNH, YẾU, CƠ HỘI VÀ THÁCH THỨC </h4>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Điểm mạnh:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor6" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Điểm yếu:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor7" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Cơ hội:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor8" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Thách thức:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="text" class="form-control" id="ckeditor9" value="">
-                                        </div>
-                                    </div>
-
-                                    <hr>
-                                    <h4 style="text-align:center;">I. PHÂN TÍCH ĐIỂM MẠNH, YẾU, CƠ HỘI VÀ THÁCH THỨC </h4>
-                                    <div class="row mb-3">
-                                        <div class="col-md-12 col-lg-12">
-                                            <input name="" type="text" class="form-control" id="ckeditor10" value="">
-                                        </div>
-                                    </div>
-
-                                    <hr>
-                                    <h4 style="text-align:center;">III. MỤC TIÊU VÀ CHIẾN LƯỢC PHÁT TRIỂN</h4>
-                                    <div class="row mb-3">
-                                        <div class="col-md-12 col-lg-12">
-                                            <input name="" type="text" class="form-control" id="ckeditor11" value="">
-                                        </div>
-                                    </div>
-
-                                    <hr>
-                                    <h4 style="text-align:center;">IV. HOẠT ĐỘNG SẢN XUẤT, KINH DOANH </h4>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Hoạt động sản xuất:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Phân phối/bán hàng:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-                                    
-                                    <hr>
-                                    <h4 style="text-align:center;">V. KẾ HOẠCH MARKETING - XÚC TIẾN THƯƠNG MẠI </h4>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Kế hoạch xúc tiến thương mại:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Kế hoạch Marketing:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <hr>
-                                    <h4 style="text-align:center;">VI. PHƯƠNG ÁN ĐẦU TƯ CƠ SỞ VẬT CHẤT, BỐ TRÍ NHÂN LỰC VÀ CÁC ĐIỀU KIỆN KHÁC</h4>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Cơ sở hạ tầng (điều chỉnh cho phù hợp điều kiện thực tế):
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Máy móc, trang thiết bị:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Nhân lực (điều chỉnh cho phù hợp điều kiện thực tế):
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Các điều kiện khác:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                </form>
-
-                            </div> <!-- hết phần III -->
-
-                            <!-- PHẦN IV -->
-                            <div class="tab-pane fade show pt-3" id="phanIV">
-                                <h3 style="text-align:center;">
-                                PHẦN IV. PHƯƠNG ÁN TÀI CHÍNH
-                                </h3>
-                                <hr>
-                                <form>
-                                    <h4 style="text-align:center;">I. PHƯƠNG ÁN HUY ĐỘNG VÀ SỬ DỤNG VỐN</h4>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Tổng nhu cầu vốn:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Phương án huy dộng vốn:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-                                    
-                                    <hr>
-                                    <h4 style="text-align:center;">II. PHƯƠNG ÁN DOANH THU, CHI PHÍ, LỢI NHUẬN TRONG NĂM</h4>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Tổng doanh thu:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Tổng chi phí:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Lợi nhuận:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <hr>
-                                    <h4 style="text-align:center;">III. PHƯƠNG ÁN TÀI CHÍNH KHÁC C</h4>
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Các quỹ tín dụng (Hội nông dân, phụ nữ, liên minh hợp tác xã,... ghi rõ tên tổ chức và số tiền dự kiến)
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        Thuê tài chính:
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="" type="file" class="form-control" id="" value="">
-                                        </div>
-                                    </div>
-
-                                </form>
-
-                            </div> <!-- hết phần IV -->
-
-                        </div><!-- End Bordered Tabs -->
-
-                    </div>
-                </div>
-
+                <form method="POST" action="{{ route('logout') }}" x-data>
+                    @csrf
+                    <a class="nav-item nav-link" href="{{ route('logout') }}" @click.prevent="$root.submit();">
+                        <i class="bi bi-box-arrow-right"></i>
+                        {{ __('Log Out') }}
+                    </a>
+                </form>
             </div>
         </div>
-    </section>
-    <script src="//cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
-    <script>
-    CKEDITOR.replace('ckeditor1');
-    CKEDITOR.replace('ckeditor2');
-    CKEDITOR.replace('ckeditor3');
-    CKEDITOR.replace('ckeditor4');
-    CKEDITOR.replace('ckeditor5');
-    CKEDITOR.replace('ckeditor6');
-    CKEDITOR.replace('ckeditor7');
-    CKEDITOR.replace('ckeditor8');
-    CKEDITOR.replace('ckeditor9');
-    CKEDITOR.replace('ckeditor10');
-    CKEDITOR.replace('ckeditor11');
-    </script>
-</main><!-- End #main -->
-@endsection
+    </nav>
+    <!-- Navbar End -->
+
+    <div class="container-xxl py-5">
+    
+        <div class="container-fluild">
+            @yield('content')
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="text-white mb-3">Liên hệ</h4>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>82, Tôn Đức Thắng, Mỹ Bình, Long Xuyên, An
+                        Giang</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+84 2963 856 188</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>ttcntttt@angiang.gov.vn</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="copyright">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                        &copy; <a class="border-bottom" href="#">DTMNGAN</a>, All Right Reserved.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('index/lib/wow/wow.min.js') }}"></script>
+    <script src="{{ asset('index/lib/easing/easing.min.js') }}"></script>
+    <script src="{{ asset('index/lib/waypoints/waypoints.min.js') }}"></script>
+    <script src="{{ asset('index/lib/owlcarousel/owl.carousel.min.js') }}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{{ asset('index/js/main.js') }}"></script>
+</body>
+
+</html>

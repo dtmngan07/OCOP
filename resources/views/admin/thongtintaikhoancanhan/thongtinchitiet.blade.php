@@ -25,11 +25,6 @@
                     <input value="{{$ThongTinCaNhan->email}}" type="text" class="form-control" name="email" id="email" disabled>
                 </div>
 
-                <div class="col-12">
-                    <label for="" class="form-label">ID user của bạn</label>
-                    <input value="{{$user->id}}" type="text" class="form-control" name="email" id="email" disabled>
-                </div>
-
                 <div class="text-center">
                 <a href="{{ URL::to('/admin/thongtintaikhoancanhan/sua') }}" class="btn btn-info">Cập nhật thông tin cá nhân</a>
                 </div>

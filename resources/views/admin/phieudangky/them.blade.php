@@ -20,8 +20,8 @@
                 <label for="" class="form-label">Tên đơn vị</label>
                 <select class="" id="ho_so_id" name="ho_so_id" required>
                     <option value="">-- Chọn --</option>
-                    @foreach($PhieuDangKy as $value)
-                    <option value="{{ $value->HoSo_id }}">{{ $value->TenDonVi }}</option>
+                    @foreach($HoSo as $value)
+                    <option value="{{ $value->id }}">{{ $value->TenDonVi }}</option>
                     @endforeach
                 </select>
             </div>

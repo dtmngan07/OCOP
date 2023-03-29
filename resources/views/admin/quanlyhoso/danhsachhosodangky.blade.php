@@ -35,9 +35,9 @@
                     <td>{{ $iteam->DienThoai }}</td>
                     <td>{{ $iteam->Email }}</td>
                     <td>{{ $iteam->Website }}</td>
-                    <td>{{ $iteam->TenNguoiDaiDien}}</td>
-                    <td><a href="{{ URL::to('/admin/xemchitiet',['id' => $iteam->HoSo_id]) }}" class="btn btn-info">Xem chi tiết</a></td>
-                    <td><a href="{{ URL::to('/admin/xoa',['id' => $iteam->HoSo_id]) }}" class="btn btn-info">Xóa</a></td>
+                    <td>{{ $iteam->NguoiDaiDien}}</td>
+                    <td><a href="{{ URL::to('/admin/xemchitiet',['id' => $iteam->HoSo_id]) }}" class="btn btn-info"><i class="bi bi-collection"></i></a></td>
+                    <td><a href="{{ URL::to('/admin/xoa',['id' => $iteam->HoSo_id]) }}" class="btn btn-info"><i class="bi bi-x-lg"></i></a></td>
                 </tr>
                 @endforeach
             </tbody>

@@ -32,35 +32,35 @@ class AdminController extends Controller
             return view('nguoidung.trangchuUser');
     }
 
-        public function getProfile(Request $request){
-            $request->user()->authorizeRoles(['Admin']);
-            $user = $request->user();
+    public function getProfile(Request $request){
+        $request->user()->authorizeRoles(['Admin']);
+        $user = $request->user();
 
-                return view('admin.hoso');
-        }
+            return view('admin.hoso');
+    }
 
-        public function getUserList(Request $request){
-            $request->user()->authorizeRoles(['Admin']);
-            $user = $request->user();
+    public function getUserList(Request $request){
+        $request->user()->authorizeRoles(['Admin']);
+        $user = $request->user();
 
-            Session::put('email',$user->email);
-    
-            $HoSo=DB::table('tblHoSo')
-                ->leftJoin('tblnguoidaidien','tblnguoidaidien.idtblnguoidaidien','=','tblHoSo.tblNguoiDaiDien_idtblNguoiDaiDien')
-                ->get();
-                
-                return view('admin.quanlytaikhoan.danhsachtaikhoan')->with('HoSo',$HoSo);
-        }
+        Session::put('email',$user->email);
 
-        public function getDS_CanBoQuanLy(Request $request){
-            $request->user()->authorizeRoles(['Admin']);
-            $user = $request->user();
+        $HoSo=DB::table('tblHoSo')
+            ->leftJoin('tblnguoidaidien','tblnguoidaidien.idtblnguoidaidien','=','tblHoSo.tblNguoiDaiDien_idtblNguoiDaiDien')
+            ->get();
+            
+            return view('admin.quanlytaikhoan.danhsachtaikhoan')->with('HoSo',$HoSo);
+    }
 
-            Session::put('email',$user->email);
-    
-            $CanBoQuanLy=DB::table('can_bo_quan_lies')
-                ->get();
-                
-                return view('admin.canboquanly.xemhoso')->with('CanBoQuanLy',$CanBoQuanLy);
-        }
+    public function getDS_CanBoQuanLy(Request $request){
+        $request->user()->authorizeRoles(['Admin']);
+        $user = $request->user();
+
+        Session::put('email',$user->email);
+
+        $CanBoQuanLy=DB::table('can_bo_quan_lies')
+            ->get();
+            
+            return view('admin.canboquanly.xemhoso')->with('CanBoQuanLy',$CanBoQuanLy);
+    }
 }

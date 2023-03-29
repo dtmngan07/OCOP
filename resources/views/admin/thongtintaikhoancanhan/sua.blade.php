@@ -9,6 +9,7 @@
             <form  action="{{ URL::to('/admin/thongtintaikhoancanhan/sua') }}" enctype="multipart/form-data" class="row g-3" method="POST">
             {{ csrf_field() }} 
             @if($ThongTinCaNhan != null)
+            <input value="{{$ThongTinCaNhan->id}}" type="text" class="form-control" name="id" hidden>
                 <div class="col-12">
                     <label for="" class="form-label">Họ tên</label>
                     <input value="{{$ThongTinCaNhan->id}}" type="text" class="form-control" name="id" hidden>
@@ -28,9 +29,9 @@
                     <input value="{{$ThongTinCaNhan->email}}" type="text" class="form-control" name="email" id="email">
                 </div>
                 @else
+                <input value="" type="text" class="form-control" name="id" hidden>
                 <div class="col-12">
                     <label for="" class="form-label">Họ tên</label>
-                    <input value="" type="text" class="form-control" name="id" hidden>
                     <input value="" type="text" class="form-control" name="hoten" id="hoten" >
                 </div>
                 <div class="col-12">
@@ -44,13 +45,9 @@
 
                 <div class="col-12">
                     <label for="" class="form-label">Email</label>
-                    <input value="{{$user->email}}" type="text" class="form-control" name="email" id="email">
+                    <input value="{{$user->email}}" type="text" class="form-control" name="email" id="email" readonly>
                 </div>
                 @endif
-                <div class="col-12">
-                    <label for="" class="form-label">ID user của bạn</label>
-                    <input value="{{$user->id}}" type="text" class="form-control" name="email" id="email" disabled>
-                </div>
 
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">Cập nhật</button>

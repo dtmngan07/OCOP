@@ -33,9 +33,9 @@ class PhieuDangKyController extends Controller
 
         $PhieuDangKy = DB::table('phieu_dang_kies')
         ->leftJoin('ho_sos','ho_sos.id','=','phieu_dang_kies.ho_so_id')
-        ->select('ho_sos.id as HoSo_id','phieu_dang_kies.*','ho_sos.*','phieu_dang_kies.id as Phieu_id')
         ->get();
-        return view('admin.phieudangky.them')->with('PhieuDangKy',$PhieuDangKy);
+        $HoSo = DB::table('ho_sos')->get();
+        return view('admin.phieudangky.them')->with('PhieuDangKy',$PhieuDangKy)->with('HoSo',$HoSo);
     }
 
     public function post_Them_PhieuDangKy(Request $request){

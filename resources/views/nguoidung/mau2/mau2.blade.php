@@ -53,6 +53,9 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div>
+            <a href="{{ url()->previous() }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block"><i class="fa fa-arrow-left ms-2"></i></a>
+            </div>
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{ URL::to('/nguoidung') }}" class="nav-item nav-link active">Trang chủ</a>
 
@@ -75,6 +78,7 @@
     <!-- Navbar End -->
 
     <div class="container-xxl py-5">
+    
         <div class="container-fluild">
             @yield('content')
         </div>

@@ -30,6 +30,11 @@
             </div>
 
             <div class="col-12">
+                <label for="" class="form-label">Địa chỉ người đại diện</label>
+                <input value="{{ $HoSo->DiaChi_NguoiDaiDien}}" type="text" class="form-control" name="DiaChi_NguoiDaiDien" id="TenNguoiDaiDien">
+            </div>
+
+            <div class="col-12">
                 <label for="" class="form-label">Phiếu đăng ký</label>
                 <input value="{{ $HoSo->SoPhieuDK}}" type="text" class="form-control" name="SoPhieuDK" id="SoPhieuDK">
             </div>
@@ -180,11 +185,6 @@
                 <input value="" type="text" class="form-control" name="Website" id="Website">
             </div>
             @endif
-            <div class="col-12">
-                <label for="" class="form-label">User ID</label>
-                <input value="{{$HoSo->user_id}}" type="text" class="form-control" name="user_id" id="user_id">
-            </div>
-
             <div class="text-center">
                 <button type="submit" class="btn btn-primary">Cập nhật</button>
             </div>

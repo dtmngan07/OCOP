@@ -84,7 +84,7 @@
                         <div class="p-4">
                             <i class="far fa-address-book" style='font-size:50px'></i><hr>
                             <h5 class="mb-3">Thông tin doanh nghiệp</h5><br>
-                            <a href="{{ URL::to('nguoidung/hoso') }}"
+                            <a href="{{ URL::to('/nguoidung/hoso') }}"
                                 class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
                                 Xem và cập nhật
                             </a>
@@ -123,7 +123,7 @@
                         <div class="p-4">
                             <i class="far fa-file" style='font-size:50px'></i><hr>
                             <h5 class="mb-3">Cập nhật thông tin mẫu 4</h5><br>
-                            <a href="{{ URL::to('nguoidung/mau4') }}"
+                            <a href="{{ URL::to('/nguoidung/capnhatmau4') }}"
                                 class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
                                 Xem và cập nhật
                             </a>

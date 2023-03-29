@@ -53,6 +53,10 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div>
+                <a href="{{ url()->previous() }}" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block"><i
+                        class="fa fa-arrow-left ms-2"></i></a>
+            </div>
             <div class="navbar-nav ms-auto p-4 p-lg-0">
                 <a href="{{ URL::to('home') }}" class="nav-item nav-link active">Trang chủ</a>
                 <a href="http://ocop.gov.vn/" class="nav-item nav-link">Thông tin chương trình</a>
@@ -82,7 +86,8 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fas fa-file-alt" style='font-size:50px'></i><hr>
+                            <i class="fas fa-file-alt" style='font-size:50px'></i>
+                            <hr>
                             <h5 class="mb-3">Phần A</h5>
                             <p>DÀNH CHO CÁN BỘ QUẢN LÝ CHƯƠNG TRÌNH OCOP</p>
                             <a href="{{ URL::to('/nguoidung/capnhatmau2phanA') }}"
@@ -96,7 +101,8 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="far fa-file-alt" style='font-size:50px'></i><hr>
+                            <i class="far fa-file-alt" style='font-size:50px'></i>
+                            <hr>
                             <h5 class="mb-3">Phần B</h5>
                             <p>THÔNG TIN VỀ CHỦ THỂ</p>
                             <a href="{{ URL::to('/nguoidung/capnhatmau2phanB') }}"
@@ -110,7 +116,8 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fas fa-file-alt" style='font-size:50px'></i><hr>
+                            <i class="fas fa-file-alt" style='font-size:50px'></i>
+                            <hr>
                             <h5 class="mb-3">Phần C</h5>
                             <p>MÔI TRƯỜNG KINH DOANH</p>
                             <a href="{{ URL::to('/nguoidung/capnhatmau2phanC') }}"
@@ -124,7 +131,8 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="far fa-file-alt" style='font-size:50px'></i><hr>
+                            <i class="far fa-file-alt" style='font-size:50px'></i>
+                            <hr>
                             <h5 class="mb-3">Phần D</h5>
                             <p>THÔNG TIN VỀ KINH DOANH</p>
                             <a href="{{ URL::to('/nguoidung/capnhatmau2phanD') }}"
@@ -138,7 +146,8 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fas fa-file-alt" style='font-size:50px'></i><hr>
+                            <i class="fas fa-file-alt" style='font-size:50px'></i>
+                            <hr>
                             <h5 class="mb-3">Phần E</h5>
                             <p>THÔNG TIN CHUNG</p>
                             <a href="{{ URL::to('/nguoidung/capnhatmau2phanE') }}"
@@ -152,7 +161,8 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="far fa-file-alt" style='font-size:50px'></i><hr>
+                            <i class="far fa-file-alt" style='font-size:50px'></i>
+                            <hr>
                             <h5 class="mb-3">Phần G</h5>
                             <p>NHU CẦU HỖ TRỢ</p>
                             <a href="{{ URL::to('/nguoidung/capnhatmau2phanG') }}"
@@ -166,8 +176,9 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="fas fa-file-alt" style='font-size:50px'></i><hr>
-                            <h5 class="mb-3">Phần A</h5>
+                            <i class="fas fa-file-alt" style='font-size:50px'></i>
+                            <hr>
+                            <h5 class="mb-3">Phần H</h5>
                             <p>Dành cho tổ chức/cá nhân đề xuất</p>
                             <a href="{{ URL::to('/nguoidung/capnhatmau2phanH') }}"
                                 class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
@@ -179,7 +190,7 @@
 
             </div>
         </div>
-        
+
     </div>
     <!-- Service End -->
 

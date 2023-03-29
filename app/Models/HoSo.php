@@ -21,6 +21,8 @@ class HoSo extends Model
         'SoDKKD',
         'MaSoThue',
         'DiaChi',
+        'NguoiDaiDien',
+        'DiaChi_NguoiDaiDien',
         'DienThoai',
         'Email',
         'Website',
@@ -58,7 +60,8 @@ class HoSo extends Model
 
         'PhuongAnKinhDoanh',
         'QuyTrinhSanXuat',
-        'YeuCauHoTro',
+        'HoTroKhac',
+        'HoTroDaoTao',
         'TanSuatHopMat',
         'CachChiaTien',
         'ThachThuc',
@@ -68,6 +71,7 @@ class HoSo extends Model
         'SoLuongThanhVien',
         'NganhNghe',
         'NhanSu',
+        'TongDienTichDat',
         'SoDoToChuc',
         'ChucNangNhiemVuNhanSu',
 
