@@ -21,7 +21,13 @@ class AdminController extends Controller
         ->leftJoin('roles','roles.id','=','role_user.role_id')
         ->where('user_id',$user->id)
         ->first();
-        return view('Home.home')->with('role',$role);
+
+        if ($role->role_name == 'admin')
+            return view('admin.trangchuAdmin');
+        else
+        return view('nguoidung.trangchuUser');
+
+/*         return view('Home.home')->with('role',$role); */
     }
    public function getdashboardAdmin(Request $request){
 

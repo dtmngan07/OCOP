@@ -33,6 +33,7 @@ Route::middleware([
     Route::get('/admin','App\Http\Controllers\AdminController@getdashboardAdmin' );
 
     Route::get('/admin/thongtintaikhoancanhan','App\Http\Controllers\CanBoQuanLyController@get_ThongTinCaNhan' );
+    Route::get('/admin/thongtintaikhoancanhan/sua','App\Http\Controllers\CanBoQuanLyController@get_Sua_ThongTinCaNhan' );
     Route::post('/admin/thongtintaikhoancanhan/sua','App\Http\Controllers\CanBoQuanLyController@post_Sua_ThongTinCaNhan' );
 
     Route::get('/admin/dshoso','App\Http\Controllers\HoSoController@getDS_HoSo' );

@@ -38,8 +38,8 @@
                         <ul class="nav nav-tabs nav-tabs-bordered">
 
                             <li class="nav-item">
-                                <button class="nav-link active" data-bs-toggle="tab"
-                                    data-bs-target="#profile-overview">Thông tin chi tiết</button>
+                                <p class="nav-link active" data-bs-toggle="tab"
+                                    data-bs-target="#profile-overview" readonly>Thông tin chi tiết</p>
                             </li>
 
 
@@ -399,8 +399,8 @@
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="LichSuHinhThanh" type="text" class="form-control"
                                                 id="LichSuHinhThanh" value="">
-                    {!!$HoSo->LichSuHinhThanh!!}
-                    </textarea>
+                                            {!!$HoSo->LichSuHinhThanh!!}
+                                            </textarea>
                                         </div>
                                     </div>
 
@@ -411,8 +411,8 @@
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="LyDoThanhLap" type="text" class="form-control"
                                                 id="LyDoThanhLap" value="">
-                    {!! $HoSo->LyDoThanhLap !!}
-                    </textarea>
+                                            {!! $HoSo->LyDoThanhLap !!}
+                                            </textarea>
                                         </div>
                                     </div>
 
@@ -424,8 +424,8 @@
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="GiaTriSanPham" type="text" class="form-control"
                                                 id="GiaTriSanPham" value="">
-                    {!! $HoSo->GiaTriSanPham!!}
-                    </textarea>
+                                            {!! $HoSo->GiaTriSanPham!!}
+                                            </textarea>
                                         </div>
                                     </div>
 
@@ -447,7 +447,7 @@
                                     </div>
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            Đất và văn phòng: rỗng
+                                            Đất và văn phòng:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <div class="col-sm-10">
@@ -739,20 +739,22 @@
                                             Kết quả bán hàng:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="KetQuaBanHang" type="file" class="form-control"
-                                                id="KetQuaBanHang" multiple>
-                                        </div>
-
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
                                             <div class="col-sm-10">
                                                 <div class="col-sm-12">
+                                                    @if ($HoSo ->KetQuaBanHang != NULL)
+
                                                     <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                        File bạn đã tải lên: <a
-                                                            href="{{ asset('file_doanhnghiep/'.$HoSo ->KetQuaBanHang) }}"
+                                                        File doanh nghiệp đã tải lên:
+                                                        <a href="{{ asset('file_doanhnghiep/'.$HoSo ->KetQuaBanHang) }}"
                                                             target="_blank">Bấm vào để tải</a>
                                                     </label>
+
+                                                    @else
+                                                    <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                        Doanh nghiệp chưa tải lên file
+                                                    </label>
+                                                    @endif
+
                                                 </div>
                                             </div>
                                         </div>
@@ -763,19 +765,19 @@
                                             Chi phí:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="ChiPhi" type="file" class="form-control" id="ChiPhi" multiple>
-                                        </div>
-
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
                                             <div class="col-sm-10">
                                                 <div class="col-sm-12">
+                                                    @if ($HoSo ->ChiPhi != NULL)
                                                     <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                        File bạn đã tải lên: <a
+                                                        File doanh nghiệp đã tải lên: <a
                                                             href="{{ asset('file_doanhnghiep/'.$HoSo ->ChiPhi) }}"
                                                             target="_blank">Bấm vào để tải</a>
                                                     </label>
+                                                    @else
+                                                    <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                        Doanh nghiệp chưa tải lên file
+                                                    </label>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -786,20 +788,19 @@
                                             Lãi/lỗ: tháng 04/2021 đến nay…
                                         </label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="DoanhThu" type="file" class="form-control" id="DoanhThu"
-                                                multiple>
-                                        </div>
-
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
                                             <div class="col-sm-10">
                                                 <div class="col-sm-12">
+                                                    @if ( $HoSo ->DoanhThu!=NULL)
                                                     <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                        File bạn đã tải lên: <a
+                                                        File doanh nghiệp đã tải lên: <a
                                                             href="{{ asset('file_doanhnghiep/'.$HoSo ->DoanhThu) }}"
                                                             target="_blank">Bấm vào để tải</a>
                                                     </label>
+                                                    @else
+                                                    <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                        Doanh nghiệp chưa tải lên file
+                                                    </label>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -810,20 +811,19 @@
                                             Nhân lực:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="NhanLuc" type="file" class="form-control" id="NhanLuc"
-                                                multiple>
-                                        </div>
-
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
                                             <div class="col-sm-10">
                                                 <div class="col-sm-12">
+                                                    @if ( $HoSo ->NhanLuc!=NULL)
                                                     <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                        File bạn đã tải lên: <a
+                                                        File doanh nghiệp đã tải lên: <a
                                                             href="{{ asset('file_doanhnghiep/'.$HoSo ->NhanLuc) }}"
                                                             target="_blank">Bấm vào để tải</a>
                                                     </label>
+                                                    @else
+                                                    <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                        Doanh nghiệp chưa tải lên file
+                                                    </label>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -834,20 +834,19 @@
                                             Nguồn cung cấp nguyên vật liệu đầu vào:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="NguonCungCapNguyenLieu" type="file" class="form-control"
-                                                id="NguonCungCapNguyenLieu" multiple>
-                                        </div>
-
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
                                             <div class="col-sm-10">
                                                 <div class="col-sm-12">
+                                                    @if ( $HoSo ->NguonCungCapNguyenLieu!=NULL)
                                                     <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                        File bạn đã tải lên: <a
+                                                        File doanh nghiệp đã tải lên: <a
                                                             href="{{ asset('file_doanhnghiep/'.$HoSo ->NguonCungCapNguyenLieu) }}"
                                                             target="_blank">Bấm vào để tải</a>
                                                     </label>
+                                                    @else
+                                                    <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                        Doanh nghiệp chưa tải lên file
+                                                    </label>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -1037,13 +1036,6 @@
                                 <h3 style="text-align:center;">THÔNG TIN CHUNG</h3>
                                 <hr>
                                 <form>
-                                    <div class="row mb-3" hidden>
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="TenDonVi" type="text" class="form-control" id=""
-                                                value="{{$HoSo-> TenDonVi}}">
-                                        </div>
-                                    </div>
 
                                     <div class="row mb-3">
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">
@@ -1052,8 +1044,8 @@
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="PhuongAnKinhDoanh" type="text" class="form-control"
                                                 id="PhuongAnKinhDoanh" value="">
-                    {!! $HoSo->PhuongAnKinhDoanh!!}
-                    </textarea>
+                                            {!! $HoSo->PhuongAnKinhDoanh!!}
+                                            </textarea>
                                         </div>
                                     </div>
                                     <br>
@@ -1062,20 +1054,19 @@
                                             Sơ đồ tóm tắt quy trình sản xuất tạo sản phẩm
                                         </label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="QuyTrinhSanXuat" type="file" class="form-control"
-                                                id="QuyTrinhSanXuat" value="">
-                                        </div>
-
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
                                             <div class="col-sm-10">
                                                 <div class="col-sm-12">
+                                                    @if ( $HoSo ->QuyTrinhSanXuat!=NULL)
                                                     <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                        File bạn đã tải lên: <a
+                                                        File doanh nghiệp đã tải lên: <a
                                                             href="{{ asset('file_doanhnghiep/'.$HoSo ->QuyTrinhSanXuat) }}"
                                                             target="_blank">Bấm vào để tải</a>
                                                     </label>
+                                                    @else
+                                                    <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                        Doanh nghiệp chưa tải lên file
+                                                    </label>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -1123,26 +1114,18 @@
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <div class="col-sm-10">
-
-                                                <div class="col-md-10 col-lg-12">
-                                                    <label for="" class=" col-form-label">
-                                                        Nếu có, trình bày vắn tắt bằng file:
-                                                    </label>
-                                                    <input name="HoTroKhac" type="file" class="form-control">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <div class="col-sm-10">
                                                 <div class="col-sm-12">
+                                                    @if ( $HoSo ->HoTroKhac!=NULL)
                                                     <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                        File bạn đã tải lên: <a
+                                                        File doanh nghiệp đã tải lên: <a
                                                             href="{{ asset('file_doanhnghiep/'.$HoSo ->HoTroKhac) }}"
                                                             target="_blank">Bấm vào để tải</a>
                                                     </label>
+                                                    @else
+                                                    <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                        Doanh nghiệp chưa tải lên file
+                                                    </label>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -1156,8 +1139,8 @@
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="TanSuatHopMat" type="text" class="form-control"
                                                 id="TanSuatHopMat" value="">
-                    {!! $HoSo->TanSuatHopMat!!}
-                    </textarea>
+                                            {!! $HoSo->TanSuatHopMat!!}
+                                            </textarea>
                                         </div>
                                     </div>
                                     <br>
@@ -1168,8 +1151,8 @@
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="CachChiaTien" type="text" class="form-control"
                                                 id="CachChiaTien" value="">
-                    {!! $HoSo->CachChiaTien!!}
-                    </textarea>
+                                            {!! $HoSo->CachChiaTien!!}
+                                            </textarea>
                                         </div>
                                     </div>
                                     <br>
@@ -1181,8 +1164,8 @@
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="ThachThuc" type="text" class="form-control" id="ThachThuc"
                                                 value="">
-                    {!! $HoSo->ThachThuc!!}
-                    </textarea>
+                                            {!! $HoSo->ThachThuc!!}
+                                            </textarea>
                                         </div>
                                     </div>
                                 </form>
@@ -1207,20 +1190,19 @@
                                             trình bày lên
                                         </label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="NhuCauHoTro" type="file" class="form-control" id="NhuCauHoTro"
-                                                value="">
-                                        </div>
-
-                                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                        </label>
-                                        <div class="col-md-8 col-lg-9">
                                             <div class="col-sm-10">
                                                 <div class="col-sm-12">
+                                                    @if ( $HoSo ->NhuCauHoTro!=NULL)
                                                     <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                        File bạn đã tải lên: <a
+                                                        File doanh nghiệp đã tải lên: <a
                                                             href="{{ asset('file_doanhnghiep/'.$HoSo ->NhuCauHoTro) }}"
                                                             target="_blank">Bấm vào để tải</a>
                                                     </label>
+                                                    @else
+                                                    <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                        Doanh nghiệp chưa tải lên file
+                                                    </label>
+                                                    @endif
                                                 </div>
                                             </div>
                                         </div>
@@ -1381,19 +1363,19 @@
                                                 Sơ đồ tổ chức bộ máy:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="SoDoToChuc" type="file" class="form-control">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ($HoSo ->SoDoToChuc !=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->SoDoToChuc) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1404,20 +1386,19 @@
                                                 Chức năng nhiệm vụ các bộ phận trong sơ đồ tổ chức:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="ChucNangNhiemVuNhanSu" type="file" class="form-control"
-                                                    id="" value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->ChucNangNhiemVuNhanSu!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->ChucNangNhiemVuNhanSu) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1514,20 +1495,19 @@
                                                 Hoạt động sản xuất:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="HoatDongSanXuat" type="file" class="form-control"
-                                                    id="HoatDongSanXuat" value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->HoatDongSanXuat!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->HoatDongSanXuat) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1538,20 +1518,19 @@
                                                 Phân phối/bán hàng:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="KenhPhanPhoi" type="file" class="form-control"
-                                                    id="KenhPhanPhoi" value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->KenhPhanPhoi!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->KenhPhanPhoi) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1564,20 +1543,19 @@
                                                 Kế hoạch xúc tiến thương mại:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="KeHoachXucTienThuongMai" type="file" class="form-control"
-                                                    id="KeHoachXucTienThuongMai" value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->KeHoachXucTienThuongMai!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->KeHoachXucTienThuongMai) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1588,20 +1566,19 @@
                                                 Kế hoạch Marketing:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="KeHoachMarketing" type="file" class="form-control"
-                                                    id="KeHoachMarketing" value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->KeHoachMarketing!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->KeHoachMarketing) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1616,20 +1593,19 @@
                                                 Cơ sở hạ tầng (điều chỉnh cho phù hợp điều kiện thực tế):
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="CoSoHaTang" type="file" class="form-control"
-                                                    id="CoSoHaTang" value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->CoSoHaTang!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->CoSoHaTang) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1640,20 +1616,19 @@
                                                 Máy móc, trang thiết bị:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="TrangThietBi" type="file" class="form-control"
-                                                    id="TrangThietBi" value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->TrangThietBi!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->TrangThietBi) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1664,20 +1639,19 @@
                                                 Nhân lực (điều chỉnh cho phù hợp điều kiện thực tế):
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="NhanLucDieuChinh" type="file" class="form-control"
-                                                    id="NhanLucDieuChinh" value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ($HoSo ->NhanLucDieuChinh !=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->NhanLucDieuChinh) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1688,20 +1662,19 @@
                                                 Các điều kiện khác:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="DieuKienKhac" type="file" class="form-control"
-                                                    id="DieuKienKhac" value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ($HoSo ->DieuKienKhac !=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->DieuKienKhac) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1730,19 +1703,19 @@
                                                 Tổng nhu cầu vốn:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="NhuCauVon" type="file" class="form-control" id="" value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ($HoSo ->NhuCauVon !=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->NhuCauVon) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1753,20 +1726,19 @@
                                                 Phương án huy dộng vốn:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="PhuongAnHuyDong" type="file" class="form-control" id=""
-                                                    value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->PhuongAnHuyDong!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->PhuongAnHuyDong) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1780,19 +1752,19 @@
                                                 Tổng doanh thu:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="TongDoanhThu" type="file" class="form-control">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->TongDoanhThu!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
                                                             File bạn đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->TongDoanhThu) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1803,19 +1775,19 @@
                                                 Tổng chi phí:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="TongChiPhi" type="file" class="form-control">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->TongChiPhi!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->TongChiPhi) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1826,19 +1798,19 @@
                                                 Lợi nhuận:
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="LoiNhuan" type="file" class="form-control" id="" value="">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->LoiNhuan!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->LoiNhuan) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1850,19 +1822,19 @@
                                             <label for="" class="col-md-4 col-lg-3 col-form-label">
                                             </label>
                                             <div class="col-md-8 col-lg-9">
-                                                <input name="PhuongAnTaiChinhKhac" type="file" class="form-control">
-                                            </div>
-
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">
-                                            </label>
-                                            <div class="col-md-8 col-lg-9">
                                                 <div class="col-sm-10">
                                                     <div class="col-sm-12">
+                                                        @if ( $HoSo ->PhuongAnTaiChinhKhac!=NULL)
                                                         <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                                            File bạn đã tải lên: <a
+                                                            File doanh nghiệp đã tải lên: <a
                                                                 href="{{ asset('file_doanhnghiep/'.$HoSo ->PhuongAnTaiChinhKhac) }}"
                                                                 target="_blank">Bấm vào để tải</a>
                                                         </label>
+                                                        @else
+                                                        <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                            Doanh nghiệp chưa tải lên file
+                                                        </label>
+                                                        @endif
                                                     </div>
                                                 </div>
                                             </div>
@@ -1887,107 +1859,112 @@
                 <div class="col-xl-12">
                     <div class="card">
                         <div class="card-body pt-3">
-                        <div class="row mb-3">
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
-                        <div class="col-md-8 col-lg-9">
-                            <input name="TenDonVi" type="text" class="form-control" id="" value="{{$HoSo->TenDonVi}}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của người điều
-                            hành:</label>
-                        <div class="col-md-8 col-lg-9">
-                            <input name="DiaChi_NguoiDaiDien" type="text" class="form-control" id="DiaChi_NguoiDaiDien"
-                                value="{{ $HoSo->DiaChi_NguoiDaiDien}}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ xưởng sản xuất:</label>
-                        <div class="col-md-8 col-lg-9">
-                            <input name="DiaChiXuong" type="text" class="form-control" id="DiaChiXuong"
-                                value="{{ $HoSo->DiaChiXuong}}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">Số điện thoại:</label>
-                        <div class="col-md-8 col-lg-9">
-                            <input name="DienThoai" type="text" class="form-control" id="" value="{{ $HoSo->DienThoai}}"
-                                readonly>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">Email:</label>
-                        <div class="col-md-8 col-lg-9">
-                            <input name="Email" type="text" class="form-control" id="Email" value="{{ $HoSo->Email}}"
-                                readonly>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">Website:</label>
-                        <div class="col-md-8 col-lg-9">
-                            <input name="Website" type="text" class="form-control" id="Website"
-                                value="{{ $HoSo->Website}}" readonly>
-                        </div>
-                    </div>
-
-                    <div class="row mb-3">
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">Cơ cấu tổ chức, loại hình doanh
-                            nghiệp:</label>
-                        <div class="col-md-8 col-lg-9">
-                            <input name="CoCauToChuc" type="file" class="form-control" id="CoCauToChuc" value="">
-                        </div>
-
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">
-                        </label>
-                        <div class="col-md-8 col-lg-9">
-                            <div class="col-sm-10">
-                                <div class="col-sm-12">
-                                    <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                        File bạn đã tải lên: <a
-                                            href="{{ asset('file_doanhnghiep/'.$HoSo ->CoCauToChuc) }}"
-                                            target="_blank">Bấm vào để tải</a>
-                                    </label>
+                            <div class="row mb-3">
+                                <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <input name="TenDonVi" type="text" class="form-control" id=""
+                                        value="{{$HoSo->TenDonVi}}" readonly>
                                 </div>
                             </div>
-                        </div>
-                    </div>
 
-                    <div class="row mb-3">
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">Sự tham gia của cộng đồng:</label>
-                        <div class="col-md-8 col-lg-9">
-                            <textarea name="CongDong" type="text" class="form-control"
-                                id="CongDong">{!! $HoSo->CongDong !!}</textarea>
-                        </div>
-                    </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của người điều
+                                    hành:</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <input name="DiaChi_NguoiDaiDien" type="text" class="form-control"
+                                        id="DiaChi_NguoiDaiDien" value="{{ $HoSo->DiaChi_NguoiDaiDien}}" readonly>
+                                </div>
+                            </div>
 
-                    <div class="row mb-3">
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">Hoạt động kế toán của cơ sở:</label>
-                        <div class="col-md-8 col-lg-9">
-                            <textarea name="HoatDongKeToan" type="text" class="form-control"
-                                id="HoatDongKeToan">{!! $HoSo->HoatDongKeToan!!}</textarea>
-                        </div>
-                    </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ xưởng sản xuất:</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <input name="DiaChiXuong" type="text" class="form-control" id="DiaChiXuong"
+                                        value="{{ $HoSo->DiaChiXuong}}" readonly>
+                                </div>
+                            </div>
 
-                    <div class="row mb-3">
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">Tình hình tiếp thị của sản phẩm:</label>
-                        <div class="col-md-8 col-lg-9">
-                            <textarea name="TinhHinhTiepThi" type="text" class="form-control"
-                                id="TinhHinhTiepThi">{!! $HoSo->TinhHinhTiepThi!!}</textarea>
-                        </div>
-                    </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-md-4 col-lg-3 col-form-label">Số điện thoại:</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <input name="DienThoai" type="text" class="form-control" id=""
+                                        value="{{ $HoSo->DienThoai}}" readonly>
+                                </div>
+                            </div>
 
-                    <div class="row mb-3">
-                        <label for="" class="col-md-4 col-lg-3 col-form-label">Phương án bảo vệ môi trường:</label>
-                        <div class="col-md-8 col-lg-9">
-                            <textarea name="PhuongAnBaoVeMoiTruong" type="text" class="form-control"
-                                id="PhuongAnBaoVeMoiTruong">{!! $HoSo->PhuongAnBaoVeMoiTruong !!}</textarea>
-                        </div>
-                    </div>
+                            <div class="row mb-3">
+                                <label for="" class="col-md-4 col-lg-3 col-form-label">Email:</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <input name="Email" type="text" class="form-control" id="Email"
+                                        value="{{ $HoSo->Email}}" readonly>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="" class="col-md-4 col-lg-3 col-form-label">Website:</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <input name="Website" type="text" class="form-control" id="Website"
+                                        value="{{ $HoSo->Website}}" readonly>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="" class="col-md-4 col-lg-3 col-form-label">Cơ cấu tổ chức, loại hình doanh
+                                    nghiệp:</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <div class="col-sm-10">
+                                        <div class="col-sm-12">
+                                            @if ( $HoSo ->CoCauToChuc!=NULL)
+                                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                File doanh nghiệp đã tải lên: <a
+                                                    href="{{ asset('file_doanhnghiep/'.$HoSo ->CoCauToChuc) }}"
+                                                    target="_blank">Bấm vào để tải</a>
+                                            </label>
+                                            @else
+                                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                                Doanh nghiệp chưa tải lên file
+                                            </label>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="" class="col-md-4 col-lg-3 col-form-label">Sự tham gia của cộng
+                                    đồng:</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <textarea name="CongDong" type="text" class="form-control"
+                                        id="CongDong">{!! $HoSo->CongDong !!}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="" class="col-md-4 col-lg-3 col-form-label">Hoạt động kế toán của cơ
+                                    sở:</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <textarea name="HoatDongKeToan" type="text" class="form-control"
+                                        id="HoatDongKeToan">{!! $HoSo->HoatDongKeToan!!}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="" class="col-md-4 col-lg-3 col-form-label">Tình hình tiếp thị của sản
+                                    phẩm:</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <textarea name="TinhHinhTiepThi" type="text" class="form-control"
+                                        id="TinhHinhTiepThi">{!! $HoSo->TinhHinhTiepThi!!}</textarea>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <label for="" class="col-md-4 col-lg-3 col-form-label">Phương án bảo vệ môi
+                                    trường:</label>
+                                <div class="col-md-8 col-lg-9">
+                                    <textarea name="PhuongAnBaoVeMoiTruong" type="text" class="form-control"
+                                        id="PhuongAnBaoVeMoiTruong">{!! $HoSo->PhuongAnBaoVeMoiTruong !!}</textarea>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -1995,8 +1972,29 @@
             </div>
         </section>
 
-        <div class="row">
-
-        </div>
+        <script src="//cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace('MoTaQuyCachSanPham');
+            CKEDITOR.replace('LichSuHinhThanh');
+            CKEDITOR.replace('LyDoThanhLap');
+            CKEDITOR.replace('GiaTriSanPham');
+            CKEDITOR.replace('ThiTruong');
+            CKEDITOR.replace('PhuongAnKinhDoanh');
+            CKEDITOR.replace('TanSuatHopMat');
+            CKEDITOR.replace('CachChiaTien');
+            CKEDITOR.replace('ThachThuc');
+            CKEDITOR.replace('NhanSu');
+            CKEDITOR.replace('TongDienTichDat');
+            CKEDITOR.replace('DanhGiaThiTruong');
+            CKEDITOR.replace('DanhGiaKhaNangThamGiaThiTruong');
+            CKEDITOR.replace('CanCuPhapLy');
+            CKEDITOR.replace('PhanTichChung');
+            CKEDITOR.replace('PhanTichCanhTranh');
+            CKEDITOR.replace('MucTieuChienLuoc');
+            CKEDITOR.replace('CongDong');
+            CKEDITOR.replace('HoatDongKeToan');
+            CKEDITOR.replace('TinhHinhTiepThi');
+            CKEDITOR.replace('PhuongAnBaoVeMoiTruong');
+        </script>
 </section>
 @endsection

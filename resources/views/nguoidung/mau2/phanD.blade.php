@@ -329,9 +329,5 @@
     <script src="//cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
     <script>
     CKEDITOR.replace('ThiTruong');
-    CKEDITOR.replace('');
-    CKEDITOR.replace('');
-    CKEDITOR.replace('');
-    </script>
 </main>
 @endsection

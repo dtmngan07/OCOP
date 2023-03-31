@@ -69,18 +69,6 @@ class CanBoQuanLyController extends Controller
         return redirect::to('/admin/dscanboquanly');
     }
 
-/*     public function get_Lay_ThongTinCaNhan(Request $request){
-        $request->user()->authorizeRoles(['user']);
-        $user = $request->user();
-
-        $ThongTinCaNhan=DB::table('can_bo_quan_lies')
-            ->join('users','users.id','=','can_bo_quan_lies.user_id')
-            ->select('users.id as User_id','users.*','can_bo_quan_lies.id as CanBoQuanLy_id','can_bo_quan_lies.*')
-            ->where('users.id',$user->id)
-            ->first();
-            
-        return view('admin.thongtintaikhoancanhan.AdminHome')->with('ThongTinCaNhan',$ThongTinCaNhan);
-    } */
     public function get_ThongTinCaNhan(Request $request){
         $user = $request->user();
         $ThongTinCaNhan = DB::table('users')
