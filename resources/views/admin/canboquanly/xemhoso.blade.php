@@ -13,6 +13,7 @@
                     <th scope="col">Họ tên</th>
                     <th scope="col">Địa chỉ</th>
                     <th scope="col">Số điện thoại</th>
+                    <th scope="col">Quyền</th>
                     <th scope="col">Xóa</th>
                     <th scope="col">Sửa</th>
                     
@@ -29,8 +30,9 @@
                     <td>{{ $iteam -> hoten }}</td>
                     <td>{{ $iteam -> diachi }}</td>
                     <td>{{ $iteam -> sodienthoai }}</td>
-                    <td><a href="{{ URL::to('/admin/canboquanly/xoa',['id' => $iteam->id]) }}" class="btn btn-info"><i class="bi bi-x-lg"></i></a></td>
-                    <td><a href="{{ URL::to('/admin/canboquanly/sua',['id' => $iteam->id]) }}" class="btn btn-info"><i class="bi bi-pencil-fill"></i></a></td>
+                    <td>{{ $iteam -> role_name }}</td>
+                    <td><a href="{{ URL::to('/admin/canboquanly/xoa',['id' => $iteam->CBQL_id]) }}" class="btn btn-info"><i class="bi bi-x-lg"></i></a></td>
+                    <td><a href="{{ URL::to('/admin/canboquanly/sua',['id' => $iteam->CBQL_id]) }}" class="btn btn-info"><i class="bi bi-pencil-fill"></i></a></td>
                 </tr>
                 @endforeach
             </tbody>

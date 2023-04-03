@@ -22,7 +22,7 @@ class AdminController extends Controller
         ->where('user_id',$user->id)
         ->first();
 
-        if ($role->role_name == 'admin')
+        if (($role->role_name == 'admin') || ($role->role_name == 'kiemduyet'))
             return view('admin.trangchuAdmin');
         else
         return view('nguoidung.trangchuUser');
@@ -38,35 +38,43 @@ class AdminController extends Controller
             return view('nguoidung.trangchuUser');
     }
 
-    public function getProfile(Request $request){
-        $request->user()->authorizeRoles(['Admin']);
-        $user = $request->user();
+    public function get_DS_TaiKhoan(Request $request){
 
-            return view('admin.hoso');
+        $TaiKhoan = DB::table('users')
+        ->leftJoin('can_bo_quan_lies','can_bo_quan_lies.user_id','=','users.id')
+        ->leftJoin('ho_sos','ho_sos.user_id','=','users.id')
+        ->leftJoin('role_user','users.id','=','role_user.user_id')
+        ->leftJoin('roles','roles.id','=','role_user.role_id')
+        ->select('users.*','users.id as userID', 'role_user.*','roles.*','roles.id as roleID')
+        ->get();
+
+
+            return view('admin.quanlytaikhoan.xemhoso')->with('TaiKhoan',$TaiKhoan);
     }
 
-    public function getUserList(Request $request){
-        $request->user()->authorizeRoles(['Admin']);
-        $user = $request->user();
+    public function get_Sua_TaiKhoan(Request $request, $id){
 
-        Session::put('email',$user->email);
+        $TaiKhoan = DB::table('users')
+        ->leftJoin('role_user','users.id','=','role_user.user_id')
+        ->leftJoin('roles','roles.id','=','role_user.role_id')
+        ->select('users.*','users.id as userID', 'role_user.*','roles.*','roles.id as roleID')
+        ->where('users.id',$id)
+        ->first();
 
-        $HoSo=DB::table('tblHoSo')
-            ->leftJoin('tblnguoidaidien','tblnguoidaidien.idtblnguoidaidien','=','tblHoSo.tblNguoiDaiDien_idtblNguoiDaiDien')
-            ->get();
-            
-            return view('admin.quanlytaikhoan.danhsachtaikhoan')->with('HoSo',$HoSo);
+        $Role = DB::table('roles')->get();
+            return view('admin.quanlytaikhoan.sua')->with('TaiKhoan',$TaiKhoan)->with('Role',$Role);
     }
 
-    public function getDS_CanBoQuanLy(Request $request){
-        $request->user()->authorizeRoles(['Admin']);
-        $user = $request->user();
+    public function post_Sua_TaiKhoan(Request $request,$id){
 
-        Session::put('email',$user->email);
+        $TaiKhoan = array();
+        $TaiKhoan['role_id'] = $request->roleID;
 
-        $CanBoQuanLy=DB::table('can_bo_quan_lies')
-            ->get();
-            
-            return view('admin.canboquanly.xemhoso')->with('CanBoQuanLy',$CanBoQuanLy);
+        $user_id = $request->id;
+        DB::table('role_user')->where('id',$user_id)->update($TaiKhoan);
+
+
+        return redirect::to('/admin/quanlytaikhoan');
     }
+
 }

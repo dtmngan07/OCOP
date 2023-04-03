@@ -32,6 +32,11 @@ Route::middleware([
 
     Route::get('/admin','App\Http\Controllers\AdminController@getdashboardAdmin' );
 
+    Route::get('/admin/quanlytaikhoan','App\Http\Controllers\AdminController@get_DS_TaiKhoan' );
+    Route::get('/admin/quanlytaikhoan/sua/{id}','App\Http\Controllers\AdminController@get_Sua_TaiKhoan' );
+    Route::post('/admin/quanlytaikhoan/sua/{id}','App\Http\Controllers\AdminController@post_Sua_TaiKhoan' );
+
+
     Route::get('/admin/thongtintaikhoancanhan','App\Http\Controllers\CanBoQuanLyController@get_ThongTinCaNhan' );
     Route::get('/admin/thongtintaikhoancanhan/sua','App\Http\Controllers\CanBoQuanLyController@get_Sua_ThongTinCaNhan' );
     Route::post('/admin/thongtintaikhoancanhan/sua','App\Http\Controllers\CanBoQuanLyController@post_Sua_ThongTinCaNhan' );

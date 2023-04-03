@@ -123,12 +123,6 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
-      <li class="nav-item">
-        <a class="nav-link " href="index.html">
-          <i class="bi bi-grid"></i>
-          <span>Dashboard</span>
-        </a>
-      </li><!-- End Dashboard Nav -->
 
       <li class="nav-heading">QUẢN LÝ CHUNG</li>
       <li class="nav-item">
@@ -156,6 +150,13 @@
         <a class="nav-link collapsed" href="{{ URL::to('admin/dsphieudangky') }}">
           <i class="bi bi-card-list"></i>
           <span>Phiếu đăng ký</span>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ URL::to('/admin/quanlytaikhoan') }}">
+          <i class="bi bi-card-list"></i>
+          <span>Quản lý tài khoản</span>
         </a>
       </li>
 

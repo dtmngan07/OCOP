@@ -22,7 +22,12 @@ class CanBoQuanLyController extends Controller
         $user = $request->user();
 
         $CanBoQuanLy=DB::table('can_bo_quan_lies')
-            ->get();
+        
+        ->leftJoin('role_user','can_bo_quan_lies.user_id','=','role_user.user_id')
+        ->leftJoin('roles','roles.id','=','role_user.role_id')
+        ->select('can_bo_quan_lies.*','can_bo_quan_lies.id as CBQL_id','role_user.*','role_user.id as Roleuser_id','roles.*','roles.id as Role_id')
+        ->get();
+            
             
         return view('admin.canboquanly.xemhoso')->with('CanBoQuanLy',$CanBoQuanLy);
     }
@@ -45,10 +50,15 @@ class CanBoQuanLyController extends Controller
 
     public function get_Sua_CanBoQuanLy(Request $request, $id){
         $CanBoQuanLy = DB::table('can_bo_quan_lies')
+        ->leftJoin('role_user','can_bo_quan_lies.user_id','=','role_user.user_id')
+        ->leftJoin('roles','roles.id','=','role_user.role_id')
+        ->select('can_bo_quan_lies.*','can_bo_quan_lies.id as CBQL_id','role_user.*','role_user.id as Roleuser_id','roles.*')
         ->where('can_bo_quan_lies.id',$id)
         ->first();
 
-        return view('admin.canboquanly.sua')->with('CanBoQuanLy',$CanBoQuanLy);
+        $Role = DB::table('roles')->get();
+
+        return view('admin.canboquanly.sua')->with('CanBoQuanLy',$CanBoQuanLy)->with('Role', $Role);
     }
     public function post_Sua_CanBoQuanLy(Request $request,$id){
 
@@ -56,6 +66,7 @@ class CanBoQuanLyController extends Controller
         $CanBoQuanLy['hoten']=$request->hoten;
         $CanBoQuanLy['diachi']=$request->diachi;
         $CanBoQuanLy['sodienthoai']=$request->sodienthoai;
+        $CanBoQuanLy['user_id']=$request->user_id;
         $save = DB::table('can_bo_quan_lies')->where('can_bo_quan_lies.id',$id)->update($CanBoQuanLy);
             
         return redirect::to('/admin/dscanboquanly');

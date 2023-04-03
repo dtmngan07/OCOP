@@ -21,7 +21,7 @@
             </div>
 
             <div class="col-12">
-                <label for="" class="form-label">Tên đơn vị</label>
+                <label for="" class="form-label">Cấp duyệt</label>
                 <select class="" id="cap_duyet_id " name="cap_duyet_id" required>
                     <option value="">-- Chọn --</option>
                     @foreach($CapDuyet as $value)
