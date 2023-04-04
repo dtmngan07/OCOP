@@ -22,10 +22,12 @@ class AdminController extends Controller
         ->where('user_id',$user->id)
         ->first();
 
-        if (($role->role_name == 'admin') || ($role->role_name == 'kiemduyet'))
+        if ($role->role_name == 'admin')
             return view('admin.trangchuAdmin');
+        else if ($role->role_name == 'kiemduyet')
+            return view('kiemduyet.trangchuKiemDuyet');
         else
-        return view('nguoidung.trangchuUser');
+            return view('nguoidung.trangchuUser');
 
 /*         return view('Home.home')->with('role',$role); */
     }
@@ -37,6 +39,10 @@ class AdminController extends Controller
         
             return view('nguoidung.trangchuUser');
     }
+    public function getdashboardKiemDuyet(Request $request){
+        
+        return view('kiemduyet.trangchuKiemDuyet');
+}
 
     public function get_DS_TaiKhoan(Request $request){
 

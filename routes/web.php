@@ -66,6 +66,18 @@ Route::middleware([
     Route::post('/admin/phieudangky/sua/{id}','App\Http\Controllers\PhieuDangKyController@post_Sua_PhieuDangKy' );
     Route::get('/admin/phieudangky/xoa/{id}','App\Http\Controllers\PhieuDangKyController@get_Xoa_PhieuDangKy' );
 
+    /* PHẦN TÀI KHOẢN KIỂM DUYỆT HỒ SƠ */
+    Route::get('/kiemduyet','App\Http\Controllers\AdminController@getdashboardKiemDuyet' );
+
+    Route::get('/kiemduyet/thongtintaikhoancanhan','App\Http\Controllers\KiemDuyetController@get_ThongTinCaNhan' );
+    Route::get('/kiemduyet/thongtintaikhoancanhan/sua','App\Http\Controllers\KiemDuyetController@get_Sua_ThongTinCaNhan' );
+    Route::post('/kiemduyet/thongtintaikhoancanhan/sua','App\Http\Controllers\KiemDuyetController@post_Sua_ThongTinCaNhan' );
+    
+    Route::get('/kiemduyet/thongtindonvi','App\Http\Controllers\KiemDuyetController@get_ThongTinDonVi' );
+    Route::get('/kiemduyet/thongtindonvi/sua','App\Http\Controllers\KiemDuyetController@get_Sua_ThongTinDonVi' );
+    Route::post('/kiemduyet/thongtindonvi/sua','App\Http\Controllers\KiemDuyetController@post_Sua_ThongTinDonVi' );
+
+
     /* PHẦN QUẢN LÝ TRANG NGƯỜI DÙNG */
     Route::get('/nguoidung','App\Http\Controllers\AdminController@getdashboardUser' );
     Route::get('/nguoidung/hoso','App\Http\Controllers\HoSoController@getHoSo' ); //xem hồ sơ doanh nghiệp

@@ -24,9 +24,14 @@
                     Xin gửi Phiếu đăng ký này đến OCOP:
                 </label>
                 <select class="col-md-8 col-lg-9" id="don_vi_duyet_id" name="don_vi_duyet_id">
-                    <option value="NULL"{{ old('don_vi_duyet_id') == 'NULL' ? 'selected' : '' }}>-- Chọn --</option>
+                    <option value="">-- Chọn --</option>
                     @foreach($DonViDuyet as $value)
-                    <option value="{{ $value->id }}"{{ old('don_vi_duyet_id') == $value->id ? 'selected' : '' }}>{{ $value->tendonvi }}</option>
+                        @if ($value->id == $PhanH->don_vi_duyet_id)
+                        <option value="{{ $value->id }}" selected>{{ $value->tendonvi }}</option>
+                        @else
+                        <option value="{{ $value->id }}">{{ $value->tendonvi }}</option>
+                        @endif
+                        
                     @endforeach
                 </select>
             </div>
@@ -64,9 +69,9 @@
                     Xin gửi Phiếu đăng ký này đến OCOP:
                 </label>
                 <select class="form-select col-md-8 col-lg-9" id="don_vi_duyet_id" name="don_vi_duyet_id">
-                    <option value="NULL"{{ old('don_vi_duyet_id') == 'NULL' ? 'selected' : '' }}>-- Chọn --</option>
+                    <option value="">-- Chọn --</option>
                     @foreach($DonViDuyet as $value)
-                    <option value="{{ $value->id }}"{{ old('don_vi_duyet_id') == $value->id ? 'selected' : '' }}>{{ $value->tendonvi }}</option>
+                    <option value="{{ $value->id }}">{{ $value->tendonvi }}</option>
                     @endforeach
                 </select>
             </div>

@@ -83,9 +83,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanI ->SoDoToChuc!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanI ->SoDoToChuc) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -104,9 +111,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanI ->ChucNangNhiemVuNhanSu!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanI ->ChucNangNhiemVuNhanSu) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -160,14 +174,14 @@
             <div class="row mb-3">
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Tổ chức nhân sự:</label>
                 <div class="col-md-8 col-lg-9">
-                    <textarea name="NhanSu" type="text" class="form-control" id="NhanSu" >{{$PhanI->NhanSu}}</textarea>
+                    <textarea name="NhanSu" type="text" class="form-control" id="NhanSu" ></textarea>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Tổng diện tích hoạt động sản xuất là</label>
                 <div class="col-md-8 col-lg-9">
-                    <textarea name="TongDienTichDat" type="text" class="form-control" id="TongDienTichDat">{!!$PhanI->TongDienTichDat!!}</textarea>
+                    <textarea name="TongDienTichDat" type="text" class="form-control" id="TongDienTichDat"></textarea>
                 </div>
             </div>
             <hr>

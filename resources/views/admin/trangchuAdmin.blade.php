@@ -1,4 +1,4 @@
 @extends( 'admin.AdminHome')
 @section ('content')
-    <h5>Đây là trang home Admin</h5>
+    <h5>Đây là trang chủ quản lý</h5>
 @endsection

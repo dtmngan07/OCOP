@@ -41,13 +41,6 @@ class DonViDuyetController extends Controller
 
     public function post_Them_DonViDuyet(Request $request){
  
-
-/*         $DonViDuyet = new DonViDuyet();
-        $DonViDuyet['tendonvi']=$request->tendonvi;
-        $DonViDuyet['diachi']=$request->diachi;
-        $DonViDuyet['sodienthoai']=$request->sodienthoai;
-        $DonViDuyet['cap_duyet_id']=$request->cap_duyet_id;
-        $DonViDuyet->save(); */
         $DonViDuyet = array();
         $DonViDuyet['tendonvi']=$request->tendonvi;
         $DonViDuyet['diachi']=$request->diachi;
@@ -87,4 +80,7 @@ class DonViDuyetController extends Controller
             
         return redirect::to('/admin/dsdonviduyet');
     }
+
+
+    
 }

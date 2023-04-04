@@ -220,7 +220,6 @@ class Mau2Controller extends Controller
         $PhanD = array();
         $PhanD['TenDonVi'] = $request->TenDonVi;
         $PhanD['MucDoHoatDongSanXuat'] =implode(' - ',$request->MucDoHoatDongSanXuat);
-        $PhanD['MucDoHoatDongSanXuat'] =implode(' - ',$request->MucDoHoatDongSanXuat);
         $PhanD['ThiTruong'] = $request->ThiTruong;
         $PhanD['MucDoBanSanPham'] =implode(' - ',$request->MucDoBanSanPham);
         $PhanD['DoiTuongKhachHang'] =implode(' - ',$request->DoiTuongKhachHang);

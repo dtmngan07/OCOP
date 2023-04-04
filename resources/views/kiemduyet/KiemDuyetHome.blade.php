@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Trang chủ Admin</title>
+  <title>Trang chủ Kiểm duyệt</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -45,7 +45,7 @@
     <div class="d-flex align-items-center justify-content-between">
       <a href="{{ URL::to('AdminHome') }}" class="logo d-flex align-items-center">
         <img src="assets/img/product.png" alt="">
-        <span class="d-none d-lg-block">Trang quản lý</span>
+        <span class="d-none d-lg-block">Trang kiểm duyệt</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -86,49 +86,31 @@
 
     <ul class="sidebar-nav" id="sidebar-nav">
 
+
       <li class="nav-heading">QUẢN LÝ CHUNG</li>
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ URL::to('admin/dshoso') }}">
+        <a class="nav-link collapsed" href="{{ URL::to('kiemduyet/dshosokiemduyet') }}">
           <i class="bi bi-card-list"></i>
           <span>Danh sách hồ sơ đăng ký</span>
         </a>
       </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ URL::to('admin/dscanboquanly') }}">
-          <i class="bi bi-card-list"></i>
-          <span>Danh sách tài khoản người quản lý</span>
-        </a>
-      </li>
 
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ URL::to('admin/dsdonviduyet') }}">
-          <i class="bi bi-card-list"></i>
-          <span>Danh sách tài khoản kiểm duyệt</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ URL::to('admin/dsphieudangky') }}">
-          <i class="bi bi-card-list"></i>
-          <span>Phiếu đăng ký</span>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ URL::to('/admin/quanlytaikhoan') }}">
-          <i class="bi bi-card-list"></i>
-          <span>Quản lý tài khoản</span>
-        </a>
-      </li>
       <li class="nav-heading">QUẢN LÝ THÔNG TIN CÁ NHÂN</li>
 
       <li class="nav-item">
-        <a class="nav-link collapsed" href="{{ URL::to('/admin/thongtintaikhoancanhan')}}">
+        <a class="nav-link collapsed" href="{{ URL::to('/kiemduyet/thongtintaikhoancanhan')}}">
           <i class="bi bi-person"></i>
           <span>Thông tin cá nhân</span>
         </a>
       </li><!-- End Profile Page Nav -->
+
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{ URL::to('/kiemduyet/thongtindonvi')}}">
+          <i class="bi bi-person"></i>
+          <span>Thông tin đơn vị của bạn</span>
+        </a>
+      </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{ URL::to('logout') }}">

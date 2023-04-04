@@ -18,7 +18,7 @@ class CanBoQuanLyController extends Controller
        $this->middleware('auth');
    }
     public function getDS_CanBoQuanLy(Request $request){
-        $request->user()->authorizeRoles(['Admin']);
+        $request->user()->authorizeRoles(['admin','kiemduyet']);
         $user = $request->user();
 
         $CanBoQuanLy=DB::table('can_bo_quan_lies')
@@ -109,7 +109,7 @@ class CanBoQuanLyController extends Controller
     }
     public function post_Sua_ThongTinCaNhan(Request $request){
 
-        $request->user()->authorizeRoles(['admin']);
+        $request->user()->authorizeRoles(['admin','kiemduyet']);
         $user = $request->user();
         $id = $request->id;
         $ThongTinCaNhan = array();

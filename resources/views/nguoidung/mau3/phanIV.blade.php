@@ -32,10 +32,17 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIV ->NhuCauVon!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIV ->NhuCauVon) }}"
                                     target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -54,11 +61,18 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIV ->PhuongAnHuyDong!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a
                                     href="{{ asset('file_doanhnghiep/'.$PhanIV ->PhuongAnHuyDong) }}"
                                     target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -79,10 +93,17 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIV ->TongDoanhThu!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIV ->TongDoanhThu) }}"
                                     target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -101,10 +122,17 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIV ->TongChiPhi!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIV ->TongChiPhi) }}"
                                     target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -123,10 +151,17 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIV ->LoiNhuan!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIV ->LoiNhuan) }}"
                                     target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -146,11 +181,18 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIV ->PhuongAnTaiChinhKhac!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a
                                     href="{{ asset('file_doanhnghiep/'.$PhanIV ->PhuongAnTaiChinhKhac) }}"
                                     target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -173,18 +215,6 @@
                     <input name="NhuCauVon" type="file" class="form-control" id="" value="">
                 </div>
 
-                <label for="" class="col-md-4 col-lg-3 col-form-label">
-                </label>
-                <div class="col-md-8 col-lg-9">
-                    <div class="col-sm-10">
-                        <div class="col-sm-12">
-                            <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIV ->NhuCauVon) }}"
-                                    target="_blank">Bấm vào để tải</a>
-                            </label>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="row mb-3">
@@ -195,19 +225,6 @@
                     <input name="PhuongAnHuyDong" type="file" class="form-control" id="" value="">
                 </div>
 
-                <label for="" class="col-md-4 col-lg-3 col-form-label">
-                </label>
-                <div class="col-md-8 col-lg-9">
-                    <div class="col-sm-10">
-                        <div class="col-sm-12">
-                            <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                File bạn đã tải lên: <a
-                                    href="{{ asset('file_doanhnghiep/'.$PhanIV ->PhuongAnHuyDong) }}"
-                                    target="_blank">Bấm vào để tải</a>
-                            </label>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <hr>
@@ -220,18 +237,6 @@
                     <input name="TongDoanhThu" type="file" class="form-control">
                 </div>
 
-                <label for="" class="col-md-4 col-lg-3 col-form-label">
-                </label>
-                <div class="col-md-8 col-lg-9">
-                    <div class="col-sm-10">
-                        <div class="col-sm-12">
-                            <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIV ->TongDoanhThu) }}"
-                                    target="_blank">Bấm vào để tải</a>
-                            </label>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="row mb-3">
@@ -240,19 +245,6 @@
                 </label>
                 <div class="col-md-8 col-lg-9">
                     <input name="TongChiPhi" type="file" class="form-control">
-                </div>
-
-                <label for="" class="col-md-4 col-lg-3 col-form-label">
-                </label>
-                <div class="col-md-8 col-lg-9">
-                    <div class="col-sm-10">
-                        <div class="col-sm-12">
-                            <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIV ->TongChiPhi) }}"
-                                    target="_blank">Bấm vào để tải</a>
-                            </label>
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -264,18 +256,6 @@
                     <input name="LoiNhuan" type="file" class="form-control" id="" value="">
                 </div>
 
-                <label for="" class="col-md-4 col-lg-3 col-form-label">
-                </label>
-                <div class="col-md-8 col-lg-9">
-                    <div class="col-sm-10">
-                        <div class="col-sm-12">
-                            <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIV ->LoiNhuan) }}"
-                                    target="_blank">Bấm vào để tải</a>
-                            </label>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <hr>
@@ -285,20 +265,6 @@
                 </label>
                 <div class="col-md-8 col-lg-9">
                     <input name="PhuongAnTaiChinhKhac" type="file" class="form-control">
-                </div>
-
-                <label for="" class="col-md-4 col-lg-3 col-form-label">
-                </label>
-                <div class="col-md-8 col-lg-9">
-                    <div class="col-sm-10">
-                        <div class="col-sm-12">
-                            <label for="" class="col-md-12 col-lg-12 col-form-label">
-                                File bạn đã tải lên: <a
-                                    href="{{ asset('file_doanhnghiep/'.$PhanIV ->PhuongAnTaiChinhKhac) }}"
-                                    target="_blank">Bấm vào để tải</a>
-                            </label>
-                        </div>
-                    </div>
                 </div>
             </div>
             @endif

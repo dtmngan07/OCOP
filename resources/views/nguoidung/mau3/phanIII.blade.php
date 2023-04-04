@@ -56,9 +56,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIII ->HoatDongSanXuat!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIII ->HoatDongSanXuat) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -77,9 +84,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIII ->KenhPhanPhoi!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIII ->KenhPhanPhoi) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -100,9 +114,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIII ->KeHoachXucTienThuongMai!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIII ->KeHoachXucTienThuongMai) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -121,9 +142,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIII ->KeHoachMarketing!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIII ->KeHoachMarketing) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -145,9 +173,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIII ->CoSoHaTang!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIII ->CoSoHaTang) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -166,9 +201,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIII ->TrangThietBi!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIII ->TrangThietBi) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -187,9 +229,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIII ->NhanLucDieuChinh!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIII ->NhanLucDieuChinh) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -208,9 +257,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanIII ->DieuKienKhac!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanIII ->DieuKienKhac) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>

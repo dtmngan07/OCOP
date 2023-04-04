@@ -2,11 +2,11 @@
 @section ('content')
 <div class="card">
     <div class="card-body">
-        <h5 class="card-title">Cập nhật thông tin doanh nghiệp</h5>
+        <h5 style="text-align:center;" class="card-title">Cập nhật thông tin doanh nghiệp</h5>
 
         <!-- Vertical Form -->
         <form enctype="multipart/form-data" class="row g-3" method="POST" action="{{ URL::to('/nguoidung/hoso/sua') }}">
-        {{ csrf_field() }} 
+            {{ csrf_field() }}
             @if($HoSo != null)
             <div class="col-12">
                 <input value="{{$HoSo->id}}" type="text" class="form-control" name="id" hidden>
@@ -15,8 +15,24 @@
             </div>
 
             <div class="col-12">
-                <label for="" class="form-label">Tên sản phẩm đăng ký</label>
-                <input value="{{ asset('bieutuong/'.$HoSo ->BieuTuong) }}" type="file" class="form-control" name="BieuTuong" id="BieuTuong">
+                <label for="" class="form-label">Ảnh biểu tượng</label>
+                <input value="{{ asset('bieutuong/'.$HoSo ->BieuTuong) }}" type="file" class="form-control"
+                    name="BieuTuong" id="BieuTuong">
+
+                <div class="col-sm-12">
+                    @if ( $HoSo ->BieuTuong!=NULL)
+                    <label for="" class="col-md-12 col-lg-12 col-form-label">
+                        File bạn đã tải lên: 
+                        <a href="{{ asset('bieutuong/'.$HoSo ->BieuTuong) }}" target="_blank">
+                            Bấm vào để tải
+                        </a>
+                    </label>
+                    @else
+                    <label for="" class="col-md-12 col-lg-12 col-form-label">
+                        Bạn chưa tải lên file
+                    </label>
+                    @endif
+                </div>
             </div>
 
             <div class="col-12">
@@ -26,12 +42,14 @@
 
             <div class="col-12">
                 <label for="" class="form-label">Tên người đại diện</label>
-                <input value="{{ $HoSo->NguoiDaiDien}}" type="text" class="form-control" name="NguoiDaiDien" id="TenNguoiDaiDien">
+                <input value="{{ $HoSo->NguoiDaiDien}}" type="text" class="form-control" name="NguoiDaiDien"
+                    id="TenNguoiDaiDien">
             </div>
 
             <div class="col-12">
                 <label for="" class="form-label">Địa chỉ người đại diện</label>
-                <input value="{{ $HoSo->DiaChi_NguoiDaiDien}}" type="text" class="form-control" name="DiaChi_NguoiDaiDien" id="TenNguoiDaiDien">
+                <input value="{{ $HoSo->DiaChi_NguoiDaiDien}}" type="text" class="form-control"
+                    name="DiaChi_NguoiDaiDien" id="TenNguoiDaiDien">
             </div>
 
             <div class="col-12">
@@ -62,10 +80,14 @@
 
             <div class="col-12">
                 <label for="" class="form-label">Loại hình tố chức</label>
-                <select value="{{$HoSo->ten}}" class="" id="loai_hinh_to_chuc_id" name="loai_hinh_to_chuc_id" required>
+                <select class="form-control" value="{{$HoSo->ten}}"  id="loai_hinh_to_chuc_id" name="loai_hinh_to_chuc_id" required>
                     <option value="">-- Chọn --</option>
                     @foreach($LoaiHinhToChuc as $value)
+                    @if ($value->loaihinhtochuc_id == $HoSo->loai_hinh_to_chuc_id)
+                    <option value="{{ $value->loaihinhtochuc_id}}" selected>{{ $value->ten}}</option>
+                    @else
                     <option value="{{ $value->loaihinhtochuc_id}}">{{ $value->ten}}</option>
+                    @endif
                     @endforeach
                 </select>
             </div>
@@ -81,7 +103,8 @@
             </div>
             <div class="col-12">
                 <label for="" class="form-label">Địa chỉ xưởng</label>
-                <input value="{{ $HoSo->DiaChiXuong}}" type="text" class="form-control" name="DiaChiXuong" id="DiaChiXuong">
+                <input value="{{ $HoSo->DiaChiXuong}}" type="text" class="form-control" name="DiaChiXuong"
+                    id="DiaChiXuong">
             </div>
 
             <div class="col-12">
@@ -99,7 +122,7 @@
                 <input value="{{$HoSo->Website}}" type="text" class="form-control" name="Website" id="Website">
             </div>
             @else
-            {{ csrf_field() }} 
+            {{ csrf_field() }}
             <div class="col-12">
                 <input value="" type="text" class="form-control" name="id" hidden>
                 <label for="" class="form-label">Tên doanh nghiệp</label>

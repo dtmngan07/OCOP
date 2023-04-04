@@ -71,11 +71,18 @@
                         <div class="col-md-8 col-lg-9">
                             <div class="col-sm-10">
                                 <div class="col-sm-12">
+                                    
+                                    @if ( $Mau4 ->CoCauToChuc!=NULL)
                                     <label for="" class="col-md-12 col-lg-12 col-form-label">
                                         File bạn đã tải lên: <a
                                             href="{{ asset('file_doanhnghiep/'.$Mau4 ->CoCauToChuc) }}"
                                             target="_blank">Bấm vào để tải</a>
                                     </label>
+                                    @else
+                                    <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                        Bạn chưa tải lên file
+                                    </label>
+                                    @endif
                                 </div>
                             </div>
                         </div>

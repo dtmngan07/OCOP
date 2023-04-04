@@ -42,9 +42,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanE ->QuyTrinhSanXuat!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanE ->QuyTrinhSanXuat) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -104,9 +111,16 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="col-sm-12">
+                            
+                            @if ( $PhanE ->HoTroKhac!=NULL)
                             <label for="" class="col-md-12 col-lg-12 col-form-label">
                                 File bạn đã tải lên: <a href="{{ asset('file_doanhnghiep/'.$PhanE ->HoTroKhac) }}" target="_blank">Bấm vào để tải</a>
                             </label>
+                            @else
+                            <label for="" class="col-md-12 col-lg-12 col-form-label">
+                                Bạn chưa tải lên file
+                            </label>
+                            @endif
                         </div>
                     </div>
                 </div>
