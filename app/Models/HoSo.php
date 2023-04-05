@@ -103,7 +103,7 @@ class HoSo extends Model
         'CongDong',
         'HoatDongKeToan',
         'TinhHinhTiepThi',
-        'PhuongAnBaoVeMoiTruong'
+        'PhuongAnBaoVeMoiTruong',
 
         ];
         public function add_HoSo ($data){

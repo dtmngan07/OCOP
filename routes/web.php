@@ -77,6 +77,9 @@ Route::middleware([
     Route::get('/kiemduyet/thongtindonvi/sua','App\Http\Controllers\KiemDuyetController@get_Sua_ThongTinDonVi' );
     Route::post('/kiemduyet/thongtindonvi/sua','App\Http\Controllers\KiemDuyetController@post_Sua_ThongTinDonVi' );
 
+    Route::get('/kiemduyet/dshosokiemduyet','App\Http\Controllers\KiemDuyetController@getDS_HoSo' );
+    Route::get('/kiemduyet/xemchitiet/{id}','App\Http\Controllers\KiemDuyetController@getXemChiTiet' );
+    Route::get('/kiemduyet/xoa/{id}','App\Http\Controllers\KiemDuyetController@get_Xoa_HoSo' );
 
     /* PHẦN QUẢN LÝ TRANG NGƯỜI DÙNG */
     Route::get('/nguoidung','App\Http\Controllers\AdminController@getdashboardUser' );

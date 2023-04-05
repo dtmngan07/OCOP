@@ -119,4 +119,45 @@ class KiemDuyetController extends Controller
             return redirect::to('/kiemduyet/thongtindonvi');
         }
 
+        /* DANH SÁCH HỒ SƠ GỬI ĐẾN ĐƠN VỊ KIỂM DUYỆT */
+        public function getDS_HoSo(Request $request){
+            $request->user()->authorizeRoles(['admin','kiemduyet']);
+            $user = $request->user();
+    
+            $HoSo=DB::table('ho_sos')
+            ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+            ->select('ho_sos.id as HoSo_id','ho_sos.*','loai_hinh_to_chucs.*')
+            ->get();
+            
+            $DonViDuyet = DB::table('users')
+            ->leftJoin('can_bo_quan_lies','can_bo_quan_lies.user_id','=','users.id')
+            ->leftJoin('don_vi_duyets','don_vi_duyets.can_bo_quan_li_id','=','can_bo_quan_lies.id')
+            ->select('can_bo_quan_lies.*','can_bo_quan_     lies.id as IDCBQL','can_bo_quan_lies.diachi as diachiCBQL','can_bo_quan_lies.sodienthoai as sodienthoaiCBQL',
+                'don_vi_duyets.*','don_vi_duyets.id as DonViDuyetID')
+            ->where('user_id',$user->id)
+            ->first();
+
+            return view('kiemduyet.quanlyhoso.danhsachhosodangky')->with('HoSo',$HoSo)->with('DonViDuyet', $DonViDuyet);
+        }
+    
+        public function getXemChiTiet(Request $request,$id){
+            $request->user()->authorizeRoles(['admin','kiemduyet']);
+            $user = $request->user();
+    
+            $HoSo=DB::table('ho_sos')
+            ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.id','=','ho_sos.nguoi_dai_dien_id')
+            ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+            ->leftJoin('phieu_dang_kies','ho_sos.id','=','phieu_dang_kies.ho_so_id')
+            ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+            ->where('ho_sos.id',$id)
+            ->first();
+            
+            return view('kiemduyet.quanlyhoso.chitiethoso')->with('HoSo',$HoSo);
+        }
+        
+        public function get_Xoa_HoSo($id){
+            DB::table('ho_sos')->delete($id);
+    
+            return redirect::to('/kiemduyet/dshosokiemduyet');
+        }
 }
