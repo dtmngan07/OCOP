@@ -8,6 +8,7 @@ use App\Http\Requests\UpdateNguoiDaiDienRequest;
 use Illuminate\Http\Request;
 use Session;
 use DB;
+use Illuminate\Support\Facades\Redirect;
 
 class NguoiDaiDienController extends Controller
 {
@@ -26,34 +27,60 @@ class NguoiDaiDienController extends Controller
         return view('admin.quanlyhoso.danhsachhosodangky')->with('HoSo',$HoSo);
     }
 
+    public function get_NguoiDaiDien(Request $request){
+        $request->user()->authorizeRoles(['user']);
+        $user = $request->user();
+
+        $NguoiDaiDien=DB::table('users')
+        ->leftJoin('ho_sos','ho_sos.user_id','=','users.id')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->select('ho_sos.*','ho_sos.id as HoSo_id','nguoi_dai_diens.*','nguoi_dai_diens.id as NguoiDaiDien_id')
+        ->where('users.id',$user->id)
+        ->first();
+
+
+        if ( $NguoiDaiDien!=NULL && $NguoiDaiDien->id != NULL)
+        {
+            return view('nguoidung.nguoidaidien.thongtinnguoidaidien')->with('NguoiDaiDien',$NguoiDaiDien)->with('user',$user);
+        }
+        else
+        {
+            return view('nguoidung.nguoidaidien.capnhat_thongtinnguoidaidien')->with('NguoiDaiDien',$NguoiDaiDien)->with('user',$user);
+        }
+    }
+
     public function getHoSo_NguoiDaiDien(Request $request){
         $request->user()->authorizeRoles(['user']);
         $user = $request->user();
 
-        $HoSo_NguoiDaiDien=DB::table('ho_sos')
-        ->rightJoin('nguoi_dai_diens','nguoi_dai_diens.id','=','ho_sos.nguoi_dai_dien_id')
+        $NguoiDaiDien=DB::table('users')
+        ->leftJoin('ho_sos','ho_sos.user_id','=','users.id')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->select('ho_sos.*','ho_sos.id as HoSo_id','nguoi_dai_diens.*','nguoi_dai_diens.id as NguoiDaiDien_id')
+        ->where('users.id',$user->id)
         ->first();
-            
-        return view('nguoidung.nguoidaidien.thongtinnguoidaidien')->with('HoSo_NguoiDaiDien',$HoSo_NguoiDaiDien);
+
+        return view('nguoidung.nguoidaidien.capnhat_thongtinnguoidaidien')->with('NguoiDaiDien',$NguoiDaiDien)->with('user',$user);
     }
 
-    public function getThemHoSo_NguoiDaiDien(Request $request){
+    public function postHoSo_NguoiDaiDien(Request $request){
+
         $request->user()->authorizeRoles(['user']);
         $user = $request->user();
+            
+        $id = $request->id;
+        $NguoiDaiDien = array();
+        $NguoiDaiDien['TenNguoiDaiDien']=$request->TenNguoiDaiDien;
+        $NguoiDaiDien['SoDienThoai'] = $request->SoDienThoai ;
+        $NguoiDaiDien['DiaChiNguoiDaiDien'] = $request-> DiaChiNguoiDaiDien;
+        $NguoiDaiDien['ho_so_id'] = $request->idHoSo;
 
-        return view('nguoidung.nguoidaidien.them_thongtinnguoidaidien');
-    }
-
-    public function postThemHoSo_NguoiDaiDien(Request $request){
-
-        $add = [
-            'TenNguoiDaiDien'=>$request->TenNguoiDaiDien,
-            'DiaChi'=>$request->DiaChi,
-            'SoDienThoai'=>$request->SoDienThoai,
-        ];
-        $this->users->add_NguoiDaiDien($add);    
-
-        return redirect()->route('nguoidung.nguoidaidien.thongtinnguoidaidien')->with();
+        if($id == NULL){
+            DB::table('nguoi_dai_diens')->insert($NguoiDaiDien);
+        }else{
+        $save = DB::table('nguoi_dai_diens')->where('id',$request->id)->update($NguoiDaiDien);
+        }
+        return redirect::to('/nguoidung/nguoidaidien');
     }
 
 

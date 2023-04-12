@@ -128,7 +128,7 @@
             <br>
             <div class="row mb-3">
                 <label for="" class="col-md-4 col-lg-3 col-form-label">
-                Chủ thể có tổ chứcc gặp mặt/họp thường xuyên không (ghi số lần họp/tháng, quý, năm nếu có):
+                Chủ thể có tổ chức gặp mặt/họp thường xuyên không (ghi số lần họp/tháng, quý, năm nếu có):
                 </label>
                 <div class="col-md-8 col-lg-9">
                     <textarea name="TanSuatHopMat" type="text" class="form-control" id="TanSuatHopMat" value="">
@@ -239,7 +239,7 @@
             <br>
             <div class="row mb-3">
                 <label for="" class="col-md-4 col-lg-3 col-form-label">
-                Chủ thể có tổ chứcc gặp mặt/họp thường xuyên không (ghi số lần họp/tháng, quý, năm nếu có):
+                Chủ thể có tổ chức gặp mặt/họp thường xuyên không (ghi số lần họp/tháng, quý, năm nếu có):
                 </label>
                 <div class="col-md-8 col-lg-9">
                     <textarea name="TanSuatHopMat" type="text" class="form-control" id="TanSuatHopMat" value="">

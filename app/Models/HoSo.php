@@ -21,8 +21,6 @@ class HoSo extends Model
         'SoDKKD',
         'MaSoThue',
         'DiaChi',
-        'NguoiDaiDien',
-        'DiaChi_NguoiDaiDien',
         'DienThoai',
         'Email',
         'Website',

@@ -58,7 +58,7 @@
                         class="fa fa-arrow-left ms-2"></i></a>
             </div>
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ URL::to('home') }}" class="nav-item nav-link active">Trang chủ</a>
+                <a href="{{ URL::to('/nguoidung') }}" class="nav-item nav-link active">Trang chủ</a>
                 <a href="http://ocop.gov.vn/" class="nav-item nav-link">Thông tin chương trình</a>
                 <a href="https://ocop.angiang.gov.vn/" class="nav-item nav-link">Trang chủ Ocop An Giang</a>
 

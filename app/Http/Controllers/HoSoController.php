@@ -21,7 +21,7 @@ class HoSoController extends Controller
         $user = $request->user();
 
         $HoSo=DB::table('ho_sos')
-        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.id','=','ho_sos.nguoi_dai_dien_id')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
         ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
         ->leftJoin('phieu_dang_kies','ho_sos.id','=','phieu_dang_kies.ho_so_id')
         ->leftJoin('users','users.id','=','ho_sos.user_id')
@@ -69,8 +69,6 @@ class HoSoController extends Controller
         $HoSo = array();
         $HoSo['SanPham'] = $request->SanPham;
         $HoSo['TenDonVi'] = $request->TenDonVi;
-        $HoSo['NguoiDaiDien'] = $request->NguoiDaiDien;
-        $HoSo['DiaChi_NguoiDaiDien'] = $request->DiaChi_NguoiDaiDien;
         $HoSo['SoPhieuDK'] = $request->SoPhieuDK;
         $HoSo['GiayDKKD'] = $request->GiayDKKD ;
         $HoSo['NgayDKKD'] = $request->	NgayDKKD ;
@@ -116,7 +114,7 @@ class HoSoController extends Controller
         $user = $request->user();
 
         $HoSo=DB::table('ho_sos')
-        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.id','=','ho_sos.nguoi_dai_dien_id')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
         ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
         ->select('ho_sos.id as HoSo_id','ho_sos.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
         ->get();
@@ -129,7 +127,7 @@ class HoSoController extends Controller
         $user = $request->user();
 
         $HoSo=DB::table('ho_sos')
-        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.id','=','ho_sos.nguoi_dai_dien_id')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
         ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
         ->leftJoin('phieu_dang_kies','ho_sos.id','=','phieu_dang_kies.ho_so_id')
         ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')

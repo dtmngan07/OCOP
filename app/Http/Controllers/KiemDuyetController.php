@@ -70,10 +70,15 @@ class KiemDuyetController extends Controller
         $ThongTin = DB::table('users')
         ->leftJoin('can_bo_quan_lies','can_bo_quan_lies.user_id','=','users.id')
         ->leftJoin('don_vi_duyets','don_vi_duyets.can_bo_quan_li_id','=','can_bo_quan_lies.id')
+        ->leftJoin('cap_duyets','cap_duyets.id','=','don_vi_duyets.cap_duyet_id')
         ->select('can_bo_quan_lies.*','can_bo_quan_lies.diachi as diachiCBQL','can_bo_quan_lies.id as IDCBQL','can_bo_quan_lies.sodienthoai as sodienthoaiCBQL',
-                'don_vi_duyets.*')
+                'don_vi_duyets.*','cap_duyets.*','cap_duyets.id as CapDuyet_id')
         ->where('users.id',$user->id)
         ->first();
+
+        $CapDuyet = DB::table('cap_duyets')
+        ->select('cap_duyets.*','cap_duyets.id as CapDuyet_id')
+        ->get();
 
         
         if ( $ThongTin!=NULL && $ThongTin->id != NULL)
@@ -82,7 +87,7 @@ class KiemDuyetController extends Controller
         }
         else
         {
-            return view('kiemduyet.sua_thongtindonvi')->with('ThongTin',$ThongTin)->with('user',$user);
+            return view('kiemduyet.sua_thongtindonvi')->with('ThongTin',$ThongTin)->with('CapDuyet',$CapDuyet)->with('user',$user);
         }
        
     }
@@ -92,12 +97,17 @@ class KiemDuyetController extends Controller
             $ThongTin = DB::table('users')
                 ->leftJoin('can_bo_quan_lies','can_bo_quan_lies.user_id','=','users.id')
                 ->leftJoin('don_vi_duyets','don_vi_duyets.can_bo_quan_li_id','=','can_bo_quan_lies.id')
+                ->leftJoin('cap_duyets','cap_duyets.id','=','don_vi_duyets.cap_duyet_id')
                 ->select('can_bo_quan_lies.*','can_bo_quan_lies.id as IDCBQL','can_bo_quan_lies.diachi as diachiCBQL','can_bo_quan_lies.sodienthoai as sodienthoaiCBQL',
-                    'don_vi_duyets.*')
+                    'don_vi_duyets.*','cap_duyets.*','cap_duyets.id as CapDuyet_id')
                 ->where('user_id',$user->id)
                 ->first();
 
-            return view('kiemduyet.sua_thongtindonvi')->with('ThongTin',$ThongTin)->with('user',$user);
+            $CapDuyet = DB::table('cap_duyets')
+            ->select('cap_duyets.*','cap_duyets.id as CapDuyet_id')
+            ->get();
+        
+            return view('kiemduyet.sua_thongtindonvi')->with('ThongTin',$ThongTin)->with('CapDuyet',$CapDuyet)->with('user',$user);
         }
         public function post_Sua_ThongTinDonVi(Request $request){
     
@@ -125,14 +135,16 @@ class KiemDuyetController extends Controller
             $user = $request->user();
     
             $HoSo=DB::table('ho_sos')
+            ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
             ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
-            ->select('ho_sos.id as HoSo_id','ho_sos.*','loai_hinh_to_chucs.*')
+            ->select('ho_sos.id as HoSo_id','ho_sos.*','loai_hinh_to_chucs.*','nguoi_dai_diens.*')
             ->get();
             
             $DonViDuyet = DB::table('users')
+            
             ->leftJoin('can_bo_quan_lies','can_bo_quan_lies.user_id','=','users.id')
             ->leftJoin('don_vi_duyets','don_vi_duyets.can_bo_quan_li_id','=','can_bo_quan_lies.id')
-            ->select('can_bo_quan_lies.*','can_bo_quan_     lies.id as IDCBQL','can_bo_quan_lies.diachi as diachiCBQL','can_bo_quan_lies.sodienthoai as sodienthoaiCBQL',
+            ->select('can_bo_quan_lies.*','can_bo_quan_lies.id as IDCBQL','can_bo_quan_lies.diachi as diachiCBQL','can_bo_quan_lies.sodienthoai as sodienthoaiCBQL',
                 'don_vi_duyets.*','don_vi_duyets.id as DonViDuyetID')
             ->where('user_id',$user->id)
             ->first();
@@ -145,7 +157,7 @@ class KiemDuyetController extends Controller
             $user = $request->user();
     
             $HoSo=DB::table('ho_sos')
-            ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.id','=','ho_sos.nguoi_dai_dien_id')
+            ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
             ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
             ->leftJoin('phieu_dang_kies','ho_sos.id','=','phieu_dang_kies.ho_so_id')
             ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')

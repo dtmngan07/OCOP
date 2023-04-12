@@ -39,19 +39,6 @@
                 <label for="" class="form-label">Tên sản phẩm đăng ký</label>
                 <input value="{{ $HoSo->SanPham}}" type="text" class="form-control" name="SanPham" id="SanPham">
             </div>
-
-            <div class="col-12">
-                <label for="" class="form-label">Tên người đại diện</label>
-                <input value="{{ $HoSo->NguoiDaiDien}}" type="text" class="form-control" name="NguoiDaiDien"
-                    id="TenNguoiDaiDien">
-            </div>
-
-            <div class="col-12">
-                <label for="" class="form-label">Địa chỉ người đại diện</label>
-                <input value="{{ $HoSo->DiaChi_NguoiDaiDien}}" type="text" class="form-control"
-                    name="DiaChi_NguoiDaiDien" id="TenNguoiDaiDien">
-            </div>
-
             <div class="col-12">
                 <label for="" class="form-label">Phiếu đăng ký</label>
                 <input value="{{ $HoSo->SoPhieuDK}}" type="text" class="form-control" name="SoPhieuDK" id="SoPhieuDK">

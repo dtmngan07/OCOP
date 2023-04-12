@@ -121,12 +121,12 @@
 
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 label">Người đại diện</div>
-                                    <div class="col-lg-9 col-md-8">{{ $HoSo -> NguoiDaiDien}}</div>
+                                    <div class="col-lg-9 col-md-8">{{ $HoSo -> TenNguoiDaiDien}}</div>
                                 </div>
 
                                 <div class="row">
                                     <div class="col-lg-3 col-md-4 label">Địa chỉ người đại diện</div>
-                                    <div class="col-lg-9 col-md-8">{{ $HoSo -> DiaChi_NguoiDaiDien}}</div>
+                                    <div class="col-lg-9 col-md-8">{{ $HoSo -> DiaChiNguoiDaiDien}}</div>
                                 </div>
 
                             </div>
@@ -253,8 +253,8 @@
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Tên người điều hành chủ
                                             thể sản xuất:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="NguoiDaiDien" type="text" class="form-control" id=""
-                                                value="{{$HoSo->	NguoiDaiDien }}" readonly>
+                                            <input name="TenNguoiDaiDien" type="text" class="form-control" id=""
+                                                value="{{$HoSo->TenNguoiDaiDien }}" readonly>
                                         </div>
                                     </div>
 
@@ -262,8 +262,8 @@
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của
                                             người điều hành:</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <input name="DiaChi_NguoiDaiDien" type="text" class="form-control" id=""
-                                                value="{{$HoSo->DiaChi_NguoiDaiDien }}" readonly>
+                                            <input name="DiaChiNguoiDaiDien" type="text" class="form-control" id=""
+                                                value="{{$HoSo->DiaChiNguoiDaiDien }}" readonly>
                                         </div>
                                     </div>
 
@@ -1871,8 +1871,8 @@
                                 <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của người điều
                                     hành:</label>
                                 <div class="col-md-8 col-lg-9">
-                                    <input name="DiaChi_NguoiDaiDien" type="text" class="form-control"
-                                        id="DiaChi_NguoiDaiDien" value="{{ $HoSo->DiaChi_NguoiDaiDien}}" readonly>
+                                    <input name="DiaChiNguoiDaiDien" type="text" class="form-control"
+                                        id="DiaChiNguoiDaiDien" value="{{ $HoSo->DiaChiNguoiDaiDien}}" readonly>
                                 </div>
                             </div>
 

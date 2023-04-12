@@ -19,7 +19,7 @@
             </div>
             <div class="row mb-3">
                 <label for="" class="col-md-4 col-lg-3 col-form-label">
-                    Đất và văn phòng: rỗng
+                    Đất và văn phòng:
                 </label>
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">

@@ -83,14 +83,14 @@ Route::middleware([
 
     /* PHẦN QUẢN LÝ TRANG NGƯỜI DÙNG */
     Route::get('/nguoidung','App\Http\Controllers\AdminController@getdashboardUser' );
+
     Route::get('/nguoidung/hoso','App\Http\Controllers\HoSoController@getHoSo' ); //xem hồ sơ doanh nghiệp
     Route::get('/nguoidung/hoso/sua','App\Http\Controllers\HoSoController@get_CapNhat_HoSo' );
     Route::post('/nguoidung/hoso/sua','App\Http\Controllers\HoSoController@post_CapNhat_HoSo' );
 
-    Route::get('/nguoidung/hosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@getHoSo_NguoiDaiDien' );
-    Route::get('/nguoidung/hosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@getHoSo_NguoiDaiDien' );
-    Route::get('/nguoidung/capnhathosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@getThemHoSo_NguoiDaiDien' );
-    Route::post('/nguoidung/capnhathosonguoidaidien','App\Http\Controllers\NguoiDaiDienController@postThemHoSo_NguoiDaiDien' );
+    Route::get('/nguoidung/nguoidaidien','App\Http\Controllers\NguoiDaiDienController@get_NguoiDaiDien' );
+    Route::get('/nguoidung/nguoidaidien/sua','App\Http\Controllers\NguoiDaiDienController@getHoSo_NguoiDaiDien' );
+    Route::post('/nguoidung/nguoidaidien/sua','App\Http\Controllers\NguoiDaiDienController@postHoSo_NguoiDaiDien' );
 
     //CẬP NHẬT THÔNG TIN CHO MẪU 2
     Route::get('nguoidung/mau2','App\Http\Controllers\Mau2Controller@getMau2' );

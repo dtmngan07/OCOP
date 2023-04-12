@@ -22,8 +22,8 @@
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của người điều
                             hành:</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="DiaChi_NguoiDaiDien" type="text" class="form-control" id="DiaChi_NguoiDaiDien"
-                                value="{{ $Mau4->DiaChi_NguoiDaiDien}}" readonly>
+                            <input name="DiaChiNguoiDaiDien" type="text" class="form-control" id="DiaChiNguoiDaiDien"
+                                value="{{ $Mau4->DiaChiNguoiDaiDien}}" readonly>
                         </div>
                     </div>
 
@@ -120,7 +120,7 @@
                         </div>
                     </div>
                     @else
-                    <input value="{{$Mau4->id}}" type="text" class="form-control" name="id" hidden>
+                    <input value="" type="text" class="form-control" name="id" hidden>
                     <div class="row mb-3">
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
                         <div class="col-md-8 col-lg-9">
@@ -132,8 +132,8 @@
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của người điều
                             hành:</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="DiaChi_NguoiDaiDien" type="text" class="form-control" id="DiaChi_NguoiDaiDien"
-                                value="{{ $Mau4->DiaChi_NguoiDaiDien}}" readonly>
+                            <input name="DiaChiNguoiDaiDien" type="text" class="form-control" id="DiaChiNguoiDaiDien"
+                                value="{{ $Mau4->DiaChiNguoiDaiDien}}" readonly>
                         </div>
                     </div>
 
@@ -181,7 +181,7 @@
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Sự tham gia của cộng đồng:</label>
                         <div class="col-md-8 col-lg-9">
                             <textarea name="CongDong" type="text" class="form-control"
-                                id="CongDong">{!! $Mau4->CongDong !!}</textarea>
+                                id="CongDong"></textarea>
                         </div>
                     </div>
 
@@ -189,7 +189,7 @@
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Hoạt động kế toán của cơ sở:</label>
                         <div class="col-md-8 col-lg-9">
                             <textarea name="HoatDongKeToan" type="text" class="form-control"
-                                id="HoatDongKeToan">{!! $Mau4->HoatDongKeToan!!}</textarea>
+                                id="HoatDongKeToan"></textarea>
                         </div>
                     </div>
 
@@ -197,7 +197,7 @@
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Tình hình tiếp thị của sản phẩm:</label>
                         <div class="col-md-8 col-lg-9">
                             <textarea name="TinhHinhTiepThi" type="text" class="form-control"
-                                id="TinhHinhTiepThi">{!! $Mau4->TinhHinhTiepThi!!}</textarea>
+                                id="TinhHinhTiepThi"></textarea>
                         </div>
                     </div>
 
@@ -205,7 +205,7 @@
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Phương án bảo vệ môi trường:</label>
                         <div class="col-md-8 col-lg-9">
                             <textarea name="PhuongAnBaoVeMoiTruong" type="text" class="form-control"
-                                id="PhuongAnBaoVeMoiTruong">{!! $Mau4->PhuongAnBaoVeMoiTruong !!}</textarea>
+                                id="PhuongAnBaoVeMoiTruong"></textarea>
                         </div>
                     </div>
                     @endif

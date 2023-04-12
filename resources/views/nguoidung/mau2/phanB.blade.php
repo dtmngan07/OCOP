@@ -48,8 +48,8 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Tên người điều hành chủ
                     thể sản xuất:</label>
                 <div class="col-md-8 col-lg-9">
-                    <input name="NguoiDaiDien" type="text" class="form-control" id=""
-                        value="{{$PhanB->	NguoiDaiDien }}" readonly>
+                    <input name="TenNguoiDaiDien" type="text" class="form-control" id=""
+                        value="{{$PhanB->TenNguoiDaiDien }}" readonly>
                 </div>
             </div>
 
@@ -57,8 +57,8 @@
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ thường trú của
                     người điều hành:</label>
                 <div class="col-md-8 col-lg-9">
-                    <input name="DiaChi_NguoiDaiDien" type="text" class="form-control" id=""
-                        value="{{$PhanB->DiaChi_NguoiDaiDien }}" readonly>
+                    <input name="DiaChiNguoiDaiDien" type="text" class="form-control" id=""
+                        value="{{$PhanB->DiaChiNguoiDaiDien }}" readonly>
                 </div>
             </div>
 

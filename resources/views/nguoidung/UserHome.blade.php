@@ -54,7 +54,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ URL::to('home') }}" class="nav-item nav-link active">Trang chủ</a>
+                <a href="{{ URL::to('/nguoidung') }}" class="nav-item nav-link active">Trang chủ</a>
                 <a href="http://ocop.gov.vn/" class="nav-item nav-link">Thông tin chương trình</a>
                 <a href="https://ocop.angiang.gov.vn/" class="nav-item nav-link">Trang chủ Ocop An Giang</a>
 
@@ -124,6 +124,19 @@
                             <i class="far fa-file" style='font-size:50px'></i><hr>
                             <h5 class="mb-3">Cập nhật thông tin mẫu 4</h5><br>
                             <a href="{{ URL::to('/nguoidung/capnhatmau4') }}"
+                                class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
+                                Xem và cập nhật
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item text-center pt-3">
+                        <div class="p-4">
+                            <i class="far fa-file" style='font-size:50px'></i><hr>
+                            <h5 class="mb-3">Cập nhật thông tin người đại diện doanh nghiệp</h5><br>
+                            <a href="{{ URL::to('/nguoidung/nguoidaidien') }}"
                                 class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
                                 Xem và cập nhật
                             </a>

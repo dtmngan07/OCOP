@@ -21,7 +21,7 @@ class Mau4Controller extends Controller
     $user = $request->user();
 
     $Mau4=DB::table('ho_sos')
-    ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.id','=','ho_sos.nguoi_dai_dien_id')
+    ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
     ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
     ->leftJoin('phieu_dang_kies','phieu_dang_kies.id','=','ho_sos.phieu_dang_ki_id')
     ->leftJoin('users','users.id','=','ho_sos.user_id')

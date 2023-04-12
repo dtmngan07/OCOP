@@ -112,12 +112,12 @@
 
                     <div class="row">
                         <div class="col-lg-3 col-md-4 label">Người đại diện</div>
-                        <div class="col-lg-9 col-md-8">{{ $HoSo -> NguoiDaiDien}}</div>
+                        <div class="col-lg-9 col-md-8">{{ $HoSo -> TenNguoiDaiDien}}</div>
                     </div>
 
                     <div class="row">
                         <div class="col-lg-3 col-md-4 label">Địa chỉ người đại diện</div>
-                        <div class="col-lg-9 col-md-8">{{ $HoSo -> DiaChi_NguoiDaiDien}}</div>
+                        <div class="col-lg-9 col-md-8">{{ $HoSo -> DiaChiNguoiDaiDien}}</div>
                     </div>
 
                 </div>
