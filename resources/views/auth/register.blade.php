@@ -27,6 +27,7 @@
         <x-jet-validation-errors class="mb-4" />
 
         <form method="POST" action="{{ route('register') }}">
+            <h1 style="text-align:center;font-size: 24px;"><b>ĐĂNG KÝ TÀI KHOẢN</b></h1><br>
             @csrf
 
             <div>

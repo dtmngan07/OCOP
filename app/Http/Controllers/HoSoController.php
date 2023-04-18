@@ -137,6 +137,18 @@ class HoSoController extends Controller
         return view('admin.quanlyhoso.chitiethoso')->with('HoSo',$HoSo);
     }
 
+    public function DuyetHoSo(Request $request,$id){
+        $request->user()->authorizeRoles(['admin','kiemduyet']);
+        $user = $request->user();
+
+        $HoSo= array();
+        $HoSo['TrangThai'] = $request->TrangThai;
+
+        $save = DB::table('ho_sos')->where('ho_sos.id',$id)->update($HoSo);
+        
+        return back();
+    }
+
     public function get_Xoa_HoSo($id){
         DB::table('ho_sos')->delete($id);
 

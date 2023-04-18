@@ -134,7 +134,7 @@
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="service-item text-center pt-3">
                         <div class="p-4">
-                            <i class="far fa-file" style='font-size:50px'></i><hr>
+                            <i class="fas fa-user-alt" style='font-size:50px'></i><hr>
                             <h5 class="mb-3">Cập nhật thông tin người đại diện doanh nghiệp</h5><br>
                             <a href="{{ URL::to('/nguoidung/nguoidaidien') }}"
                                 class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">

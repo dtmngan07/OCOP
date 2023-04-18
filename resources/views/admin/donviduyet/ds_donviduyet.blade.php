@@ -32,8 +32,8 @@
                     <td>{{ $iteam -> diachi }}</td>
                     <td>{{ $iteam -> sodienthoai }}</td>
                     <td>{{ $iteam -> tencapduyet}}</td>
-                    <td><a href="{{ URL::to('/admin/donviduyet/sua',['id' => $iteam->DonViDuyet_id]) }}" class="btn btn-info"><i class="bi bi-pencil-fill"></i></a></td>
-                    <td><a href="{{ URL::to('/admin/donviduyet/xoa',['id' => $iteam->DonViDuyet_id]) }}" class="btn btn-info"><i class="bi bi-x-lg"></i></a></td>
+                    <td><a href="{{ URL::to('/admin/donviduyet/sua',['id' => $iteam->DonViDuyet_id]) }}" class="btn btn-warning"><i class="bi bi-pencil-fill"></i></a></td>
+                    <td><a href="{{ URL::to('/admin/donviduyet/xoa',['id' => $iteam->DonViDuyet_id]) }}" class="btn btn-danger"><i class="bi bi-x-lg"></i></a></td>
                 </tr>
                 @endforeach
             </tbody>

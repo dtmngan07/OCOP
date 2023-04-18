@@ -45,6 +45,8 @@ Route::middleware([
     Route::get('/admin/xemchitiet/{id}','App\Http\Controllers\HoSoController@getXemChiTiet' );
     Route::get('/admin/xoa/{id}','App\Http\Controllers\HoSoController@get_Xoa_HoSo' );
 
+    Route::post('/admin/duyetHS/{id}','App\Http\Controllers\HoSoController@DuyetHoSo' );
+
     Route::get('/admin/dscanboquanly','App\Http\Controllers\CanBoQuanLyController@getDS_CanBoQuanLy' );
     Route::get('/admin/canboquanly/them','App\Http\Controllers\CanBoQuanLyController@get_Them_CanBoQuanLy' );
     Route::post('/savethem','App\Http\Controllers\CanBoQuanLyController@post_Them_CanBoQuanLy' );
@@ -134,8 +136,6 @@ Route::middleware([
     Route::get('/nguoidung/capnhatmau4','App\Http\Controllers\Mau4Controller@get_capnhat_Mau4');
     Route::post('/nguoidung/capnhatmau4','App\Http\Controllers\Mau4Controller@post_capnhat_Mau4');
 
-    Route::get('/nguoidung/uploadfile','App\Http\Controllers\HoSoController@getuploadfile' );
-    Route::post('/nguoidung/uploadfile','App\Http\Controllers\HoSoController@postuploadfile' );
 });
 
 require_once __DIR__ . '../jetstream.php';

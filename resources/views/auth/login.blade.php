@@ -33,8 +33,8 @@
         @endif
 
         <form method="POST" action="{{ route('login') }}">
+            <h1 style="text-align:center;font-size: 24px;"><b>ĐĂNG NHẬP</b></h1>
             @csrf
-
             <div>
                 <x-jet-label for="email" value="{{ __('Email') }}" />
                 <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />

@@ -71,7 +71,7 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <span class="d-none d-md-block ps-2">
-            {{ Auth::user()->name }}
+            Xin chào {{ Auth::user()->name }}
             </span>
           </a><!-- End Profile Iamge Icon -->
           
@@ -89,7 +89,7 @@
       <li class="nav-heading">QUẢN LÝ CHUNG</li>
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{ URL::to('admin/dshoso') }}">
-          <i class="bi bi-card-list"></i>
+          <i class="bi bi-clipboard"></i>
           <span>Danh sách hồ sơ đăng ký</span>
         </a>
       </li>
@@ -103,21 +103,21 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{ URL::to('admin/dsdonviduyet') }}">
-          <i class="bi bi-card-list"></i>
+          <i class="bi bi-people"></i>
           <span>Danh sách tài khoản kiểm duyệt</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{ URL::to('admin/dsphieudangky') }}">
-          <i class="bi bi-card-list"></i>
+          <i class="bi bi-file-text"></i>
           <span>Phiếu đăng ký</span>
         </a>
       </li>
 
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{ URL::to('/admin/quanlytaikhoan') }}">
-          <i class="bi bi-card-list"></i>
+          <i class="bi bi-person-square"></i>
           <span>Quản lý tài khoản</span>
         </a>
       </li>

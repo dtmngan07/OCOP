@@ -71,7 +71,7 @@
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <span class="d-none d-md-block ps-2">
-            {{ Auth::user()->name }}
+            Xin chào {{ Auth::user()->name }}
             </span>
           </a><!-- End Profile Iamge Icon -->
           

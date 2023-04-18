@@ -31,8 +31,8 @@
                     <td>{{ $iteam->ngaydangky}}</td>
                     <td>{{ $iteam->TenDonVi}}</td>
                     <td>{{ $iteam->ho_so_id}}</td>
-                    <td><a href="{{ URL::to('/admin/phieudangky/sua',['id' => $iteam->Phieu_id]) }}" class="btn btn-info"><i class="bi bi-pencil-fill"></i></a></td>
-                    <td><a href="{{ URL::to('/admin/phieudangky/xoa',['id' => $iteam->Phieu_id]) }}" class="btn btn-info"><i class="bi bi-x-lg"></i></a></td>
+                    <td><a href="{{ URL::to('/admin/phieudangky/sua',['id' => $iteam->Phieu_id]) }}" class="btn btn-warning"><i class="bi bi-pencil-fill"></i></a></td>
+                    <td><a href="{{ URL::to('/admin/phieudangky/xoa',['id' => $iteam->Phieu_id]) }}" class="btn btn-danger"><i class="bi bi-x-lg"></i></a></td>
                 </tr>
                 @endforeach
             </tbody>

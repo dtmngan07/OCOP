@@ -1972,6 +1972,31 @@
             </div>
         </section>
 
+        <div class="card">
+            <div class="card-body">
+                <h5 style="text-align: center" class="card-title">TRẠNG THÁI HỒ SƠ</h5>
+
+                <!-- Vertical Form -->
+                <form action="{{ URL::to('admin/duyetHS',['id' => $HoSo->id]) }}" enctype="multipart/form-data" class="row g-3" method="POST">
+                    @csrf
+                    <div class="col-12">
+                        <label for="" class="form-label">Trạng thái</label>
+
+                        <select class="col-md-8 col-lg-9 form-select" id="TrangThai" name="TrangThai">
+                            <option value="0" @if($HoSo->TrangThai == 0) selected @endif>Hồ sơ chưa được duyệt</option>
+                            <option value="1" @if($HoSo->TrangThai == 1) selected @endif>Yêu cầu bổ sung hồ sơ</option>
+                            <option value="2" @if($HoSo->TrangThai == 2) selected @endif>Hồ sơ đã được duyệt</option>
+                        </select>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary">Cập nhật</button>
+                    </div>
+                </form><!-- Vertical Form -->
+
+            </div>
+        </div>
+
         <script src="//cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
         <script>
             CKEDITOR.replace('MoTaQuyCachSanPham');

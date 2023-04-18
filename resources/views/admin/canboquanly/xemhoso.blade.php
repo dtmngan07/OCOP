@@ -31,8 +31,8 @@
                     <td>{{ $iteam -> diachi }}</td>
                     <td>{{ $iteam -> sodienthoai }}</td>
                     <td>{{ $iteam -> role_name }}</td>
-                    <td><a href="{{ URL::to('/admin/canboquanly/xoa',['id' => $iteam->CBQL_id]) }}" class="btn btn-info"><i class="bi bi-x-lg"></i></a></td>
-                    <td><a href="{{ URL::to('/admin/canboquanly/sua',['id' => $iteam->CBQL_id]) }}" class="btn btn-info"><i class="bi bi-pencil-fill"></i></a></td>
+                    <td><a href="{{ URL::to('/admin/canboquanly/xoa',['id' => $iteam->CBQL_id]) }}" class="btn btn-warning"><i class="bi bi-x-lg"></i></a></td>
+                    <td><a href="{{ URL::to('/admin/canboquanly/sua',['id' => $iteam->CBQL_id]) }}" class="btn btn-danger"><i class="bi bi-pencil-fill"></i></a></td>
                 </tr>
                 @endforeach
             </tbody>

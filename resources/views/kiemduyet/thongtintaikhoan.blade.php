@@ -23,12 +23,6 @@
                         id="diachi">
                 </div>
 
-                <div class="col-12">
-                    <label for="" class="form-label">ID đơn vị duyệt</label>
-                    <input value="{{$ThongTinCaNhan->donviduyetID}}" type="text" class="form-control" name="donviduyetID"
-                        id="donviduyetID">
-                </div>
-
                 <div class="text-center">
                     <a href="{{ URL::to('/kiemduyet/thongtintaikhoancanhan/sua') }}" class="btn btn-info">Cập nhật thông
                         tin cá nhân</a>

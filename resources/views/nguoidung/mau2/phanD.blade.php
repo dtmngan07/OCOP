@@ -180,24 +180,21 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="form-check">
-                            <input name="MucDoHoatDongSanXuat[]" value="Thường xuyên hàng ngày" class="form-check-input" type="checkbox"
-                            {{ in_array("Thường xuyên hàng ngày", explode(' - ', $PhanD->MucDoHoatDongSanXuat)) ? 'checked' : '' }}>
+                            <input name="MucDoHoatDongSanXuat[]" value="Thường xuyên hàng ngày" class="form-check-input" type="checkbox">
                             <label class="form-check-label">
                                 Thường xuyên hàng ngày
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input name="MucDoHoatDongSanXuat[]" value="Theo tuần" class="form-check-input" type="checkbox"
-                            {{ in_array("Theo tuần", explode(' - ', $PhanD->MucDoHoatDongSanXuat)) ? 'checked' : '' }}>
+                            <input name="MucDoHoatDongSanXuat[]" value="Theo tuần" class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="gridCheck2">
                                 Theo tuần
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input name="MucDoHoatDongSanXuat[]" value="Theo tháng" class="form-check-input" type="checkbox"
-                            {{ in_array("Theo tháng", explode(' - ', $PhanD->MucDoHoatDongSanXuat)) ? 'checked' : '' }}>
+                            <input name="MucDoHoatDongSanXuat[]" value="Theo tháng" class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="gridCheck2">
                                 Theo tháng
                             </label>
@@ -223,24 +220,21 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="form-check">
-                            <input name="MucDoBanSanPham[]" value="Thường xuyên hàng ngày" class="form-check-input" type="checkbox" 
-                            {{ in_array("Thường xuyên hàng ngày", explode(' - ', $PhanD->MucDoBanSanPham)) ? 'checked' : '' }}>
+                            <input name="MucDoBanSanPham[]" value="Thường xuyên hàng ngày" class="form-check-input" type="checkbox" >
                             <label class="form-check-label" for="gridCheck1">
                                 Thường xuyên hàng ngày
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input name="MucDoBanSanPham[]" value="Theo tuần" class="form-check-input" type="checkbox"
-                            {{ in_array("Theo tuần", explode(' - ', $PhanD->MucDoBanSanPham)) ? 'checked' : '' }}>
+                            <input name="MucDoBanSanPham[]" value="Theo tuần" class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="gridCheck2">
                                 Theo tuần
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input name="MucDoBanSanPham[]" value="Theo tháng" class="form-check-input" type="checkbox"
-                            {{ in_array("Theo tháng", explode(' - ', $PhanD->MucDoBanSanPham)) ? 'checked' : '' }}>
+                            <input name="MucDoBanSanPham[]" value="Theo tháng" class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="gridCheck2">
                                 Theo tháng
                             </label>
@@ -256,32 +250,28 @@
                 <div class="col-md-8 col-lg-9">
                     <div class="col-sm-10">
                         <div class="form-check">
-                            <input name="DoiTuongKhachHang[]" value="Khá giả" class="form-check-input" type="checkbox"
-                            {{ in_array("Khá giả", explode(' - ', $PhanD->DoiTuongKhachHang)) ? 'checked' : '' }}>
+                            <input name="DoiTuongKhachHang[]" value="Khá giả" class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="gridCheck1">
                                 Khá giả
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input name="DoiTuongKhachHang[]" value="Bình dân" class="form-check-input" type="checkbox"
-                            {{ in_array("Bình dân", explode(' - ', $PhanD->DoiTuongKhachHang)) ? 'checked' : '' }}>
+                            <input name="DoiTuongKhachHang[]" value="Bình dân" class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="gridCheck2">
                                 Bình dân
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input name="DoiTuongKhachHang[]" value="Nông thôn" class="form-check-input" type="checkbox"
-                            {{ in_array("Nông thôn", explode(' - ', $PhanD->DoiTuongKhachHang)) ? 'checked' : '' }}>
+                            <input name="DoiTuongKhachHang[]" value="Nông thôn" class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="gridCheck2">
                                 Nông thôn
                             </label>
                         </div>
 
                         <div class="form-check">
-                            <input name="DoiTuongKhachHang[]" value="Thành thị" class="form-check-input" type="checkbox"
-                            {{ in_array("Thành thị", explode(' - ', $PhanD->DoiTuongKhachHang)) ? 'checked' : '' }}>
+                            <input name="DoiTuongKhachHang[]" value="Thành thị" class="form-check-input" type="checkbox">
                             <label class="form-check-label" for="gridCheck2">
                                 Thành thị
                             </label>
@@ -329,5 +319,6 @@
     <script src="//cdn.ckeditor.com/4.16.2/full-all/ckeditor.js"></script>
     <script>
     CKEDITOR.replace('ThiTruong');
+    </script>
 </main>
 @endsection
