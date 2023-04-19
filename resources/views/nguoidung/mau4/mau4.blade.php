@@ -124,7 +124,7 @@
                     <div class="row mb-3">
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="" type="text" class="form-control" id="" value="{{$Mau4->TenDonVi}}" readonly>
+                            <input name="TenDonVi" type="text" class="form-control" id="" value="" readonly>
                         </div>
                     </div>
 
@@ -133,7 +133,7 @@
                             hành:</label>
                         <div class="col-md-8 col-lg-9">
                             <input name="DiaChiNguoiDaiDien" type="text" class="form-control" id="DiaChiNguoiDaiDien"
-                                value="{{ $Mau4->DiaChiNguoiDaiDien}}" readonly>
+                                value="" readonly>
                         </div>
                     </div>
 
@@ -141,14 +141,14 @@
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Địa chỉ xưởng sản xuất:</label>
                         <div class="col-md-8 col-lg-9">
                             <input name="DiaChiXuong" type="text" class="form-control" id="DiaChiXuong"
-                                value="{{ $Mau4->DiaChiXuong}}" readonly>
+                                value="" readonly>
                         </div>
                     </div>
 
                     <div class="row mb-3">
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Số điện thoại:</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="DienThoai" type="text" class="form-control" id="" value="{{ $Mau4->DienThoai}}"
+                            <input name="DienThoai" type="text" class="form-control" id="" value=""
                                 readonly>
                         </div>
                     </div>
@@ -156,7 +156,7 @@
                     <div class="row mb-3">
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Email:</label>
                         <div class="col-md-8 col-lg-9">
-                            <input name="Email" type="text" class="form-control" id="Email" value="{{ $Mau4->Email}}"
+                            <input name="Email" type="text" class="form-control" id="Email" value=""
                                 readonly>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                         <label for="" class="col-md-4 col-lg-3 col-form-label">Website:</label>
                         <div class="col-md-8 col-lg-9">
                             <input name="Website" type="text" class="form-control" id="Website"
-                                value="{{ $Mau4->Website}}" readonly>
+                                value="" readonly>
                         </div>
                     </div>
 

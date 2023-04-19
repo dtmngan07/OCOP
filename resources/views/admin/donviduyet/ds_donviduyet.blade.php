@@ -10,7 +10,6 @@
             
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">id đơn vị duyệt</th>
                     <th scope="col">Đơn vị</th>
                     <th scope="col">Địa chỉ</th>
                     <th scope="col">Số điện thoại</th>
@@ -27,7 +26,6 @@
                 <tr>
                 @csrf
                     <td>{{++$i}}</td>
-                    <td>{{$iteam->DonViDuyet_id}}</td>
                     <td>{{ $iteam -> tendonvi }}</td>
                     <td>{{ $iteam -> diachi }}</td>
                     <td>{{ $iteam -> sodienthoai }}</td>

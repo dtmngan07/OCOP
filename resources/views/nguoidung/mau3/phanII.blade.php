@@ -35,25 +35,25 @@
             </div>
 
             @else
-            <input value="{{$PhanII->id}}" type="text" class="form-control" name="id" hidden>
+            <input value="" type="text" class="form-control" name="id" hidden>
             <div class="row mb-3">
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Đánh giá chung về tình hình thị trường</label>
                 <div class="col-md-8 col-lg-9">
-                    <textarea name="DanhGiaThiTruong" type="text" class="form-control" id="DanhGiaThiTruong">{!!$PhanII->DanhGiaThiTruong!!}</textarea>
+                    <textarea name="DanhGiaThiTruong" type="text" class="form-control" id="DanhGiaThiTruong"></textarea>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Đánh giá khả năng tham gia thị trường</label>
                 <div class="col-md-8 col-lg-9">
-                    <textarea name="DanhGiaKhaNangThamGiaThiTruong" type="text" class="form-control" id="DanhGiaKhaNangThamGiaThiTruong" >{!!$PhanII->DanhGiaKhaNangThamGiaThiTruong!!}</textarea>
+                    <textarea name="DanhGiaKhaNangThamGiaThiTruong" type="text" class="form-control" id="DanhGiaKhaNangThamGiaThiTruong" ></textarea>
                 </div>
             </div>
 
             <div class="row mb-3">
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Căn cứ pháp lý thành lập và hoạt động</label>
                 <div class="col-md-8 col-lg-9">
-                    <textarea name="CanCuPhapLy" type="text" class="form-control" id="CanCuPhapLy">{!!$PhanII->CanCuPhapLy!!}</textarea> 
+                    <textarea name="CanCuPhapLy" type="text" class="form-control" id="CanCuPhapLy"></textarea> 
                 </div>
             </div>
             @endif

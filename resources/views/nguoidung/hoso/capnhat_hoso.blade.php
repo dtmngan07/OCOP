@@ -40,11 +40,6 @@
                 <input value="{{ $HoSo->SanPham}}" type="text" class="form-control" name="SanPham" id="SanPham">
             </div>
             <div class="col-12">
-                <label for="" class="form-label">Phiếu đăng ký</label>
-                <input value="{{ $HoSo->SoPhieuDK}}" type="text" class="form-control" name="SoPhieuDK" id="SoPhieuDK">
-            </div>
-
-            <div class="col-12">
                 <label for="" class="form-label">Giấy đăng ký kinh doanh</label>
                 <input value="{{ $HoSo->GiayDKKD}}" type="text" class="form-control" name="GiayDKKD" id="GiayDKKD">
             </div>
@@ -67,7 +62,7 @@
 
             <div class="col-12">
                 <label for="" class="form-label">Loại hình tố chức</label>
-                <select class="form-control" value="{{$HoSo->ten}}"  id="loai_hinh_to_chuc_id" name="loai_hinh_to_chuc_id" required>
+                <select class="form-select" value="{{$HoSo->ten}}"  id="loai_hinh_to_chuc_id" name="loai_hinh_to_chuc_id" required>
                     <option value="">-- Chọn --</option>
                     @foreach($LoaiHinhToChuc as $value)
                     @if ($value->loaihinhtochuc_id == $HoSo->loai_hinh_to_chuc_id)
@@ -122,16 +117,6 @@
             </div>
 
             <div class="col-12">
-                <label for="" class="form-label">Tên người đại diện</label>
-                <input value="" type="text" class="form-control" name="NguoiDaiDien" id="NguoiDaiDien">
-            </div>
-
-            <div class="col-12">
-                <label for="" class="form-label">Phiếu đăng ký</label>
-                <input value="" type="text" class="form-control" name="SoPhieuDK" id="SoPhieuDK">
-            </div>
-
-            <div class="col-12">
                 <label for="" class="form-label">Giấy đăng ký kinh doanh</label>
                 <input value="" type="text" class="form-control" name="GiayDKKD" id="GiayDKKD">
             </div>
@@ -153,12 +138,7 @@
 
             <div class="col-12">
                 <label for="" class="form-label">Loại hình tố chức</label>
-                <input value="" type="text" class="form-control" name="ten" id="ten">
-            </div>
-
-            <div class="col-12">
-                <label for="" class="form-label">Loại hình tố chức</label>
-                <select value="" class="" id="loai_hinh_to_chuc_id" name="loai_hinh_to_chuc_id" required>
+                <select value="" class="form-select" id="loai_hinh_to_chuc_id" name="loai_hinh_to_chuc_id" required>
                     <option value="">-- Chọn --</option>
                     @foreach($LoaiHinhToChuc as $value)
                     <option value="{{ $value->loaihinhtochuc_id}}">{{ $value->ten}}</option>

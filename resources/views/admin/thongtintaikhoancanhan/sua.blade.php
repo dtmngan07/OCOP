@@ -3,7 +3,7 @@
 <section class="section profile">
     <div class="card">
         <div class="card-body">
-            <h5 class="card-title">Sửa thông tin tài khoản</h5>
+            <h5 style="text-align: center;" class="card-title">Cập nhật thông tin tài khoản</h5>
 
             <!-- Vertical Form -->
             <form  action="{{ URL::to('/admin/thongtintaikhoancanhan/sua') }}" enctype="multipart/form-data" class="row g-3" method="POST">

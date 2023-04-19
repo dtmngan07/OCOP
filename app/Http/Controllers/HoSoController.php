@@ -23,7 +23,7 @@ class HoSoController extends Controller
         $HoSo=DB::table('ho_sos')
         ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
         ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
-        ->leftJoin('phieu_dang_kies','ho_sos.id','=','phieu_dang_kies.ho_so_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
         ->leftJoin('users','users.id','=','ho_sos.user_id')
         ->where('users.id',$user->id)
         ->first();
@@ -49,9 +49,9 @@ class HoSoController extends Controller
         $user = $request->user();
 
         $HoSo=DB::table('ho_sos')
-        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.id','=','ho_sos.nguoi_dai_dien_id')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
         ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
-        ->leftJoin('phieu_dang_kies','phieu_dang_kies.id','=','ho_sos.phieu_dang_ki_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
         ->leftJoin('users','users.id','=','ho_sos.user_id')
         ->where('users.id',$user->id)
         ->first();
@@ -69,7 +69,6 @@ class HoSoController extends Controller
         $HoSo = array();
         $HoSo['SanPham'] = $request->SanPham;
         $HoSo['TenDonVi'] = $request->TenDonVi;
-        $HoSo['SoPhieuDK'] = $request->SoPhieuDK;
         $HoSo['GiayDKKD'] = $request->GiayDKKD ;
         $HoSo['NgayDKKD'] = $request->	NgayDKKD ;
         $HoSo['SoDKKD'] = $request->SoDKKD ;
@@ -81,19 +80,9 @@ class HoSoController extends Controller
         $HoSo['DiaChiCty'] = $request->DiaChiCty ;
         $HoSo['VonDieuLe'] = $request->VonDieuLe ;
         $HoSo['loai_hinh_to_chuc_id'] = $request->loai_hinh_to_chuc_id;
-        $HoSo['nguoi_dai_dien_id'] = $request->nguoi_dai_dien_id;
         $HoSo['user_id']=$user->id;
         if($request->file('BieuTuong')){
 
-            if($request->id != null){
-                $data = DB::table('ho_sos')
-                ->where('user_id',$user->id)
-                ->first();
-
-                $file_name ='bieutuong/'. $data->BieuTuong;
-
-                unlink(public_path($file_name));
-            }
             $file= $request->file('BieuTuong');
             $filename= $HoSo['TenDonVi'].'_Biểu tượng_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('bieutuong'), $filename);
@@ -129,7 +118,7 @@ class HoSoController extends Controller
         $HoSo=DB::table('ho_sos')
         ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
         ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
-        ->leftJoin('phieu_dang_kies','ho_sos.id','=','phieu_dang_kies.ho_so_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
         ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
         ->where('ho_sos.id',$id)
         ->first();

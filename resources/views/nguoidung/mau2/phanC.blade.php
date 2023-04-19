@@ -449,11 +449,11 @@
                 </div>
             </div>
             @else
-            <input value="{{$PhanC->id}}" type="text" class="form-control" name="id" hidden>
+            <input value="" type="text" class="form-control" name="id" hidden>
             <div class="row mb-3" hidden>
                 <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
                 <div class="col-md-8 col-lg-9">
-                    <input name="TenDonVi" type="text" class="form-control" id="" value="{{$PhanC-> TenDonVi}}">
+                    <input name="TenDonVi" type="text" class="form-control" id="" value="">
                 </div>
             </div>
             <div class="row mb-3">
