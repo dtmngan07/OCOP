@@ -20,11 +20,15 @@
                 <input value='{{$CanBoQuanLy->diachi}}' type="text" class="form-control" id="diachi" name="diachi">
             </div>
             <div class="col-12">
-                <label for="" class="form-label">Tên đơn vị</label>
-                <select value="{{$CanBoQuanLy->role_name}}" class="" id="user_id" name="user_id" required>
+                <label for="" class="form-label">Vai trò</label>
+                <select class="form-select" id="user_id" name="user_id" required>
                     <option value="">-- Chọn --</option>
                     @foreach($Role as $value)
+                    @if ($value->id == $CanBoQuanLy->user_id)
+                    <option value="{{ $value->id}}" selected>{{ $value->role_name }}</option>
+                    @else
                     <option value="{{ $value->id}}">{{ $value->role_name }}</option>
+                    @endif
                     @endforeach
                 </select>
             </div>

@@ -15,33 +15,169 @@ class AdminController extends Controller
    }
 
    public function getdashboard(Request $request){
-    $user = $request->user();
-    $role = DB::table('role_user')
+        $user = $request->user();
+        $role = DB::table('role_user')
         ->leftJoin('users','users.id','=','role_user.user_id')
         ->leftJoin('roles','roles.id','=','role_user.role_id')
         ->where('user_id',$user->id)
         ->first();
+        $HoSo=DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->get();
+
+        $DaDuyet = DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->where('TrangThai',2)
+        ->get();
+
+        $ChuaDuyet = DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->where('TrangThai',0)
+        ->get();
+
+        $BoSungHS = DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->where('TrangThai',1)
+        ->get();
+        $DonViDuyet = DB::table('users')
+        ->leftJoin('can_bo_quan_lies','can_bo_quan_lies.user_id','=','users.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.can_bo_quan_li_id','=','can_bo_quan_lies.id')
+        ->select('can_bo_quan_lies.*','can_bo_quan_lies.id as IDCBQL','can_bo_quan_lies.diachi as diachiCBQL','can_bo_quan_lies.sodienthoai as sodienthoaiCBQL',
+            'don_vi_duyets.*','don_vi_duyets.id as DonViDuyetID')
+        ->where('user_id',$user->id)
+        ->first();
 
         if ($role->role_name == 'admin')
-            return view('admin.trangchuAdmin');
+            return view('admin.trangchuAdmin')->with('HoSo',$HoSo)
+            ->with('DaDuyet', $DaDuyet)
+            ->with('ChuaDuyet', $ChuaDuyet)
+            ->with('BoSungHS',$BoSungHS);
         else if ($role->role_name == 'kiemduyet')
-            return view('kiemduyet.trangchuKiemDuyet');
+            return view('kiemduyet.trangchuKiemDuyet')
+            ->with('HoSo',$HoSo)->with('DonViDuyet', $DonViDuyet)
+            ->with('DaDuyet', $DaDuyet)
+            ->with('ChuaDuyet', $ChuaDuyet)
+            ->with('BoSungHS',$BoSungHS);
         else
             return view('nguoidung.trangchuUser');
 
 /*         return view('Home.home')->with('role',$role); */
     }
    public function getdashboardAdmin(Request $request){
+        $request->user()->authorizeRoles(['admin']);
+        $user = $request->user();
 
-        return view('admin.trangchuAdmin');
+        $HoSo=DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->get();
+
+        $DaDuyet = DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->where('TrangThai',2)
+        ->get();
+
+        $ChuaDuyet = DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->where('TrangThai',0)
+        ->get();
+
+        $BoSungHS = DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->where('TrangThai',1)
+        ->get();
+
+        return view('admin.trangchuAdmin')->with('HoSo',$HoSo)
+        ->with('DaDuyet', $DaDuyet)
+        ->with('ChuaDuyet', $ChuaDuyet)
+        ->with('BoSungHS',$BoSungHS);
     }
     public function getdashboardUser(Request $request){
         
             return view('nguoidung.trangchuUser');
     }
     public function getdashboardKiemDuyet(Request $request){
+        $request->user()->authorizeRoles(['kiemduyet']);
+        $user = $request->user();
+
+        $HoSo=DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->get();
+
+        $DaDuyet = DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->where('TrangThai',2)
+        ->get();
+
+        $ChuaDuyet = DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->where('TrangThai',0)
+        ->get();
+
+        $BoSungHS = DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->where('TrangThai',1)
+        ->get();
         
-        return view('kiemduyet.trangchuKiemDuyet');
+        $DonViDuyet = DB::table('users')
+        ->leftJoin('can_bo_quan_lies','can_bo_quan_lies.user_id','=','users.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.can_bo_quan_li_id','=','can_bo_quan_lies.id')
+        ->select('can_bo_quan_lies.*','can_bo_quan_lies.id as IDCBQL','can_bo_quan_lies.diachi as diachiCBQL','can_bo_quan_lies.sodienthoai as sodienthoaiCBQL',
+            'don_vi_duyets.*','don_vi_duyets.id as DonViDuyetID')
+        ->where('user_id',$user->id)
+        ->first();
+        
+        return view('kiemduyet.trangchuKiemDuyet')->with('HoSo',$HoSo)->with('DonViDuyet', $DonViDuyet)
+        ->with('DaDuyet', $DaDuyet)
+        ->with('ChuaDuyet', $ChuaDuyet)
+        ->with('BoSungHS',$BoSungHS);
 }
 
     public function get_DS_TaiKhoan(Request $request){

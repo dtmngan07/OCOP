@@ -22,10 +22,15 @@
 
             <div class="col-12">
                 <label for="" class="form-label">Cấp duyệt</label>
-                <select value="{{$DonViDuyet->tencapduyet}}" class="" id="cap_duyet_id " name="cap_duyet_id" required>
+                <select value="" class="form-select" id="cap_duyet_id " name="cap_duyet_id" required>
                     <option value="">-- Chọn --</option>
                     @foreach($CapDuyet as $value)
-                    <option value="{{ $value->id}}">{{ $value->tencapduyet }}</option>
+                        @if ($value->id == $DonViDuyet->cap_duyet_id)
+                        <option value="{{ $value->id}}" selected>{{ $value->tencapduyet }}</option>
+                        @else
+                        <option value="{{ $value->id}}">{{ $value->tencapduyet }}</option>
+                        @endif
+                    
                     @endforeach
                 </select>
             </div>

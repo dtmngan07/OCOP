@@ -83,6 +83,7 @@ Route::middleware([
     Route::get('/kiemduyet/xemchitiet/{id}','App\Http\Controllers\KiemDuyetController@getXemChiTiet' );
     Route::get('/kiemduyet/xoa/{id}','App\Http\Controllers\KiemDuyetController@get_Xoa_HoSo' );
 
+    Route::post('/kiemduyet/duyetHS/{id}','App\Http\Controllers\KiemDuyetController@DuyetHoSo' );
     /* PHẦN QUẢN LÝ TRANG NGƯỜI DÙNG */
     Route::get('/nguoidung','App\Http\Controllers\AdminController@getdashboardUser' );
 

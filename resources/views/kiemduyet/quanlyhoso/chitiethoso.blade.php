@@ -8,13 +8,7 @@
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
                         <img src="{{ asset('bieutuong/'.$HoSo ->BieuTuong) }}" alt="Profile" class="">
-                        <h2></h2>
-                        <div class="social-links mt-2">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                        </div>
+                        <h2>Ảnh đại diện</h2>
                     </div>
 
                 </div>
@@ -1977,7 +1971,7 @@
                 <h5 style="text-align: center" class="card-title">TRẠNG THÁI HỒ SƠ</h5>
 
                 <!-- Vertical Form -->
-                <form action="{{ URL::to('admin/duyetHS',['id' => $HoSo->id]) }}" enctype="multipart/form-data" class="row g-3" method="POST">
+                <form action="{{ URL::to('kiemduyet/duyetHS',['id' => $HoSo->HoSo_id]) }}" enctype="multipart/form-data" class="row g-3" method="POST">
                     @csrf
                     <div class="col-12">
                         <label for="" class="form-label">Trạng thái</label>

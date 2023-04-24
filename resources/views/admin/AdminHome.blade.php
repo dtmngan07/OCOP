@@ -43,8 +43,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-      <a href="{{ URL::to('AdminHome') }}" class="logo d-flex align-items-center">
-        <img src="assets/img/product.png" alt="">
+      <a href="{{ URL::to('dashboard') }}" class="logo d-flex align-items-center">
         <span class="d-none d-lg-block">Trang quản lý</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>

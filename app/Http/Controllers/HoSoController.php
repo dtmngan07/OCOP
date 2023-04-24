@@ -120,6 +120,7 @@ class HoSoController extends Controller
         ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
         ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
         ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
         ->where('ho_sos.id',$id)
         ->first();
         

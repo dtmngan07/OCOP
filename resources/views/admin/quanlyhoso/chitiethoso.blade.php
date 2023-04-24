@@ -8,13 +8,7 @@
                     <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
                         <img src="{{ asset('bieutuong/'.$HoSo ->BieuTuong) }}" alt="Profile" class="">
-                        <h2></h2>
-                        <div class="social-links mt-2">
-                            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-                        </div>
+                        <h2>Ảnh đại diện</h2>
                     </div>
 
                 </div>
@@ -297,7 +291,7 @@
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="MoTaQuyCachSanPham" type="text" class="form-control"
                                                 id="MoTaQuyCachSanPham"
-                                                value="">{!!$HoSo->MoTaQuyCachSanPham !!}</textarea>
+                                                value="" readonly>{!!$HoSo->MoTaQuyCachSanPham !!}</textarea>
                                         </div>
                                     </div>
                                     <br>
@@ -398,7 +392,7 @@
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="LichSuHinhThanh" type="text" class="form-control"
-                                                id="LichSuHinhThanh" value="">
+                                                id="LichSuHinhThanh"  readonly>
                                             {!!$HoSo->LichSuHinhThanh!!}
                                             </textarea>
                                         </div>
@@ -410,7 +404,7 @@
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="LyDoThanhLap" type="text" class="form-control"
-                                                id="LyDoThanhLap" value="">
+                                                id="LyDoThanhLap" readonly>
                                             {!! $HoSo->LyDoThanhLap !!}
                                             </textarea>
                                         </div>
@@ -423,7 +417,7 @@
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="GiaTriSanPham" type="text" class="form-control"
-                                                id="GiaTriSanPham" value="">
+                                                id="GiaTriSanPham" readonly>
                                             {!! $HoSo->GiaTriSanPham!!}
                                             </textarea>
                                         </div>
@@ -442,7 +436,7 @@
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="TenDonVi" type="text" class="form-control" id=""
-                                                value="{{$HoSo-> TenDonVi}}">
+                                                value="{{$HoSo-> TenDonVi}}" readonly>
                                         </div>
                                     </div>
                                     <div class="row mb-3">
@@ -864,7 +858,7 @@
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="TenDonVi" type="text" class="form-control" id=""
-                                                value="{{$HoSo-> TenDonVi}}">
+                                                value="{{$HoSo-> TenDonVi}}" readonly>
                                         </div>
                                     </div>
 
@@ -1043,7 +1037,7 @@
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="PhuongAnKinhDoanh" type="text" class="form-control"
-                                                id="PhuongAnKinhDoanh" value="">
+                                                id="PhuongAnKinhDoanh" readonly>
                                             {!! $HoSo->PhuongAnKinhDoanh!!}
                                             </textarea>
                                         </div>
@@ -1138,7 +1132,7 @@
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="TanSuatHopMat" type="text" class="form-control"
-                                                id="TanSuatHopMat" value="">
+                                                id="TanSuatHopMat" readonly>
                                             {!! $HoSo->TanSuatHopMat!!}
                                             </textarea>
                                         </div>
@@ -1150,7 +1144,7 @@
                                         </label>
                                         <div class="col-md-8 col-lg-9">
                                             <textarea name="CachChiaTien" type="text" class="form-control"
-                                                id="CachChiaTien" value="">
+                                                id="CachChiaTien" readonly>
                                             {!! $HoSo->CachChiaTien!!}
                                             </textarea>
                                         </div>
@@ -1162,8 +1156,7 @@
                                             phải:
                                         </label>
                                         <div class="col-md-8 col-lg-9">
-                                            <textarea name="ThachThuc" type="text" class="form-control" id="ThachThuc"
-                                                value="">
+                                            <textarea name="ThachThuc" type="text" class="form-control" id="ThachThuc" readonly>
                                             {!! $HoSo->ThachThuc!!}
                                             </textarea>
                                         </div>
@@ -1180,7 +1173,7 @@
                                         <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="TenDonVi" type="text" class="form-control" id=""
-                                                value="{{$HoSo-> TenDonVi}}">
+                                                value="{{$HoSo-> TenDonVi}}"  readonly>
                                         </div>
                                     </div>
                                     <br>
@@ -1321,11 +1314,10 @@
                                         </div>
 
                                         <div class="row mb-3">
-                                            <label for="" class="col-md-4 col-lg-3 col-form-label">Số lượng thành
-                                                viên:</label>
+                                            <label for="" class="col-md-4 col-lg-3 col-form-label">Số lượng thành viên:</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="SoLuongThanhVien" type="text" class="form-control" id=""
-                                                    value="{{$HoSo->SoLuongThanhVien}}">
+                                                    value="{{$HoSo->SoLuongThanhVien}}" readonly>
                                             </div>
                                         </div>
 
@@ -1334,7 +1326,7 @@
                                                 kinh doanh:</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="NganhNghe" type="text" class="form-control" id=""
-                                                    value="{{$HoSo->NganhNghe}}">
+                                                    value="{{$HoSo->NganhNghe}}" readonly>
                                             </div>
                                         </div>
 
@@ -1343,7 +1335,7 @@
                                                 sự:</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="NhanSu" type="text" class="form-control" id="NhanSu"
-                                                    value="{{$HoSo->NhanSu}}">
+                                                    value="{{$HoSo->NhanSu}}" readonly>
                                             </div>
                                         </div>
 
@@ -1352,7 +1344,7 @@
                                                 động sản xuất là</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="TongDienTichDat" type="text" class="form-control"
-                                                    id="TongDienTichDat" value="{{$HoSo->TongDienTichDat}}">
+                                                    id="TongDienTichDat" value="{{$HoSo->TongDienTichDat}}" readonly>
                                             </div>
                                         </div>
                                         <hr>
@@ -1420,7 +1412,7 @@
                                                 tình hình thị trường</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <textarea name="DanhGiaThiTruong" type="text" class="form-control"
-                                                    id="DanhGiaThiTruong">{!!$HoSo->DanhGiaThiTruong!!}</textarea>
+                                                    id="DanhGiaThiTruong" readonly>{!!$HoSo->DanhGiaThiTruong!!}</textarea>
                                             </div>
                                         </div>
 
@@ -1430,7 +1422,7 @@
                                             <div class="col-md-8 col-lg-9">
                                                 <textarea name="DanhGiaKhaNangThamGiaThiTruong" type="text"
                                                     class="form-control"
-                                                    id="DanhGiaKhaNangThamGiaThiTruong">{!!$HoSo->DanhGiaKhaNangThamGiaThiTruong!!}</textarea>
+                                                    id="DanhGiaKhaNangThamGiaThiTruong" readonly>{!!$HoSo->DanhGiaKhaNangThamGiaThiTruong!!}</textarea>
                                             </div>
                                         </div>
 
@@ -1439,7 +1431,7 @@
                                                 lập và hoạt động</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <textarea name="CanCuPhapLy" type="text" class="form-control"
-                                                    id="CanCuPhapLy">{!!$HoSo->CanCuPhapLy!!}</textarea>
+                                                    id="CanCuPhapLy" readonly>{!!$HoSo->CanCuPhapLy!!}</textarea>
                                             </div>
                                         </div>
                                     </form>
@@ -1458,7 +1450,7 @@
                                             <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="TenDonVi" type="text" class="form-control" id=""
-                                                    value="{{$HoSo-> TenDonVi}}">
+                                                    value="{{$HoSo-> TenDonVi}}" readonly>
                                             </div>
                                         </div>
                                         <h4 style="text-align:center;">I. PHÂN TÍCH ĐIỂM MẠNH, YẾU, CƠ HỘI VÀ THÁCH THỨC
@@ -1466,7 +1458,7 @@
                                         <div class="row mb-3">
                                             <div class="col-md-12 col-lg-12">
                                                 <textarea name="PhanTichChung" type="text" class="form-control"
-                                                    id="PhanTichChung">{!! $HoSo->PhanTichChung !!}</textarea>
+                                                    id="PhanTichChung" readonly>{!! $HoSo->PhanTichChung !!}</textarea>
                                             </div>
                                         </div>
                                         <hr>
@@ -1475,7 +1467,7 @@
                                         <div class="row mb-3">
                                             <div class="col-md-12 col-lg-12">
                                                 <textarea name="PhanTichCanhTranh" type="text" class="form-control"
-                                                    id="PhanTichCanhTranh">{!! $HoSo->PhanTichCanhTranh !!}</textarea>
+                                                    id="PhanTichCanhTranh" readonly>{!! $HoSo->PhanTichCanhTranh !!}</textarea>
                                             </div>
                                         </div>
                                         <hr>
@@ -1484,7 +1476,7 @@
                                         <div class="row mb-3">
                                             <div class="col-md-12 col-lg-12">
                                                 <textarea name="MucTieuChienLuoc" type="text" class="form-control"
-                                                    id="MucTieuChienLuoc">{!! $HoSo->MucTieuChienLuoc!!}</textarea>
+                                                    id="MucTieuChienLuoc" readonly>{!! $HoSo->MucTieuChienLuoc!!}</textarea>
                                             </div>
                                         </div>
 
@@ -1695,7 +1687,7 @@
                                             <label for="" class="col-md-4 col-lg-3 col-form-label">Tên chủ thể:</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="TenDonVi" type="text" class="form-control" id=""
-                                                    value="{{$HoSo-> TenDonVi}}">
+                                                    value="{{$HoSo-> TenDonVi}}" readonly>
                                             </div>
                                         </div>
                                         <div class="row mb-3">
@@ -1935,7 +1927,7 @@
                                     đồng:</label>
                                 <div class="col-md-8 col-lg-9">
                                     <textarea name="CongDong" type="text" class="form-control"
-                                        id="CongDong">{!! $HoSo->CongDong !!}</textarea>
+                                        id="CongDong" readonly>{!! $HoSo->CongDong !!}</textarea>
                                 </div>
                             </div>
 
@@ -1944,7 +1936,7 @@
                                     sở:</label>
                                 <div class="col-md-8 col-lg-9">
                                     <textarea name="HoatDongKeToan" type="text" class="form-control"
-                                        id="HoatDongKeToan">{!! $HoSo->HoatDongKeToan!!}</textarea>
+                                        id="HoatDongKeToan" readonly>{!! $HoSo->HoatDongKeToan!!}</textarea>
                                 </div>
                             </div>
 
@@ -1953,7 +1945,7 @@
                                     phẩm:</label>
                                 <div class="col-md-8 col-lg-9">
                                     <textarea name="TinhHinhTiepThi" type="text" class="form-control"
-                                        id="TinhHinhTiepThi">{!! $HoSo->TinhHinhTiepThi!!}</textarea>
+                                        id="TinhHinhTiepThi" readonly>{!! $HoSo->TinhHinhTiepThi!!}</textarea>
                                 </div>
                             </div>
 
@@ -1962,7 +1954,7 @@
                                     trường:</label>
                                 <div class="col-md-8 col-lg-9">
                                     <textarea name="PhuongAnBaoVeMoiTruong" type="text" class="form-control"
-                                        id="PhuongAnBaoVeMoiTruong">{!! $HoSo->PhuongAnBaoVeMoiTruong !!}</textarea>
+                                        id="PhuongAnBaoVeMoiTruong" readonly>{!! $HoSo->PhuongAnBaoVeMoiTruong !!}</textarea>
                                 </div>
                             </div>
                         </div>
@@ -1978,7 +1970,7 @@
                 <h5 style="text-align: center" class="card-title">TRẠNG THÁI HỒ SƠ</h5>
 
                 <!-- Vertical Form -->
-                <form action="{{ URL::to('admin/duyetHS',['id' => $HoSo->id]) }}" enctype="multipart/form-data" class="row g-3" method="POST">
+                <form action="{{ URL::to('admin/duyetHS',['id' => $HoSo->HoSo_id]) }}" enctype="multipart/form-data" class="row g-3" method="POST">
                     @csrf
                     <div class="col-12">
                         <label for="" class="form-label">Trạng thái</label>

@@ -54,7 +54,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ URL::to('/nguoidung') }}" class="nav-item nav-link active">Trang chủ</a>
+                <a href="{{ URL::to('dashboard') }}" class="nav-item nav-link active">Trang chủ</a>
                 <a href="http://ocop.gov.vn/" class="nav-item nav-link">Thông tin chương trình</a>
                 <a href="https://ocop.angiang.gov.vn/" class="nav-item nav-link">Trang chủ Ocop An Giang</a>
 

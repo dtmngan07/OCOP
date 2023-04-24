@@ -162,9 +162,22 @@ class KiemDuyetController extends Controller
             ->leftJoin('phieu_dang_kies','ho_sos.id','=','phieu_dang_kies.ho_so_id')
             ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
             ->where('ho_sos.id',$id)
+            ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
             ->first();
             
             return view('kiemduyet.quanlyhoso.chitiethoso')->with('HoSo',$HoSo);
+        }
+
+        public function DuyetHoSo(Request $request,$id){
+            $request->user()->authorizeRoles(['admin','kiemduyet']);
+            $user = $request->user();
+    
+            $HoSo= array();
+            $HoSo['TrangThai'] = $request->TrangThai;
+    
+            $save = DB::table('ho_sos')->where('ho_sos.id',$id)->update($HoSo);
+            
+            return back();
         }
         
         public function get_Xoa_HoSo($id){
