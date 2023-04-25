@@ -25,11 +25,11 @@ class KiemDuyetController extends Controller
 
     if ( $ThongTinCaNhan!=NULL && $ThongTinCaNhan->CBQLID != NULL)
     {
-        return view('kiemduyet.thongtintaikhoan')->with('ThongTinCaNhan',$ThongTinCaNhan)->with('user',$user);
+        return view('kiemduyet.quanlytaikhoan.thongtintaikhoan')->with('ThongTinCaNhan',$ThongTinCaNhan)->with('user',$user);
     }
     else
     {
-        return view('kiemduyet.sua_thongtintaikhoan')->with('ThongTinCaNhan',$ThongTinCaNhan)->with('user',$user);
+        return view('kiemduyet.quanlytaikhoan.sua_thongtintaikhoan')->with('ThongTinCaNhan',$ThongTinCaNhan)->with('user',$user);
     }
    
 }
@@ -44,7 +44,7 @@ class KiemDuyetController extends Controller
             ->where('user_id',$user->id)
             ->first();
 
-        return view('kiemduyet.sua_thongtintaikhoan')->with('ThongTinCaNhan',$ThongTinCaNhan)->with('user',$user);
+        return view('kiemduyet.quanlytaikhoan.sua_thongtintaikhoan')->with('ThongTinCaNhan',$ThongTinCaNhan)->with('user',$user);
     }
     public function post_Sua_ThongTinCaNhan(Request $request){
 
@@ -83,11 +83,11 @@ class KiemDuyetController extends Controller
         
         if ( $ThongTin!=NULL && $ThongTin->id != NULL)
         {
-            return view('kiemduyet.thongtindonvi')->with('ThongTin',$ThongTin)->with('user',$user);
+            return view('kiemduyet.quanlytaikhoan.thongtindonvi')->with('ThongTin',$ThongTin)->with('user',$user);
         }
         else
         {
-            return view('kiemduyet.sua_thongtindonvi')->with('ThongTin',$ThongTin)->with('CapDuyet',$CapDuyet)->with('user',$user);
+            return view('kiemduyet.quanlytaikhoan.sua_thongtindonvi')->with('ThongTin',$ThongTin)->with('CapDuyet',$CapDuyet)->with('user',$user);
         }
        
     }
@@ -107,7 +107,7 @@ class KiemDuyetController extends Controller
             ->select('cap_duyets.*','cap_duyets.id as CapDuyet_id')
             ->get();
         
-            return view('kiemduyet.sua_thongtindonvi')->with('ThongTin',$ThongTin)->with('CapDuyet',$CapDuyet)->with('user',$user);
+            return view('kiemduyet.quanlytaikhoan.sua_thongtindonvi')->with('ThongTin',$ThongTin)->with('CapDuyet',$CapDuyet)->with('user',$user);
         }
         public function post_Sua_ThongTinDonVi(Request $request){
     

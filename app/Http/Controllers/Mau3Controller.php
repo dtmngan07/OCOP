@@ -54,7 +54,7 @@ class Mau3Controller extends Controller
 
         if($request->file('SoDoToChuc'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -62,7 +62,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->SoDoToChuc;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('SoDoToChuc');
             $filename= $PhanI['TenDonVi'].'_Sơ đồ tổ chức_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -71,7 +71,7 @@ class Mau3Controller extends Controller
 
         if($request->file('ChucNangNhiemVuNhanSu'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -79,7 +79,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->ChucNangNhiemVuNhanSu;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('ChucNangNhiemVuNhanSu');
             $filename= $PhanI['TenDonVi'].'_Chức năng/nhiệm vụ nhân sự_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -159,7 +159,7 @@ class Mau3Controller extends Controller
 
         if($request->file('HoatDongSanXuat'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -167,7 +167,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->HoatDongSanXuat;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('HoatDongSanXuat');
             $filename= $PhanIII['TenDonVi'].'_Hoạt động sản xuất_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -176,7 +176,7 @@ class Mau3Controller extends Controller
 
         if($request->file('KenhPhanPhoi'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -184,7 +184,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->KenhPhanPhoi;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('KenhPhanPhoi');
             $filename= $PhanIII['TenDonVi'].'_Phân phối bán hàng_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -193,7 +193,7 @@ class Mau3Controller extends Controller
 
         if($request->file('KeHoachXucTienThuongMai'))
         {
-            if($request->id != null){
+          /*   if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -201,7 +201,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->KeHoachXucTienThuongMai;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('KeHoachXucTienThuongMai');
             $filename= $PhanIII['TenDonVi'].'_Kế hoạch xúc tiến thương mại_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -210,7 +210,7 @@ class Mau3Controller extends Controller
 
         if($request->file('KeHoachMarketing'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -218,7 +218,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->KeHoachMarketing;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('KeHoachMarketing');
             $filename= $PhanIII['TenDonVi'].'_Kế hoạch Marketing_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -227,7 +227,7 @@ class Mau3Controller extends Controller
 
         if($request->file('CoSoHaTang'))
         {
-            if($request->id != null){
+           /*  if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -235,7 +235,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->CoSoHaTang;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('CoSoHaTang');
             $filename= $PhanIII['TenDonVi'].'_Cơ sở hạ tầng_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -244,7 +244,7 @@ class Mau3Controller extends Controller
 
         if($request->file('TrangThietBi'))
         {
-            if($request->id != null){
+          /*   if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -252,7 +252,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->TrangThietBi;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('TrangThietBi');
             $filename= $PhanIII['TenDonVi'].'_Trang thiết bị_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -261,7 +261,7 @@ class Mau3Controller extends Controller
 
         if($request->file('NhanLucDieuChinh'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -269,7 +269,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->NhanLucDieuChinh;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('NhanLucDieuChinh');
             $filename= $PhanIII['TenDonVi'].'_Phân phối nhân lực điều chỉnh_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -278,7 +278,7 @@ class Mau3Controller extends Controller
 
         if($request->file('DieuKienKhac'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -286,7 +286,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->DieuKienKhac;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('DieuKienKhac');
             $filename= $PhanIII['TenDonVi'].'_Điều kiện khác_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -326,7 +326,7 @@ class Mau3Controller extends Controller
 
         if($request->file('NhuCauVon'))
         {
-            if($request->id != null){
+           /*  if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -334,7 +334,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->NhuCauVon;
 
                 unlink(public_path($file_name));
-            }
+            } */
 
             $file= $request->file('NhuCauVon');
             $filename= $PhanIV['TenDonVi'].'_Nhu cầu vốn_'.date('YmdHis').$file->getClientOriginalName();
@@ -344,7 +344,7 @@ class Mau3Controller extends Controller
 
         if($request->file('PhuongAnHuyDong'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -352,7 +352,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->PhuongAnHuyDong;
 
                 unlink(public_path($file_name));
-            }
+            } */
 
             $file= $request->file('PhuongAnHuyDong');
             $filename= $PhanIV['TenDonVi'].'_Phuong án huy động vốn_'.date('YmdHis').$file->getClientOriginalName();
@@ -362,7 +362,7 @@ class Mau3Controller extends Controller
 
         if($request->file('TongDoanhThu'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -370,7 +370,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->TongDoanhThu;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('TongDoanhThu');
             $filename= $PhanIV['TenDonVi'].'_Tổng doanh thu_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -379,7 +379,7 @@ class Mau3Controller extends Controller
 
         if($request->file('TongChiPhi'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
             $data = DB::table('ho_sos')
             ->where('user_id',$user->id)
             ->first();
@@ -387,7 +387,7 @@ class Mau3Controller extends Controller
             $file_name ='file_doanhnghiep/'. $data->TongChiPhi;
 
             unlink(public_path($file_name));
-        }
+            } */
             $file= $request->file('TongChiPhi');
             $filename= $PhanIV['TenDonVi'].'_Tổng chi phí_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -396,7 +396,7 @@ class Mau3Controller extends Controller
 
         if($request->file('LoiNhuan'))
         {
-            if($request->id != null){
+           /*  if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -404,7 +404,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->LoiNhuan;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('LoiNhuan');
             $filename= $PhanIV['TenDonVi'].'_Lợi nhuận_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -413,7 +413,7 @@ class Mau3Controller extends Controller
 
         if($request->file('PhuongAnTaiChinhKhac'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -421,7 +421,7 @@ class Mau3Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->PhuongAnTaiChinhKhac;
 
                 unlink(public_path($file_name));
-            }
+            } */
 
             $file= $request->file('PhuongAnTaiChinhKhac');
             $filename= $PhanIV['TenDonVi'].'_Phương án tài chính khác_'.date('YmdHis').$file->getClientOriginalName();

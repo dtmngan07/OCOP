@@ -109,7 +109,7 @@ class Mau2Controller extends Controller
 
         if($request->file('KetQuaBanHang'))
         {
-            if($request->id != null){
+           /*  if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -117,16 +117,18 @@ class Mau2Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->KetQuaBanHang;
 
                 unlink(public_path($file_name));
-            }
+            } */
+            
             $file= $request->file('KetQuaBanHang');
             $filename= $PhanC['TenDonVi'].'_Kết quả bán hàng_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
             $PhanC['KetQuaBanHang'] = $filename;
+            
         }
 
         if($request->file('ChiPhi'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -134,16 +136,18 @@ class Mau2Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->ChiPhi;
 
                 unlink(public_path($file_name));
-            }
+            } */
+            
             $file= $request->file('ChiPhi');
             $filename= $PhanC['TenDonVi'].'_Chi phí_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
             $PhanC['ChiPhi'] = $filename;
+            
         }
 
         if($request->file('DoanhThu'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -151,7 +155,7 @@ class Mau2Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->DoanhThu;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('DoanhThu');
             $filename= $PhanC['TenDonVi'].'_Doanh thu_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -160,7 +164,7 @@ class Mau2Controller extends Controller
 
         if($request->file('NhanLuc'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -168,7 +172,7 @@ class Mau2Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->NhanLuc;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('NhanLuc');
             $filename= $PhanC['TenDonVi'].'_Nhân lực_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -177,7 +181,7 @@ class Mau2Controller extends Controller
 
         if($request->file('NguonCungCapNguyenLieu'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -185,7 +189,7 @@ class Mau2Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->NguonCungCapNguyenLieu;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('NguonCungCapNguyenLieu');
             $filename= $PhanC['TenDonVi'].'_Nguồn cung cấp nguyên liệu_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -271,7 +275,7 @@ class Mau2Controller extends Controller
 
         if($request->file('QuyTrinhSanXuat'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -279,7 +283,7 @@ class Mau2Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->QuyTrinhSanXuat;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('QuyTrinhSanXuat');
             $filename= $PhanE['TenDonVi'].'_Quy trình sản xuất_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -288,7 +292,7 @@ class Mau2Controller extends Controller
 
         if($request->file('HoTroKhac'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -296,7 +300,7 @@ class Mau2Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->HoTroKhac;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('HoTroKhac');
             $filename= $PhanE['TenDonVi'].'_Hỗ trợ khác_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);
@@ -335,7 +339,7 @@ class Mau2Controller extends Controller
         $PhanG['TenDonVi'] = $request->TenDonVi;
         if($request->file('NhuCauHoTro'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -343,7 +347,7 @@ class Mau2Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->NhuCauHoTro;
 
                 unlink(public_path($file_name));
-            }
+            } */
             $file= $request->file('NhuCauHoTro');
             $filename= $PhanG['TenDonVi'].'_Nhu cầu hỗ trợ_'.date('YmdHis').$file->getClientOriginalName();
             $file->move(public_path('file_doanhnghiep'), $filename);

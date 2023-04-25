@@ -44,9 +44,9 @@
     <!-- ======= Header ======= -->
     <header id="header" class="header fixed-top d-flex align-items-center">
 
-        <div class="d-flex align-items-center justify-content-between">
-            <a href="{{ URL::to('UserHome') }}" class="logo d-flex align-items-center">
-                <span class="d-none d-lg-block">Trang dành cho doanh nghiệp</span>
+        <div class="align-items-center">
+            <a href="{{ URL::to('dashboard') }}" class="logo">
+                <span class="">Trang dành cho doanh nghiệp</span>
             </a>
         </div><!-- End Logo -->
 

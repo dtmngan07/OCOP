@@ -6,20 +6,15 @@
         <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
             <img src="{{ asset('bieutuong/'.$HoSo ->BieuTuong) }}" alt="Profile" class="">
-            <h2></h2>
-            <div class="social-links mt-2">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-            </div>
+            <h2>Ảnh đại diện</h2>
+            
         </div>
     </div>
     <div class="text-center">
         <a href="{{ URL::to('nguoidung/hoso/sua') }}" class="btn btn-info">Cập nhật thông tin hồ
             sơ</a>
     </div>
-
+    
 </div>
 <div class="col-xl-8">
 
@@ -29,9 +24,8 @@
             <ul class="nav nav-tabs nav-tabs-bordered">
 
                 <li class="nav-item">
-                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Thông tin
-                        chi
-                        tiết</button>
+                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">
+                    Thông tin chi tiết</button>
                 </li>
 
             </ul>
@@ -39,6 +33,26 @@
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
                     <h5 class="card-title">Thông tin chi tiết</h5>
+
+                    <div class="row">
+                        @if ($HoSo->TrangThai === 0)
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                Hồ sơ của bạn chưa được duyệ
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @elseif ($HoSo->TrangThai === 1)
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                Yêu cầu bổ sung hồ sơ
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @elseif ($HoSo->TrangThai === 2)
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            Hồ sơ của bạn đã được duyệt
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        @endif
+                    </div>
+
                     <div class="row">
                         <div class="col-lg-3 col-md-4 label ">Tên doanh nghiệp</div>
                         <div class="col-lg-9 col-md-8">{{ $HoSo -> TenDonVi}}</div>
@@ -71,7 +85,7 @@
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-3 col-md-4 label">Mã sô thuế</div>
+                        <div class="col-lg-3 col-md-4 label">Mã số thuế</div>
                         <div class="col-lg-9 col-md-8">{{ $HoSo -> MaSoThue}}</div>
                     </div>
 

@@ -12,7 +12,7 @@
                     </div>
 
                 </div>
-                <div class="text-center">
+                <!-- <div class="text-center">
                     <a href="{{ URL::to('') }}" class="btn btn-secondary rounded-pill">Xem thông tin mẫu 2</a>
                 </div>
                 <br>
@@ -22,7 +22,7 @@
                 <br>
                 <div class="text-center">
                     <a href="{{ URL::to('') }}" class="btn btn-success rounded-pill">Xem thông tin mẫu 4</a>
-                </div>
+                </div> -->
             </div>
 
             <div class="col-xl-8">

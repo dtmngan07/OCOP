@@ -52,7 +52,7 @@ class Mau4Controller extends Controller
 
         if($request->file('CoCauToChuc'))
         {
-            if($request->id != null){
+            /* if($request->id != null){
                 $data = DB::table('ho_sos')
                 ->where('user_id',$user->id)
                 ->first();
@@ -60,7 +60,7 @@ class Mau4Controller extends Controller
                 $file_name ='file_doanhnghiep/'. $data->CoCauToChuc;
 
                 unlink(public_path($file_name));
-            }
+            } */
             
             $file= $request->file('CoCauToChuc');
             $filename= $Mau4['TenDonVi'].'_Cơ cấu tổ chức_'.date('YmdHis').$file->getClientOriginalName();
