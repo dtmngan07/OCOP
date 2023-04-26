@@ -10,17 +10,17 @@
             <input value="{{$ThongTinCaNhan->CBQLID}}" type="text" class="form-control" name="id" hidden>
                 <div class="col-12">
                     <label for="" class="form-label">Họ tên cán bộ quản lý đơn vị</label>
-                    <input value="{{$ThongTinCaNhan->hoten}}" type="text" class="form-control" name="hoten" id="hoten">
+                    <input value="{{$ThongTinCaNhan->hoten}}" type="text" class="form-control" name="hoten" id="hoten" readonly>
                 </div>
                 <div class="col-12">
                     <label for="" class="form-label">Số điện thoại cán bộ quản lý đơn vị</label>
                     <input value="{{$ThongTinCaNhan->sodienthoaiCBQL}}" type="text" class="form-control" name="sodienthoaiCBQL"
-                        id="sodienthoai">
+                        id="sodienthoai" readonly>
                 </div>
                 <div class="col-12">
                     <label for="" class="form-label">Địa chỉ cán bộ quản lý đơn vị</label>
                     <input value="{{$ThongTinCaNhan->diachiCBQL}}" type="text" class="form-control" name="diachiCBQL"
-                        id="diachi">
+                        id="diachi" readonly>
                 </div>
 
                 <div class="text-center">

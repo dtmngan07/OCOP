@@ -18,10 +18,15 @@
 
             <div class="col-12">
                 <label for="" class="form-label">Tên đơn vị</label>
-                <select class="" id="ho_so_id" name="ho_so_id" required>
-                    <option value="">-- Chọn --</option>
-                    @foreach($PhieuDangKy as $value)
-                    <option value="{{ $value->HoSo_id }}" >{{ $value->TenDonVi }}</option>
+                <select class="form-select" id="ho_so_id" name="ho_so_id" required>
+                    <option value="form-select">-- Chọn --</option>
+                    @foreach($HoSo as $value)
+                        @if ($value->HS_id == $PhieuDangKy->ho_so_id)
+                        <option value="{{ $value->HS_id }}" selected>{{ $value->TenDonVi }}</option>
+                        @else
+                        <option value="{{ $value->HS_id }}">{{ $value->TenDonVi }}</option>
+                        @endif
+
                     @endforeach
                 </select>
             </div>

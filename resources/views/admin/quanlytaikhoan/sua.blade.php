@@ -20,7 +20,7 @@
 
             <div class="col-12">
                 <label for="" class="form-label">Quyền</label>
-                <select class="" id="roleID" name="roleID" required>
+                <select class="form-select" id="roleID" name="roleID" required>
                     <option value="">-- Chọn --</option>
                     @foreach($Role as $value)
                         @if ($value->id == $TaiKhoan->roleID)

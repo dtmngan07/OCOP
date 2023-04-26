@@ -18,7 +18,7 @@
 
             <div class="col-12">
                 <label for="" class="form-label">Tên đơn vị</label>
-                <select class="" id="ho_so_id" name="ho_so_id" required>
+                <select class="form-select" id="ho_so_id" name="ho_so_id" required>
                     <option value="">-- Chọn --</option>
                     @foreach($HoSo as $value)
                     <option value="{{ $value->id }}">{{ $value->TenDonVi }}</option>
