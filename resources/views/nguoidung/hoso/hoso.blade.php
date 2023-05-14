@@ -11,8 +11,7 @@
         </div>
     </div>
     <div class="text-center">
-        <a href="{{ URL::to('nguoidung/hoso/sua') }}" class="btn btn-info">Cập nhật thông tin hồ
-            sơ</a>
+        <a href="{{ URL::to('nguoidung/hoso/sua') }}" class="btn btn-info">Cập nhật thông tin hồ sơ</a>
     </div>
     
 </div>

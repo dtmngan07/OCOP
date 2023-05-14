@@ -89,7 +89,7 @@
                             <i class="fas fa-file-alt" style='font-size:50px'></i>
                             <hr>
                             <h5 class="mb-3">Phần A</h5>
-                            <p>DÀNH CHO CÁN BỘ QUẢN LÝ CHƯƠNG TRÌNH OCOP</p>
+                            <p>DÀNH CHO CÁN BỘ QUẢN LÝ</p>
                             <a href="{{ URL::to('/nguoidung/capnhatmau2phanA') }}"
                                 class="btn btn-primary py-md-3 px-md-5 me-3 animated slideInLeft">
                                 Xem và cập nhật

@@ -55,6 +55,16 @@ class AdminController extends Controller
         ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
         ->where('TrangThai',1)
         ->get();
+
+        $PhieuDangKy = DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->where('phieu_dang_ki_id',"")
+        ->get();
+
         $DonViDuyet = DB::table('users')
         ->leftJoin('can_bo_quan_lies','can_bo_quan_lies.user_id','=','users.id')
         ->leftJoin('don_vi_duyets','don_vi_duyets.can_bo_quan_li_id','=','can_bo_quan_lies.id')
@@ -67,13 +77,15 @@ class AdminController extends Controller
             return view('admin.trangchuAdmin')->with('HoSo',$HoSo)
             ->with('DaDuyet', $DaDuyet)
             ->with('ChuaDuyet', $ChuaDuyet)
-            ->with('BoSungHS',$BoSungHS);
+            ->with('BoSungHS',$BoSungHS)
+            ->with('PhieuDangKy',$PhieuDangKy);
         else if ($role->role_name == 'kiemduyet')
             return view('kiemduyet.trangchuKiemDuyet')
             ->with('HoSo',$HoSo)->with('DonViDuyet', $DonViDuyet)
             ->with('DaDuyet', $DaDuyet)
             ->with('ChuaDuyet', $ChuaDuyet)
-            ->with('BoSungHS',$BoSungHS);
+            ->with('BoSungHS',$BoSungHS)
+            ->with('PhieuDangKy',$PhieuDangKy);
         else
             return view('nguoidung.trangchuUser');
 
@@ -118,10 +130,20 @@ class AdminController extends Controller
         ->where('TrangThai',1)
         ->get();
 
+        $PhieuDangKy = DB::table('ho_sos')
+        ->leftJoin('nguoi_dai_diens','nguoi_dai_diens.ho_so_id','=','ho_sos.id')
+        ->leftJoin('loai_hinh_to_chucs','loai_hinh_to_chucs.id','=','ho_sos.loai_hinh_to_chuc_id')
+        ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
+        ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
+        ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
+        ->where('phieu_dang_ki_id','')
+        ->get();
+
         return view('admin.trangchuAdmin')->with('HoSo',$HoSo)
         ->with('DaDuyet', $DaDuyet)
         ->with('ChuaDuyet', $ChuaDuyet)
-        ->with('BoSungHS',$BoSungHS);
+        ->with('BoSungHS',$BoSungHS)
+        ->with('PhieuDangKy',$PhieuDangKy);
     }
     public function getdashboardUser(Request $request){
         

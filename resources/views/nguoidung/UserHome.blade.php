@@ -68,7 +68,7 @@
                     @csrf
                     <a class="nav-item nav-link" href="{{ route('logout') }}" @click.prevent="$root.submit();">
                         <i class="bi bi-box-arrow-right"></i>
-                        {{ __('Log Out') }}
+                        {{ __('Đăng xuất') }}
                     </a>
                 </form>
             </div>
@@ -147,7 +147,72 @@
         </div>
     </div>
     <!-- Service End -->
+    <hr>
+    <!-- About Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="mb-4">Hướng dẫn chủ thể xây dựng phương án/dự án sản xuất kinh doanh</h1>
+                
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="https://ocop.angiang.gov.vn/huong-dan/huong-dan-chu-the-xay-dung-phuong-an-du-an-san-xuat-kinh-doanh/">Xem chi tiết</a>
+                </div>
 
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="mb-4">Hướng dẫn công bố tiêu chuẩn, quy chuẩn và thủ tục cấp giấy chứng nhận đủ điều kiện an toàn thực phẩm</h1>
+                
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="https://ocop.angiang.gov.vn/huong-dan/huong-dan-cong-bo-tieu-chuan-quy-chuan-va-thu-tuc-cap-giay-chung-nhan-du-dieu-kien-an-toan-thuc-pham/">Xem chi tiết</a>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="mb-4">Hướng dẫn một số nội dung triển khai Chu trình OCOP</h1>
+                    
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Tuyên truyền, hướng dẫn về Chương trình OCOP</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Nhận ý tưởng sản phẩm</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Nhận phương án sản xuất kinh doanh (phương án kinh doanh)</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Triển khai phương án kinh doanh</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Đánh giá và phân hạng sản phẩm OCOP</p>
+                        </div>
+                        <div class="col-sm-6">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Xúc tiến thương mại</p>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="https://ocop.angiang.gov.vn/huong-dan/huong-dan-mot-so-noi-dung-trien-khai-chu-trinh-ocop/">Xem chi tiết</a>
+                </div>
+
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <h1 class="mb-4">Hướng dẫn thủ tục hồ sơ đăng ký sản phẩm OCOP</h1>
+                    
+                    <div class="row gy-2 gx-4 mb-4">
+                        <div class="col-sm-12">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Yêu cầu về hồ sơ đánh giá sản phẩm OCOP</p>
+                        </div>
+                        <div class="col-sm-12">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Sản phẩm tham gia chương trình mỗi xã một sản phẩm – OCOP</p>
+                        </div>
+                        <div class="col-sm-12">
+                            <p class="mb-0"><i class="fa fa-arrow-right text-primary me-2"></i>Cách xác định tiềm năng sản phẩm OCOP</p>
+                        </div>
+                    </div>
+                    <a class="btn btn-primary py-3 px-5 mt-2" href="https://ocop.angiang.gov.vn/huong-dan/huong-dan-thu-tuc-ho-so-dang-ky-san-pham-ocop/">Xem chi tiết</a>
+                </div>
+
+                
+                
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
     <!-- Footer Start -->
     <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
         <div class="container py-5">

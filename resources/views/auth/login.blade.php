@@ -16,6 +16,9 @@
         <!-- Styles -->
         @livewireStyles
 
+        <style>
+        
+        </style>
     </head>
     <body class="font-sans antialiased">
     <x-guest-layout>
@@ -26,11 +29,8 @@
 
         <x-jet-validation-errors class="mb-4" />
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
+        
+<!--         <img src="{{asset('index/img/logoocop.png')}}" alt=""> -->
 
         <form method="POST" action="{{ route('login') }}">
             <h1 style="text-align:center;font-size: 24px;"><b>ĐĂNG NHẬP</b></h1>
@@ -51,6 +51,11 @@
                     <span class="ml-2 text-sm text-gray-600">{{ __('Nhớ tài khoản') }}</span>
                 </label>
             </div>
+            @if (session('status'))
+            <div class="mb-4 font-medium text-sm text-green-600">
+                {{ session('status') }}
+            </div>
+            @endif
 
             <div class="flex items-center justify-end mt-4">
                 @if (Route::has('password.request'))

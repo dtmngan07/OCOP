@@ -66,6 +66,27 @@
                         </div>
                     </div>
                 </div>
+                <hr>
+                <div class="col-xxl-6 col-xl-12">
+
+                    <div class="card info-card customers-card">
+                        <div class="card-body">
+                            <h5 class="card-title">Hồ sơ chưa được cấp phiếu đăng ký</h5>
+
+                            <div class="d-flex align-items-center">
+                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                    <i class="bi bi-file-earmark-check"></i>
+                                </div>
+                                <div class="ps-3">
+                                    <h6>
+                                    {{$PhieuDangKy->count()}}
+                                    </h6>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
             </div>
         </div><!-- End Left side columns -->
        

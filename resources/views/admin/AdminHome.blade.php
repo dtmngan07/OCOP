@@ -10,7 +10,7 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="{{ asset('assets/img/adminicon.png') }}" rel="icon">
+  <link href="{{ asset('index/img/logo.jpeg') }}" rel="icon">
   <link href="{{ asset('assets/img/adminicon.png') }}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
@@ -132,7 +132,7 @@
       <li class="nav-item">
         <a class="nav-link collapsed" href="{{ URL::to('logout') }}">
           <i class="bi bi-box-arrow-in-right"></i>
-          <span>Logout</span>
+          <span>Đăng xuất</span>
         </a>
       </li><!-- End Login Page Nav -->
 
