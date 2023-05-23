@@ -39,7 +39,6 @@ class Mau4Controller extends Controller
         $id = $request->id;
         $Mau4 = array();
         $Mau4['TenDonVi'] = $request->TenDonVi;
-        $Mau4['DiaChi_NguoiDaiDien'] = $request-> DiaChi_NguoiDaiDien;
         $Mau4['DiaChiXuong'] = $request-> DiaChiXuong;
         $Mau4['DienThoai'] = $request-> DienThoai;
         $Mau4['Email'] = $request->Email ;

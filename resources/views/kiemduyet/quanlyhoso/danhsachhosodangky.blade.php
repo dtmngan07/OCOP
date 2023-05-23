@@ -25,6 +25,9 @@
             @php
             $i = 0;
             @endphp
+            @if ($DonViDuyet->DonViDuyetID == null)
+                <h5>Bạn phải cập nhật thông tin đơn vị!</h5>
+            @endif
             @foreach($HoSo as $iteam)
                 @if ($DonViDuyet->DonViDuyetID == $iteam->don_vi_duyet_id)
                 <tr>

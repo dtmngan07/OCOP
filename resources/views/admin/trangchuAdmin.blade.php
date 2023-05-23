@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <hr>
-                <div class="col-xxl-6 col-xl-12">
+                <!-- <div class="col-xxl-6 col-xl-12">
 
                     <div class="card info-card customers-card">
                         <div class="card-body">
@@ -86,7 +86,7 @@
 
                         </div>
                     </div>
-                </div>
+                </div> -->
 
             </div>
         </div><!-- End Left side columns -->

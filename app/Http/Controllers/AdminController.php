@@ -136,7 +136,7 @@ class AdminController extends Controller
         ->leftJoin('phieu_dang_kies','phieu_dang_kies.ho_so_id','=','ho_sos.id')
         ->leftJoin('don_vi_duyets','don_vi_duyets.id','=','ho_sos.don_vi_duyet_id')
         ->select('ho_sos.id as HoSo_id','ho_sos.*','don_vi_duyets.*','phieu_dang_kies.*','nguoi_dai_diens.*','loai_hinh_to_chucs.*')
-        ->where('phieu_dang_ki_id','')
+        ->where('phieu_dang_ki_id',0)
         ->get();
 
         return view('admin.trangchuAdmin')->with('HoSo',$HoSo)

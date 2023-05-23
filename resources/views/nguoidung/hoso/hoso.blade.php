@@ -36,7 +36,7 @@
                     <div class="row">
                         @if ($HoSo->TrangThai === 0)
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                Hồ sơ của bạn chưa được duyệ
+                                Hồ sơ của bạn chưa được duyệt
                                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         @elseif ($HoSo->TrangThai === 1)
